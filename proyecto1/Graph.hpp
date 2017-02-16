@@ -4,11 +4,13 @@
  *  @author : Salvador Di Renzo
  *  @author : Stefani Castellanos 11-11394
  *
- *  Implementation for a graphs respresenteed as a list of edges
+ *  Information of the graph
  */
 
-#ifndef _GRAPHINFO_HPP
-#define _GRAPHINFO_HPP
+#ifndef _GRAPH_HPP
+#define _GRAPH_HPP
+
+#include <list>
 
 /**************************************************************************//**
  *  GraphInfo. Information of an edge of the graph, it's benefit and cost.
@@ -36,4 +38,24 @@ GraphInfo::GraphInfo (int v1, int v2, int be, int ce) {
   ce = ce;
 }
 
-#endif // _GRAPHINFO_HPP
+/**************************************************************************//**
+ *  Graph. List of the edges and it's benefits and costs
+ *****************************************************************************/
+class Graph {
+    private:
+        std::list<GraphInfo> edges;
+    public:
+        Graph(std::list<GraphInfo> & edges);
+        //FUNCIONES QUE PODRIA TENER, AUN NO ESTOY SEGURA
+        void MST();
+        void isEulerian();
+        void isConnected();
+        void connectedComponents();
+};
+
+// Constructor
+Graph::Graph (std::list<GraphInfo> & edges) {
+    edges = edges;
+}
+
+#endif // _GRAPH_HPP

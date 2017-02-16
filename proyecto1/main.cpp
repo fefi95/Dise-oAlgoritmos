@@ -10,7 +10,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "graphInfo.hpp"
+#include "Graph.hpp"
 
 using namespace std;
 

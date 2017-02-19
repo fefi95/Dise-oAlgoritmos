@@ -27,7 +27,7 @@ class Reader {
 
 public:
 	Reader();
-	std::list<GraphInfo> ReadFile(const char* path);
+	Graph ReadFile(const char* path);
 private:
 	int get_int(string line);
 	GraphInfo get_edge(string line);
@@ -39,13 +39,14 @@ Reader::Reader(){ }
 
 
 //ReadFile creates the Grpah's edges with the read values
-std::list<GraphInfo> Reader::ReadFile(const char* path){
+Graph Reader::ReadFile(const char* path){
 
-	int size;    //Number of vertex
-	int r_edges; //Number of Required edges
-	int n_edges; //Number of Non Required edges
+	int size = 0;    //Number of vertex
+	int r_edges = 0; //Number of Required edges
+	int n_edges = 0; //Number of Non Required edges
 	string line; //Value of the read line
-	list<GraphInfo> edges; // Returning Value of the function
+	list<GraphInfo> positive_benefit; // List of positive benefit edges;
+	list<GraphInfo> negative_benefit; // List of negative benefit edges;
 	ifstream sourcefile(path); //File to be read
 
 	//Make sure the file exists
@@ -65,7 +66,7 @@ std::list<GraphInfo> Reader::ReadFile(const char* path){
 		for (int i = 0; i < r_edges; i = i+1){
 
 			getline(sourcefile,line);
-			edges.push_back(Reader::get_edge(line));
+			positive_benefit.push_back(Reader::get_edge(line));
 		}
 
 		//Getting the number of the non required edges
@@ -77,15 +78,17 @@ std::list<GraphInfo> Reader::ReadFile(const char* path){
 		for (int i = 0; i < n_edges; i = i+1){
 
 			getline(sourcefile,line);
-			edges.push_back(Reader::get_edge(line));
+			negative_benefit.push_back(Reader::get_edge(line));
 		}
+
+		sourcefile.close();
 
 	}
 
 	else { cout << "Unable to read specified file..." << endl; }
 
-	sourcefile.close();
-	return edges;
+	Graph result(size,r_edges,n_edges,positive_benefit,negative_benefit); //Structure that contains the resulting Graph
+	return result;
 
 }
 
@@ -125,7 +128,7 @@ GraphInfo Reader::get_edge(string line){
 
 	//cout << v1 << " " << v2 << " " << cost << " " << benefit << endl;
 
-	GraphInfo result(v1,v2,cost,benefit); //Structure that contains the edges info
+	GraphInfo result(v1,v2,cost,benefit); //Structure that contains the edge's info
 
 	return result;
 

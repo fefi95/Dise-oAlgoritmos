@@ -63,7 +63,7 @@ Edge get_edge(string line){
 }
 
 //ReadFile creates the Grpah's edges with the read values
-GraphPRPP readFile(const char* path){
+Graph readFile(const char* path){
 
 	int size = 0;    //Number of vertex
 	int r_edges = 0; //Number of Required edges
@@ -111,7 +111,7 @@ GraphPRPP readFile(const char* path){
 
 	else { cout << "Unable to read specified file..." << endl; }
 
-	GraphPRPP result(size,r_edges,n_edges,positive_benefit,negative_benefit); //Structure that contains the resulting Graph
+	Graph result(size,r_edges,n_edges,positive_benefit,negative_benefit); //Structure that contains the resulting Graph
 	return result;
 }
 

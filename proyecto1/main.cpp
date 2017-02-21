@@ -15,7 +15,8 @@
 using namespace std;
 
 int main(int argc, char **argv) {
-    GraphPRPP graphPRPP = readFile(argv[1]);
+    Graph graph = readFile(argv[1]);
+    std::cout << isEulerian(graph.get_vertex(), graph.get_r_edges()) << std::endl;
     // GraphPRPP.solvePRPP();
-    std::cout << graphPRPP << std::endl;
+    std::cout << graph << std::endl;
 }

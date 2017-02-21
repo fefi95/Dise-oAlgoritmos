@@ -40,7 +40,7 @@ int get_int(string line){
 
 
 //get_edge. Given a string of 4 integers, returns an edge with those values
-GraphInfo get_edge(string line){
+Edge get_edge(string line){
 
 	char * token; //Allows to save each sub-string from the variable line
 	int v1,v2,cost,benefit; //Each of the edge values (origin - destiny - cost - benefit)
@@ -56,21 +56,21 @@ GraphInfo get_edge(string line){
 
 	//cout << v1 << " " << v2 << " " << cost << " " << benefit << endl;
 
-	GraphInfo result(v1,v2,cost,benefit); //Structure that contains the edge's info
+	Edge result(v1,v2,cost,benefit); //Structure that contains the edge's info
 
 	return result;
 
 }
 
 //ReadFile creates the Grpah's edges with the read values
-Graph readFile(const char* path){
+GraphPRPP readFile(const char* path){
 
 	int size = 0;    //Number of vertex
 	int r_edges = 0; //Number of Required edges
 	int n_edges = 0; //Number of Non Required edges
 	string line; //Value of the read line
-	list<GraphInfo> positive_benefit; // List of positive benefit edges;
-	list<GraphInfo> negative_benefit; // List of negative benefit edges;
+	list<Edge> positive_benefit; // List of positive benefit edges;
+	list<Edge> negative_benefit; // List of negative benefit edges;
 	ifstream sourcefile(path); //File to be read
 
 	//Make sure the file exists
@@ -111,7 +111,7 @@ Graph readFile(const char* path){
 
 	else { cout << "Unable to read specified file..." << endl; }
 
-	Graph result(size,r_edges,n_edges,positive_benefit,negative_benefit); //Structure that contains the resulting Graph
+	GraphPRPP result(size,r_edges,n_edges,positive_benefit,negative_benefit); //Structure that contains the resulting Graph
 	return result;
 }
 

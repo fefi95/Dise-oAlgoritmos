@@ -10,7 +10,7 @@
 #ifndef _GRAPH_HPP
 #define _GRAPH_HPP
 
-#include <list>
+#include <vector>
 #include <iostream>
 #include <set>
 #include <queue>
@@ -77,31 +77,32 @@ inline std::ostream& operator<<(std::ostream &os, Edge &Edge) {
     return os;
 }
 
-void printEdges(std::ostream &os, std::list<Edge> &edges) {
-    for(std::list<Edge>::iterator it= edges.begin(); it != edges.end(); ++it) {
+void printEdges(std::ostream &os, std::vector<Edge> &edges) {
+    for(std::vector<Edge>::iterator it= edges.begin(); it != edges.end(); ++it) {
 		it -> print(os);
 	}
 }
 
 /**************************************************************************//**
- *  GraphPRPP. List of the edges and it's benefits and costs
+ *  GraphPRPP. vector of the edges and it's benefits and costs
  *****************************************************************************/
 class GraphPRPP {
     private:
 		int nodes;  //Number of nodes of the Graph
 		int r_size; //Number of required edges of the Graph
 		int n_size; //Number of non required edges of the Graph
-        std::list<Edge> r_edges; //List of required edges
-        std::list<Edge> n_edges; //List of non required edges
+        std::vector<Edge> r_edges; //List of required edges
+        std::vector<Edge> n_edges; //List of non required edges
+
     public:
-        GraphPRPP(int nodes, int r_size, int n_size, std::list<Edge> & r_edges, std::list<Edge> & n_edges);
+        GraphPRPP(int nodes, int r_size, int n_size, std::vector<Edge> & r_edges, std::vector<Edge> & n_edges);
         //FUNCIONES QUE PODRIA TENER, AUN NO ESTOY SEGURA
         void print(std::ostream &os) ;
         //void solvePRPP();
 };
 
 // Constructor
-GraphPRPP::GraphPRPP (int nodes, int r_size, int n_size, std::list<Edge> & r_edges, std::list<Edge> & n_edges) {
+GraphPRPP::GraphPRPP (int nodes, int r_size, int n_size, std::vector<Edge> & r_edges, std::vector<Edge> & n_edges) {
 
 	this -> nodes = nodes;
 	this -> r_size = r_size;
@@ -109,8 +110,8 @@ GraphPRPP::GraphPRPP (int nodes, int r_size, int n_size, std::list<Edge> & r_edg
 	this -> r_edges = r_edges;
 	this -> n_edges = n_edges;
 	//we proceed to sort the lists for easy work later
-	this -> r_edges.sort(comp);
-	this -> n_edges.sort(comp);
+	// this -> r_edges.sort(comp);
+	// this -> n_edges.sort(comp);
 }
 
 //Prints the current Graph Info
@@ -133,23 +134,48 @@ inline std::ostream& operator<<(std::ostream &os, GraphPRPP &graph) {
  *****************************************************************************/
 class Graph {
     private:
-		int n_vertex;  //Number of nodes of the Graph
-        std::list<Edge> edges; //List of edges
+		int n_vertex;  //Number of vertex of the Graph
+        std::vector<Edge> edges; //List of edges
 
     public:
-        Graph(int n_vertex, std::list<Edge> & edges);
+        Graph(int n_vertex, std::vector<Edge> &edges);
         //FUNCIONES QUE PODRIA TENER, AUN NO ESTOY SEGURA
         void print(std::ostream &os);
         bool isEulerian();
-        std::list<Edge> MST();
-        //void solvePRPP();
+        bool isConnected();
+        std::vector<Edge> MST();
 };
+
+// Constructor
+Graph::Graph (int n_vertex, std::vector<Edge> &edges) {
+    this -> n_vertex = n_vertex;
+    this -> edges = edges;
+}
+
+bool Graph::isConnected() {
+
+    bool isDeposit = false; //Whether the source is in the graph
+    std::set<int> visitedVertex; // Set for visited nodes.
+
+    // Find first edge of source vertex
+    for(std::vector<Edge>::iterator edge = this -> edges.begin(); edge != this -> edges.end(); ++edge) {
+        int v1 = edge -> get_v1();
+        int v2 = edge -> get_v2();
+        visitedVertex.insert(v1);
+        visitedVertex.insert(v2);
+
+        if (v1 == 1 || v2 == 1){
+            isDeposit = true;
+        }
+    }
+    return visitedVertex.size() == this -> n_vertex;
+}
 
 bool Graph::isEulerian() {
 
     int aux [this -> n_vertex];
 
-    for(std::list<Edge>::iterator edge = this -> edges.begin(); edge != this -> edges.end(); ++edge) {
+    for(std::vector<Edge>::iterator edge = this -> edges.begin(); edge != this -> edges.end(); ++edge) {
         int v1 = edge -> get_v1();
         int v2 = edge -> get_v2();
         aux[v1] = (v1 + 1) % 2;
@@ -165,7 +191,7 @@ bool Graph::isEulerian() {
 }
 
 //Creates the Maximun Spanning Tree (Variation Of Kruskall)
-std::list<Edge> Graph::MST(){
+std::vector<Edge> Graph::MST(){
 
 	// std::list<Edge> result; //Variable for the returning
 	//YA LAS LISTAS ESTAN ORDENADAS DONDE POR BENEFICIO MAYOR A COSTO

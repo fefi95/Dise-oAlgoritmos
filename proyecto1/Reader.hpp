@@ -69,8 +69,8 @@ GraphPRPP readFile(const char* path){
 	int r_edges = 0; //Number of Required edges
 	int n_edges = 0; //Number of Non Required edges
 	string line; //Value of the read line
-	list<Edge> positive_benefit; // List of positive benefit edges;
-	list<Edge> negative_benefit; // List of negative benefit edges;
+	vector<Edge> positive_benefit; // List of positive benefit edges;
+	vector<Edge> negative_benefit; // List of negative benefit edges;
 	ifstream sourcefile(path); //File to be read
 
 	//Make sure the file exists

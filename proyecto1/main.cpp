@@ -10,10 +10,12 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "Graph.hpp"
+#include "Reader.hpp"
 
 using namespace std;
 
 int main(int argc, char **argv) {
-  std::cout << "Hello World!" << endl;
+    Graph graph = readFile(argv[1]);
+    // graph.solvePRPP();
+    graph.print();
 }

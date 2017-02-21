@@ -17,5 +17,5 @@ using namespace std;
 int main(int argc, char **argv) {
     Graph graph = readFile(argv[1]);
     // graph.solvePRPP();
-    graph.print();
+    std::cout << graph << std::endl;
 }

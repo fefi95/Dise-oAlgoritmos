@@ -29,7 +29,7 @@ class GraphInfo {
         GraphInfo(int, int, int, int);
 
         //Prints the current Edge Info
-        void print();
+        void print(std::ostream &os);
 
         int get_cost() {return this -> ce;}
 
@@ -47,9 +47,9 @@ GraphInfo::GraphInfo (int v1, int v2, int ce, int be) {
   this -> crossE2 = be - 2 * ce;
 }
 
-void GraphInfo::print(){
+inline void GraphInfo::print(std::ostream &os)  {
 
-	cout << "Start: " << this->v1 << " End: " << this->v2 << " Cost: " <<
+	os << "Start: " << this->v1 << " End: " << this->v2 << " Cost: " <<
 	this->ce << " Benefit: "<< this->be << endl;
 
 }
@@ -62,6 +62,10 @@ bool comp (GraphInfo &a, GraphInfo &b) {
 
 }
 
+inline std::ostream& operator<<(std::ostream &os, GraphInfo &graphInfo) {
+    graphInfo.print(os);
+    return os;
+}
 
 
 /**************************************************************************//**
@@ -77,7 +81,7 @@ class Graph {
     public:
         Graph(int nodes, int r_size, int n_size, std::list<GraphInfo> & r_edges, std::list<GraphInfo> & n_edges);
         //FUNCIONES QUE PODRIA TENER, AUN NO ESTOY SEGURA
-        void print();
+        void print(std::ostream &os) ;
         std::list<GraphInfo> MST();
         void isEulerian();
         void isConnected();
@@ -99,27 +103,27 @@ Graph::Graph (int nodes, int r_size, int n_size, std::list<GraphInfo> & r_edges,
 }
 
 //Prints the current Graph Info
-void Graph::print(){
+inline void Graph::print(std::ostream &os)  {
 
-	cout << "Number of Nodes: " << this->nodes << endl;
-	cout << "Required edges: " << this->r_size << endl;
+	os << "Number of Nodes: " << this->nodes << endl;
+	os << "Required edges: " << this->r_size << endl;
 	for(std::list<GraphInfo>::iterator it= this->r_edges.begin(); it != this->r_edges.end();++it){
 
-		it -> print();
+		it -> print(os);
 
 	}
-	cout << "Non Required edges: " << this->n_size << endl;
+	os << "Non Required edges: " << this->n_size << endl;
 	for(std::list<GraphInfo>::iterator it= this->n_edges.begin(); it != this->n_edges.end();++it){
 
-		it -> print();
+		it -> print(os);
 
 	}
 }
 
-// inline std::ostream& operator<<(std::ostream &os, const Graph &graph) {
-//     graph.print(os);
-//     return os;
-// }
+inline std::ostream& operator<<(std::ostream &os, Graph &graph) {
+    graph.print(os);
+    return os;
+}
 
 //Creates the Maximun Spanning Tree (Variation Of Kruskall)
 std::list<GraphInfo> Graph::MST(){

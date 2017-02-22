@@ -164,15 +164,16 @@ std::vector<Edge> makeEurelian(int n_vertex, std::vector<Edge> graph, std::vecto
     for (int i = 0; i < n_vertex; i++) {
         even[i] = 0;
     }
+
     for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge) {
         v1 = edge -> get_v1() - 1;
         v2 = edge -> get_v2() - 1;
         even[v1] = (even[v1] + 1) % 2;
         even[v2] = (even[v2] + 1) % 2;
-        eurelian.insert(edge);
+        eurelian.push_back(*edge);
     }
     //FALTA. NO LO PENSE MAS...
-    return eurelian
+    return eurelian;
 }
 
 /**************************************************************************//**

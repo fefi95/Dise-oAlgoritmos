@@ -16,8 +16,9 @@ using namespace std;
 
 int main(int argc, char **argv) {
     Graph graph = readFile(argv[1]);
-    std::cout << isConnected(graph.get_vertex(), graph.get_r_edges()) << std::endl;
-    std::cout << isEulerian(graph.get_vertex(), graph.get_r_edges()) << std::endl;
+    std::cout << true << std::endl;
+    std::cout << "isConnected: " << isConnected(graph.get_vertex(), graph.get_r_edges()) << std::endl;
+    std::cout << "isEulerian: " << isEulerian(graph.get_vertex(), graph.get_r_edges()) << std::endl;
     // GraphPRPP.solvePRPP();
     std::cout << graph << std::endl;
 }

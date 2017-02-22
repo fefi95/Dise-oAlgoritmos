@@ -83,8 +83,38 @@ void printEdges(std::ostream &os, std::vector<Edge> &edges) {
 	}
 }
 
-//NO FUNCIONA....
+/**
+ *  Checks if an vector of edges is connected. Any connected graph
+ *  has at most 2 vertexes with only one edge incident.
+ *  @param n_vertex: number of vertexes of the graph
+ *  @param edges: vector of edges (graph) to be checked
+ *  @return true/false
+ */
 bool isConnected(int n_vertex, std::vector<Edge> edges) {
+    int n_edges [n_vertex]; // array for the number of edges incident in every node
+    int v1, v2; // Edge
+
+    // Initialize array of vertexes
+    for (int i = 0; i < n_vertex; i++) {
+        n_edges[i] = 0;
+    }
+
+    for(std::vector<Edge>::iterator edge = edges.begin(); edge != edges.end(); ++edge) {
+        v1 = edge -> get_v1() - 1;
+        v2 = edge -> get_v2() - 1;
+        ++n_edges[v1];
+        ++n_edges[v2];
+    }
+
+    int count = 0;
+    for (int i = 0; i < n_vertex; i++) {
+        if (n_edges[i] == 1) { // A vertex does not have an even number of edges
+            ++count;
+            if (count > 2){
+                return false;
+            }
+        }
+    }
     return true;
 }
 

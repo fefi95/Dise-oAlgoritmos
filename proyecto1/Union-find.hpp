@@ -7,8 +7,8 @@
  *  Information of the graph
  */
 
-#ifndef _UNION-FIND_HPP
-#define _UNION-FIND_HPP
+#ifndef _UNION_FIND_HPP
+#define _UNION_FIND_HPP
 
 #include <vector>
 #include <iostream>
@@ -21,40 +21,51 @@ using namespace std;
 /**************************************************************************//**
  *  Edge. Information of an edge of the graph, it's benefit and cost.
  *****************************************************************************/
-class Union_Find {
-    private:
-        int parent;
-        int rank;
-    public:
-        Union_Find(int);
+ class Union_find {
+   int *parent; // Array of parents
+   int cont;    // Number of disjoint sets
+   int *sz;     // Size of disjoint set
+   public:
+        // Create an empty union find data structure with N isolated sets.
+        Union_find (int);
+        int find(int p);
+        void set_union(int x, int y);
+        bool connected(int x, int y);
+
+        // Return the number of disjoint sets.
+        int count() { return cont; }
 };
 
 // Constructor
-Union_Find::Union_Find (int value) {
-  // this -> value = value;
-  this -> parent = value;
-  this -> rank = 0;
+Union_find::Union_find(int N) {
+    cont = N; parent = new int[N]; sz = new int[N];
+    for (int i = 0; i<N; i++)  parent[i] = i, sz[i] = 1;
 }
 
-Union_Find union (Union_Find x, Union_Find y) {
-    return link(find_set(x), find_set(y));
+// Return the parent of component corresponding to object p.
+int Union_find::find(int p) {
+    int root = p;
+    while (root != parent[root])    root = parent[root];
+    while (p != root) { int newp = parent[p]; parent[p] = root; p = newp; }
+    return root;
 }
 
-Union_Find find (Union_Find x) {
-    if (x != x.parent) {
-        x.parent = find(x.parent);
-    }
-}
-Union_Find link(Union_Find x, Union_Find y) {
-    if (x.rank > y.rank){
-        y.parent = x;
+// Replace sets containing x and y with their union.
+void Union_find::set_union(int x, int y) {
+    int i = find(x); int j = find(y); if (i == j) return;
+    // make smaller root point to larger one
+    if (sz[i] < sz[j]) {
+        parent[i] = j;
+        sz[j] += sz[i];
     }
     else {
-        x.parent = y
-        if (x.rank == y.rank) {
-            ++y.rank;
-        }
+        parent[j] = i;
+        sz[i] += sz[j];
     }
+    --cont;
 }
 
-#endif // _UNION-FIND_HPP
+// Are objects x and y in the same set?
+bool Union_find::connected(int x, int y) { return find(x) == find(y); }
+
+#endif // _UNION_FIND_HPP

@@ -15,6 +15,8 @@
 #include <set>
 #include <queue>
 #include <vector>
+#include <algorithm>
+#include "Union-find.hpp"
 
 using namespace std;
 
@@ -66,7 +68,7 @@ inline void Edge::print(std::ostream &os)  {
 
 //Aux function to specify the order to sort a list
 //Does not form part of the namesapce Edge
-bool comp (Edge &a, Edge &b) {
+bool comp (Edge a, Edge b) {
 
 	return ((a.get_benefit() - a.get_cost()) > (b.get_benefit() - b.get_cost()));
 
@@ -214,8 +216,8 @@ Graph::Graph (int vertex, int r_size, int n_size, std::vector<Edge> &r_edges, st
 	this -> r_edges = r_edges;
 	this -> n_edges = n_edges;
 	//we proceed to sort the lists for easy work later
-	// this -> r_edges.sort(comp);
-	// this -> n_edges.sort(comp);
+	std::sort (this -> r_edges.begin(), this -> r_edges.end(), comp);
+	std::sort (this -> n_edges.begin(), this -> n_edges.end(), comp);
 }
 
 //Prints the current Graph Info
@@ -230,34 +232,34 @@ inline void Graph::print(std::ostream &os)  {
 
 /**
  * Creates the Minimum Spanning Tree (Variation Of Kruskall) for non-required
- * edges
+ * edges connecting isolated connected components
  */
 //NO CHEQUEADO. IDEA DE COMO ES
 std::vector<Edge> Graph::MST(){
 
 	std::vector<Edge> mst; //Variable for the returning
-    std::set<int> visitedVertex; // Set for visited vertex.
+    // std::set<int> visitedVertex; // Set for visited vertex.
     // Priority queue for non required edges order by the benefit of crossing twice
-    std::priority_queue<Edge, std::vector<Edge> > edges_queue;
+    //std::priority_queue<Edge, std::vector<Edge> > edges_queue;
     Edge edge(0,0,0,0);
     int v1, v2;
-    bool is_v1, is_v2;
-
-    for (int i = 0; i < r_size; i++) {
-        edge = edges_queue.top();
-        edges_queue.pop();
-        v1 = edge.get_v1();
-        v2 = edge.get_v2();
-        is_v1 = visitedVertex.find(v1) != visitedVertex.end();
-        is_v2 = visitedVertex.find(v1) != visitedVertex.end();
-        // if the edge crosses the cut..
-        if (!is_v1 || !is_v2){
-            mst.push_back(edge);
-            visitedVertex.insert(v1);
-            visitedVertex.insert(v2);
+    Union_find uf(vertex);
+    for(std::vector<Edge>::iterator edge = this -> r_edges.begin(); edge != this -> r_edges.end(); ++edge) {
+        v1 = edge -> get_v1() - 1;
+        v2 = edge -> get_v2() - 1;
+        if(!uf.connected(v1, v2)){
+            uf.set_union(v1, v2);
+        }
+        mst.push_back(*edge);
+    }
+    for(std::vector<Edge>::iterator edge = this -> n_edges.begin(); edge != this -> n_edges.end(); ++edge) {
+        v1 = edge -> get_v1() - 1;
+        v2 = edge -> get_v2() - 1;
+        if(!uf.connected(v1, v2)) {
+            mst.push_back(*edge);
+            uf.set_union(v1, v2);
         }
     }
-
     return mst;
 }
 
@@ -268,9 +270,9 @@ std::vector<Edge> Graph::solvePRPP(){
     if (isEulerian(this -> vertex, this -> r_edges)){
         return this -> r_edges;
     }
-    else if (isConnected(this -> vertex, this -> r_edges)){
-        //solution = makeEurelian(... this -> r_edges);
-    }
+    // else if (isConnected(this -> vertex, this -> r_edges)){
+    //     //solution = makeEurelian(... this -> r_edges);
+    // }
     else {
         //std::vector<Edge> mst = this -> MST();
         // solution = makeEurelian(..., mst);

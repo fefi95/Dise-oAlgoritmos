@@ -83,28 +83,9 @@ void printEdges(std::ostream &os, std::vector<Edge> &edges) {
 	}
 }
 
+//NO FUNCIONA....
 bool isConnected(int n_vertex, std::vector<Edge> edges) {
-
-    // bool isDeposit = false; //Whether the source is in the graph
-    std::set<int> visitedVertex; // Set for visited vertexes.
-    int v1, v2;
-
-    // Find first edge of source vertex
-    for(std::vector<Edge>::iterator edge = edges.begin(); edge != edges.end(); ++edge) {
-        v1 = edge -> get_v1();
-        v2 = edge -> get_v2();
-        visitedVertex.insert(v1);
-        visitedVertex.insert(v2);
-
-        // if (v1 == 1 || v2 == 1){
-        //     isDeposit = true;
-        // }
-    }
-    // for(std::set<int>::iterator v = visitedVertex.begin(); v != visitedVertex.end(); ++v){
-    //     std::cout << "valor" << *v;
-    // }
-    // std::cout << visitedVertex.size() << std::endl;
-    return visitedVertex.size() >= n_vertex;
+    return true;
 }
 
 /**
@@ -189,38 +170,37 @@ inline void Graph::print(std::ostream &os)  {
     printEdges(os, this -> n_edges);
 }
 
-//Creates the Maximun Spanning Tree (Variation Of Kruskall)
+/**
+ * Creates the Minimum Spanning Tree (Variation Of Kruskall) for non-required
+ * edges
+ */
+//NO CHEQUEADO. IDEA DE COMO ES
 std::vector<Edge> Graph::MST(){
 
-	// std::list<Edge> result; //Variable for the returning
-	//YA LAS LISTAS ESTAN ORDENADAS DONDE POR BENEFICIO MAYOR A COSTO
-	//NO SE SI DEJARLO ASI U ORDENARLOS POR BENEFICIO MAYOR A 2 VECES COSTO
-
+	std::vector<Edge> mst; //Variable for the returning
     std::set<int> visitedVertex; // Set for visited vertex.
+    // Priority queue for non required edges order by the benefit of crossing twice
+    std::priority_queue<Edge, std::vector<Edge> > edges_queue;
+    Edge edge(0,0,0,0);
     int v1, v2;
-    // Initialize visited vertexes
-    for(std::vector<Edge>::iterator edge = this -> r_edges.begin(); edge != this -> r_edges.end(); ++edge) {
-        v1 = edge -> get_v1();
-        v2 = edge -> get_v2();
-        visitedVertex.insert(v1);
-        visitedVertex.insert(v2);
+    bool is_v1, is_v2;
+
+    for (int i = 0; i < r_size; i++) {
+        edge = edges_queue.top();
+        edges_queue.pop();
+        v1 = edge.get_v1();
+        v2 = edge.get_v2();
+        is_v1 = visitedVertex.find(v1) != visitedVertex.end();
+        is_v2 = visitedVertex.find(v1) != visitedVertex.end();
+        // if the edge crosses the cut..
+        if (!is_v1 || !is_v2){
+            mst.push_back(edge);
+            visitedVertex.insert(v1);
+            visitedVertex.insert(v2);
+        }
     }
 
-    std::priority_queue<Edge, std::vector<Edge> > edges_queue;
-
-    //priority queue
-    /*
-    A = 0
-    for each vertex v E G.v
-        make-set(v)
-    sort-edges
-    for each edge
-        if find-set(u) != find-set(v)
-            A = A U {(u,v)}
-            Union(u,v)
-    return A
-    */
-
+    return mst;
 }
 
 #endif // _GRAPH_HPP

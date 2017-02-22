@@ -148,6 +148,33 @@ bool isEulerian(int n_vertex, std::vector<Edge> edges) {
     return true;
 }
 
+/**
+ *  Add edges to a connected graph so it becames an eurelian cycle
+ *  @param n_vertex: number of vertexes of the graph
+ *  @param graph: vector of edges. Initial graph
+ *  @param edges: vector of edges to be added to the graph
+ *  @return true/false
+ */
+std::vector<Edge> makeEurelian(int n_vertex, std::vector<Edge> graph, std::vector<Edge> edges){
+    std::vector<Edge> eurelian;
+    int even [n_vertex]; // array to check whether a vertex has an even number of edges
+    int v1, v2; // Edge
+
+    // Initialize array of vertexes
+    for (int i = 0; i < n_vertex; i++) {
+        even[i] = 0;
+    }
+    for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge) {
+        v1 = edge -> get_v1() - 1;
+        v2 = edge -> get_v2() - 1;
+        even[v1] = (even[v1] + 1) % 2;
+        even[v2] = (even[v2] + 1) % 2;
+        eurelian.insert(edge);
+    }
+    //FALTA. NO LO PENSE MAS...
+    return eurelian
+}
+
 /**************************************************************************//**
  *  Graph. vector of the edges and it's benefits and costs
  *****************************************************************************/
@@ -169,7 +196,7 @@ class Graph {
         //FUNCIONES QUE PODRIA TENER, AUN NO ESTOY SEGURA
         void print(std::ostream &os);
         std::vector<Edge> MST();
-        //void solvePRPP();
+        std::vector<Edge> solvePRPP();
 };
 
 inline std::ostream& operator<<(std::ostream &os, Graph &graph) {
@@ -232,5 +259,23 @@ std::vector<Edge> Graph::MST(){
 
     return mst;
 }
+
+std::vector<Edge> Graph::solvePRPP(){
+
+	std::vector<Edge> solution;
+
+    if (isEulerian(this -> vertex, this -> r_edges)){
+        return this -> r_edges;
+    }
+    else if (isConnected(this -> vertex, this -> r_edges)){
+        //solution = makeEurelian(... this -> r_edges);
+    }
+    else {
+        //std::vector<Edge> mst = this -> MST();
+        // solution = makeEurelian(..., mst);
+    }
+    return solution;
+}
+
 
 #endif // _GRAPH_HPP

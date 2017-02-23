@@ -127,7 +127,7 @@ class Graph {
 		std::vector<Edge> r2_edges; //List of required edges that get benefit after crossing them twice
         std::vector<Edge> r_edges; //List of required edges
         std::vector<Edge> n_edges; //List of non required edges
-        vector< vector<int> > path;
+        std::vector< vector<int> > path;
 
     public:
         Graph(int n_vertex, int r2_size, int r_size, int n_size,std::vector<Edge> &r2_edges, std::vector<Edge> &r_edges, std::vector<Edge> &n_edges);
@@ -138,6 +138,7 @@ class Graph {
         std::vector<Edge> get_r2_edges() { return this -> r2_edges; }
         std::vector<Edge> get_r_edges()  { return this -> r_edges; }
         std::vector<Edge> get_n_edges()  { return this -> n_edges; }
+        std::vector< vector<int> > get_path()  { return this -> path; }
         //FUNCIONES QUE PODRIA TENER, AUN NO ESTOY SEGURA
         void print(std::ostream &os);
         bool isEulerian();

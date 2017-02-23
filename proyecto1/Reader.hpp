@@ -70,7 +70,7 @@ Graph readFile(const char* path){
 	int r_edges = 0; //Number of Required edges
 	int n_edges = 0; //Number of Non Required edges
 	string line; //Value of the read line
-	vector<Edge> twice_benefit; // List of positive beneffit edges after crossing them twice
+	vector<Edge> twice_benefit; // List of positive benefit edges after crossing them twice
 	vector<Edge> positive_benefit; // List of positive benefit edges;
 	vector<Edge> negative_benefit; // List of negative benefit edges;
 	ifstream sourcefile(path); //File to be read

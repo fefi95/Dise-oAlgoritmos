@@ -28,8 +28,7 @@ class Edge {
         int v1, v2;  // Edge of the graph
         int be;      // Edge's benefit
         int ce;      // Edge's cost
-        int crossE1; // Benefit of crossing an edge once
-        int crossE2; // Benefit of crossing an edge twice
+        bool repeat; // Defines if the edge is a two way path
 
     public:
         Edge(int, int, int, int);
@@ -39,14 +38,12 @@ class Edge {
 
         int get_v1() { return this -> v1; }
         int get_v2() { return this -> v2; }
-
         int get_cost() {return this -> ce;}
-
         int get_benefit() {return this -> be;}
-
-        bool operator< (const Edge &edge) const {
-            return this -> crossE2 < edge.crossE2;
-        }
+        void set_repeat() {this->repeat = true;}
+        // bool operator< (const Edge &edge) const {
+        //     return this -> crossE2 < edge.crossE2;
+        // }
 };
 
 // Constructor
@@ -55,8 +52,7 @@ Edge::Edge (int v1, int v2, int ce, int be) {
   this -> v2 = v2;
   this -> be = be;
   this -> ce = ce;
-  this -> crossE1 = be - ce;
-  this -> crossE2 = be - 2 * ce;
+  this -> repeat  = false;
 }
 
 inline void Edge::print(std::ostream &os)  {
@@ -157,9 +153,11 @@ bool isEulerian(int n_vertex, std::vector<Edge> edges) {
  *  @param edges: vector of edges to be added to the graph
  *  @return true/false
  */
+
 std::vector<Edge> makeEurelian(int n_vertex, std::vector<Edge> graph, std::vector<Edge> edges){
+
     std::vector<Edge> eurelian;
-    int even [n_vertex]; // array to check whether a vertex has an even number of edges
+    int even [n_vertex]; // array to check if a vertex is already an origin
     int v1, v2; // Edge
 
     // Initialize array of vertexes
@@ -167,14 +165,44 @@ std::vector<Edge> makeEurelian(int n_vertex, std::vector<Edge> graph, std::vecto
         even[i] = 0;
     }
 
+    //we must sort the edges to obtain the less cost's edge
+    //std::sort(edges.begin(),edges.end(),comp);
+
+    //we make sure to include all the initial graph to the eurelian answer
     for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge) {
         v1 = edge -> get_v1() - 1;
         v2 = edge -> get_v2() - 1;
-        even[v1] = (even[v1] + 1) % 2;
-        even[v2] = (even[v2] + 1) % 2;
+        even[v1] = (even[v1]+1)%2;
+        even[v2] = (even[v2]+1)%2;
         eurelian.push_back(*edge);
     }
-    //FALTA. NO LO PENSE MAS...
+    //We study each edge to make sure ever vertex is even
+    for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge){
+    	v1 = edge -> get_v1() - 1;
+    	v2 = edge -> get_v2() - 1;
+    	bool found = false;
+    	std::vector<Edge>::iterator it;
+    	if (even[v1] != 0) {
+    		it = edges.begin();
+    		//we try to find the best edge
+    		while((!found) || (it != edges.end())){
+
+    			found = ((v1+1) == it->get_v1());
+    			if (found && (even[it->get_v2()-1] != 0)) {
+    				even[it->get_v1()-1] = (even[it->get_v1()-1]+1)%2;
+    				even[it->get_v2()-1] = (even[it->get_v2()-1]+1)%2;
+    				eurelian.push_back(*it);
+    			}
+    			++it;
+    		}
+    		//If there is no path, we set a double path edge (a -> b and b -> a)
+    		if (!found){
+    			it->set_repeat();
+    		}
+    	}
+    }
+
+
     return eurelian;
 }
 
@@ -183,19 +211,23 @@ std::vector<Edge> makeEurelian(int n_vertex, std::vector<Edge> graph, std::vecto
  *****************************************************************************/
 class Graph {
     private:
-		int vertex;  //Number of vertex of the Graph
-		int r_size; //Number of required edges of the Graph
-		int n_size; //Number of non required edges of the Graph
+		int vertex;  // Number of vertex of the Graph
+        int r2_size; // Number of edges that get benefit after crossing them twice
+		int r_size;  // Number of required that get benefit after crossing them once
+		int n_size;  // Number of non required edges of the Graph
+		std::vector<Edge> r2_edges; //List of required edges that get benefit after crossing them twice
         std::vector<Edge> r_edges; //List of required edges
         std::vector<Edge> n_edges; //List of non required edges
 
     public:
-        Graph(int vertex, int r_size, int n_size, std::vector<Edge> &r_edges, std::vector<Edge> &n_edges);
-        int get_vertex()  { return this -> vertex; }
-        int get_r_size()  { return this -> r_size; }
-        int get_n_size()  { return this -> n_size; }
-        std::vector<Edge> get_r_edges() { return this -> r_edges; }
-        std::vector<Edge> get_n_edges() { return this -> n_edges; }
+        Graph(int vertex, int r2_size, int r_size, int n_size,std::vector<Edge> &r2_edges, std::vector<Edge> &r_edges, std::vector<Edge> &n_edges);
+        int get_vertex()   { return this -> vertex; }
+        int get_r2_size()  { return this -> r_size; }
+        int get_r_size()   { return this -> r_size; }
+        int get_n_size()   { return this -> n_size; }
+        std::vector<Edge> get_r2_edges() { return this -> r2_edges; }
+        std::vector<Edge> get_r_edges()  { return this -> r_edges; }
+        std::vector<Edge> get_n_edges()  { return this -> n_edges; }
         //FUNCIONES QUE PODRIA TENER, AUN NO ESTOY SEGURA
         void print(std::ostream &os);
         std::vector<Edge> MST();
@@ -208,14 +240,16 @@ inline std::ostream& operator<<(std::ostream &os, Graph &graph) {
 }
 
 // Constructor
-Graph::Graph (int vertex, int r_size, int n_size, std::vector<Edge> &r_edges, std::vector<Edge> &n_edges) {
+Graph::Graph (int vertex, int r2_size, int r_size, int n_size, std::vector<Edge> &r2_edges, std::vector<Edge> &r_edges, std::vector<Edge> &n_edges) {
 
 	this -> vertex = vertex;
+    this -> r2_size = r2_size;
 	this -> r_size = r_size;
 	this -> n_size = n_size;
+	this -> r2_edges = r2_edges;
 	this -> r_edges = r_edges;
 	this -> n_edges = n_edges;
-	//we proceed to sort the lists for easy work later
+    //we proceed to sort the lists for easy work later
 	std::sort (this -> r_edges.begin(), this -> r_edges.end(), comp);
 	std::sort (this -> n_edges.begin(), this -> n_edges.end(), comp);
 }
@@ -244,7 +278,9 @@ std::vector<Edge> Graph::MST(){
     Edge edge(0,0,0,0);
     int v1, v2;
     Union_find uf(vertex);
-    for(std::vector<Edge>::iterator edge = this -> r_edges.begin(); edge != this -> r_edges.end(); ++edge) {
+
+    // connected components
+    for(std::vector<Edge>::iterator edge = this -> r2_edges.begin(); edge != this -> r2_edges.end(); ++edge) {
         v1 = edge -> get_v1() - 1;
         v2 = edge -> get_v2() - 1;
         if(!uf.connected(v1, v2)){
@@ -252,6 +288,16 @@ std::vector<Edge> Graph::MST(){
         }
         mst.push_back(*edge);
     }
+
+    for(std::vector<Edge>::iterator edge = this -> r_edges.begin(); edge != this -> r_edges.end(); ++edge) {
+        v1 = edge -> get_v1() - 1;
+        v2 = edge -> get_v2() - 1;
+        if(!uf.connected(v1, v2)) {
+            mst.push_back(*edge);
+            uf.set_union(v1, v2);
+        }
+    }
+
     for(std::vector<Edge>::iterator edge = this -> n_edges.begin(); edge != this -> n_edges.end(); ++edge) {
         v1 = edge -> get_v1() - 1;
         v2 = edge -> get_v2() - 1;
@@ -270,9 +316,9 @@ std::vector<Edge> Graph::solvePRPP(){
     if (isEulerian(this -> vertex, this -> r_edges)){
         return this -> r_edges;
     }
-    // else if (isConnected(this -> vertex, this -> r_edges)){
-    //     //solution = makeEurelian(... this -> r_edges);
-    // }
+    else if (isConnected(this -> vertex, this -> r_edges)){
+        //solution = makeEurelian(... this -> r_edges);
+    }
     else {
         //std::vector<Edge> mst = this -> MST();
         // solution = makeEurelian(..., mst);

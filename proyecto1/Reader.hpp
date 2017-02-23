@@ -66,9 +66,11 @@ Edge get_edge(string line){
 Graph readFile(const char* path){
 
 	int size = 0;    //Number of vertex
+	int r2_edges = 0;
 	int r_edges = 0; //Number of Required edges
 	int n_edges = 0; //Number of Non Required edges
 	string line; //Value of the read line
+	vector<Edge> twice_benefit; // List of positive beneffit edges after crossing them twice
 	vector<Edge> positive_benefit; // List of positive benefit edges;
 	vector<Edge> negative_benefit; // List of negative benefit edges;
 	ifstream sourcefile(path); //File to be read
@@ -84,19 +86,27 @@ Graph readFile(const char* path){
 		//Getting the number of required edges
 		getline(sourcefile,line);
 		r_edges = get_int(line);
-		//cout << r_edges << endl;
+		// cout << r_edges << endl;
+		Edge auxE(0,0,0,0);
 
 		//Creating each of the required edges
 		for (int i = 0; i < r_edges; i = i+1){
 
 			getline(sourcefile,line);
-			positive_benefit.push_back(get_edge(line));
+			auxE = get_edge(line);
+			if(auxE.get_benefit() > 2 * auxE.get_cost()) {
+				twice_benefit.push_back(auxE);
+				++r2_edges;
+			}
+			else {
+				positive_benefit.push_back(auxE);
+			}
 		}
 
 		//Getting the number of the non required edges
 		getline(sourcefile,line);
 		n_edges = get_int(line);
-		//cout << n_edges << endl;
+		// cout << n_edges << endl;
 
 		//Creating each of the non required edges
 		for (int i = 0; i < n_edges; i = i+1){
@@ -111,7 +121,7 @@ Graph readFile(const char* path){
 
 	else { cout << "Unable to read specified file..." << endl; }
 
-	Graph result(size,r_edges,n_edges,positive_benefit,negative_benefit); //Structure that contains the resulting Graph
+	Graph result(size,r2_edges,r_edges-r2_edges,n_edges,twice_benefit,positive_benefit,negative_benefit); //Structure that contains the resulting Graph
 	return result;
 }
 

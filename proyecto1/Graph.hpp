@@ -211,7 +211,7 @@ std::vector<Edge> makeEurelian(int n_vertex, std::vector<Edge> graph, std::vecto
  *****************************************************************************/
 class Graph {
     private:
-		int vertex;  // Number of vertex of the Graph
+		int n_vertex;  // Number of vertex of the Graph
         int r2_size; // Number of edges that get benefit after crossing them twice
 		int r_size;  // Number of required that get benefit after crossing them once
 		int n_size;  // Number of non required edges of the Graph
@@ -221,7 +221,7 @@ class Graph {
 
     public:
         Graph(int vertex, int r2_size, int r_size, int n_size,std::vector<Edge> &r2_edges, std::vector<Edge> &r_edges, std::vector<Edge> &n_edges);
-        int get_vertex()   { return this -> vertex; }
+        int get_n_vertex()   { return this -> n_vertex; }
         int get_r2_size()  { return this -> r_size; }
         int get_r_size()   { return this -> r_size; }
         int get_n_size()   { return this -> n_size; }
@@ -240,9 +240,9 @@ inline std::ostream& operator<<(std::ostream &os, Graph &graph) {
 }
 
 // Constructor
-Graph::Graph (int vertex, int r2_size, int r_size, int n_size, std::vector<Edge> &r2_edges, std::vector<Edge> &r_edges, std::vector<Edge> &n_edges) {
+Graph::Graph (int n_vertex, int r2_size, int r_size, int n_size, std::vector<Edge> &r2_edges, std::vector<Edge> &r_edges, std::vector<Edge> &n_edges) {
 
-	this -> vertex = vertex;
+	this -> n_vertex = n_vertex;
     this -> r2_size = r2_size;
 	this -> r_size = r_size;
 	this -> n_size = n_size;
@@ -257,7 +257,7 @@ Graph::Graph (int vertex, int r2_size, int r_size, int n_size, std::vector<Edge>
 //Prints the current Graph Info
 inline void Graph::print(std::ostream &os)  {
 
-	os << "Number of vertex: " << this->vertex << endl;
+	os << "Number of vertex: " << this->n_vertex << endl;
 	os << "Required edges: " << this->r_size << endl;
     printEdges(os, this -> r_edges);
 	os << "Non Required edges: " << this->n_size << endl;
@@ -268,16 +268,12 @@ inline void Graph::print(std::ostream &os)  {
  * Creates the Minimum Spanning Tree (Variation Of Kruskall) for non-required
  * edges connecting isolated connected components
  */
-//NO CHEQUEADO. IDEA DE COMO ES
 std::vector<Edge> Graph::MST(){
 
 	std::vector<Edge> mst; //Variable for the returning
-    // std::set<int> visitedVertex; // Set for visited vertex.
-    // Priority queue for non required edges order by the benefit of crossing twice
-    //std::priority_queue<Edge, std::vector<Edge> > edges_queue;
     Edge edge(0,0,0,0);
     int v1, v2;
-    Union_find uf(vertex);
+    Union_find uf(n_vertex);
 
     // connected components
     for(std::vector<Edge>::iterator edge = this -> r2_edges.begin(); edge != this -> r2_edges.end(); ++edge) {
@@ -297,13 +293,15 @@ std::vector<Edge> Graph::MST(){
             uf.set_union(v1, v2);
         }
     }
-
-    for(std::vector<Edge>::iterator edge = this -> n_edges.begin(); edge != this -> n_edges.end(); ++edge) {
-        v1 = edge -> get_v1() - 1;
-        v2 = edge -> get_v2() - 1;
-        if(!uf.connected(v1, v2)) {
-            mst.push_back(*edge);
-            uf.set_union(v1, v2);
+    // All vertexes belong to the same tree
+    if (uf.count() > 1) {
+        for(std::vector<Edge>::iterator edge = this -> n_edges.begin(); edge != this -> n_edges.end(); ++edge) {
+            v1 = edge -> get_v1() - 1;
+            v2 = edge -> get_v2() - 1;
+            if(!uf.connected(v1, v2)) {
+                mst.push_back(*edge);
+                uf.set_union(v1, v2);
+            }
         }
     }
     return mst;
@@ -313,11 +311,11 @@ std::vector<Edge> Graph::solvePRPP(){
 
 	std::vector<Edge> solution;
 
-    if (isEulerian(this -> vertex, this -> r_edges)){
-        return this -> r_edges;
+    if (isConnected(this -> n_vertex, this -> r2_edges)){
+        //solution = r2_edges;
     }
-    else if (isConnected(this -> vertex, this -> r_edges)){
-        //solution = makeEurelian(... this -> r_edges);
+    else if (isEulerian(this -> n_vertex, this -> r_edges)){
+        return this -> r_edges;
     }
     else {
         //std::vector<Edge> mst = this -> MST();

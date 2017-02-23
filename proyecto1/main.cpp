@@ -18,7 +18,7 @@ int main(int argc, char **argv) {
     Graph graph = readFile(argv[1]);
     std::cout << true << std::endl;
     std::cout << "isConnected: " << isConnected(graph.get_r2_size(), graph.get_r2_edges()) << std::endl;
-    std::cout << "isEulerian: " << isEulerian(graph.get_vertex(), graph.get_r2_edges()) << std::endl;
+    std::cout << "isEulerian: " << isEulerian(graph.get_n_vertex(), graph.get_r2_edges()) << std::endl;
 
     std::cout << "MST" << std::endl;
     std::vector<Edge> mst = graph.MST();

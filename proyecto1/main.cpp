@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
         edge -> print(std::cout);
     }
     std::cout << "eurelian" << std::endl;
-    std::vector<Edge> eurelian = makeEurelian(mst.size(), mst, graph.get_r_edges());
+    std::vector<Edge> eurelian = graph.makeEurelian(mst.size(), mst, graph.get_r_edges());
     for(std::vector<Edge>::iterator edge = eurelian.begin(); edge != eurelian.end(); ++edge) {
         edge -> print(std::cout);
     }

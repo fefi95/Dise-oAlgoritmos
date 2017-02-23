@@ -115,64 +115,6 @@ bool isConnected(int n_vertex, std::vector<Edge> edges) {
     return true;
 }
 
-/**
- *  Add edges to a connected graph so it becames an eurelian cycle
- *  @param n_vertex: number of vertexes of the graph
- *  @param graph: vector of edges. Initial graph
- *  @param edges: vector of edges to be added to the graph
- *  @return true/false
- */
-
-std::vector<Edge> makeEurelian(int n_vertex, std::vector<Edge> graph, std::vector<Edge> edges){
-
-    std::vector<Edge> eurelian;
-    int even [n_vertex]; // array to check if a vertex is already an origin
-    int v1, v2; // Edge
-
-    // Initialize array of vertexes
-    for (int i = 0; i < n_vertex; i++) {
-        even[i] = 0;
-    }
-
-    //we must sort the edges to obtain the less cost's edge
-    //std::sort(edges.begin(),edges.end(),comp);
-
-    //we make sure to include all the initial graph to the eurelian answer
-    for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge) {
-        v1 = edge -> get_v1() - 1;
-        v2 = edge -> get_v2() - 1;
-        even[v1] = (even[v1]+1)%2;
-        even[v2] = (even[v2]+1)%2;
-        eurelian.push_back(*edge);
-    }
-    //We study each edge to make sure ever vertex is even
-    for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge){
-    	v1 = edge -> get_v1() - 1;
-    	v2 = edge -> get_v2() - 1;
-    	bool found = false;
-    	std::vector<Edge>::iterator it;
-    	if (even[v1] != 0) {
-    		it = edges.begin();
-    		//we try to find the best edge
-    		while((!found) || (it != edges.end())){
-
-    			found = ((v1+1) == it->get_v1());
-    			if (found && (even[it->get_v2()-1] != 0)) {
-    				even[it->get_v1()-1] = (even[it->get_v1()-1]+1)%2;
-    				even[it->get_v2()-1] = (even[it->get_v2()-1]+1)%2;
-    				eurelian.push_back(*it);
-    			}
-    			++it;
-    		}
-    		//If there is no path, we set a double path edge (a -> b and b -> a)
-    		if (!found){
-    			it->set_repeat();
-    		}
-    	}
-    }
-    return eurelian;
-}
-
 /**************************************************************************//**
  *  Graph. vector of the edges and it's benefits and costs
  *****************************************************************************/
@@ -199,6 +141,7 @@ class Graph {
         //FUNCIONES QUE PODRIA TENER, AUN NO ESTOY SEGURA
         void print(std::ostream &os);
         bool isEulerian();
+        std::vector<Edge> makeEurelian(int n_vertex, std::vector<Edge> graph, std::vector<Edge> edges);
         std::vector<Edge> MST();
         std::vector<Edge> solvePRPP();
 };
@@ -287,6 +230,8 @@ std::vector<Edge> Graph::MST(){
             uf.set_union(v1, v2);
         }
         mst.push_back(*edge);
+        this -> path[v1].push_back(v2);
+        this -> path[v2].push_back(v1);
     }
 
     for(std::vector<Edge>::iterator edge = this -> r_edges.begin(); edge != this -> r_edges.end(); ++edge) {
@@ -295,6 +240,8 @@ std::vector<Edge> Graph::MST(){
         if(!uf.connected(v1, v2)) {
             mst.push_back(*edge);
             uf.set_union(v1, v2);
+            this -> path[v1].push_back(v2);
+            this -> path[v2].push_back(v1);
         }
     }
     // All vertexes belong to the same tree
@@ -305,10 +252,70 @@ std::vector<Edge> Graph::MST(){
             if(!uf.connected(v1, v2)) {
                 mst.push_back(*edge);
                 uf.set_union(v1, v2);
+                this -> path[v1].push_back(v2);
+                this -> path[v2].push_back(v1);
             }
         }
     }
     return mst;
+}
+
+/**
+ *  Add edges to a connected graph so it becames an eurelian cycle
+ *  @param n_vertex: number of vertexes of the graph
+ *  @param graph: vector of edges. Initial graph
+ *  @param edges: vector of edges to be added to the graph
+ *  @return true/false
+ */
+std::vector<Edge> Graph::makeEurelian(int n_vertex, std::vector<Edge> graph, std::vector<Edge> edges){
+
+    // EN PATH TIENES EL CAMINO DEL MST EN FORMA DE LISTA DE ADYACENCIAS
+    std::vector<Edge> eurelian;
+    int even [n_vertex]; // array to check if a vertex is already an origin
+    int v1, v2; // Edge
+
+    // Initialize array of vertexes
+    for (int i = 0; i < n_vertex; i++) {
+        even[i] = 0;
+    }
+
+    //we must sort the edges to obtain the less cost's edge
+    //std::sort(edges.begin(),edges.end(),comp);
+
+    //we make sure to include all the initial graph to the eurelian answer
+    for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge) {
+        v1 = edge -> get_v1() - 1;
+        v2 = edge -> get_v2() - 1;
+        even[v1] = (even[v1]+1)%2;
+        even[v2] = (even[v2]+1)%2;
+        eurelian.push_back(*edge);
+    }
+    //We study each edge to make sure ever vertex is even
+    for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge){
+    	v1 = edge -> get_v1() - 1;
+    	v2 = edge -> get_v2() - 1;
+    	bool found = false;
+    	std::vector<Edge>::iterator it;
+    	if (even[v1] != 0) {
+    		it = edges.begin();
+    		//we try to find the best edge
+    		while((!found) || (it != edges.end())){
+
+    			found = ((v1+1) == it->get_v1());
+    			if (found && (even[it->get_v2()-1] != 0)) {
+    				even[it->get_v1()-1] = (even[it->get_v1()-1]+1)%2;
+    				even[it->get_v2()-1] = (even[it->get_v2()-1]+1)%2;
+    				eurelian.push_back(*it);
+    			}
+    			++it;
+    		}
+    		//If there is no path, we set a double path edge (a -> b and b -> a)
+    		if (!found){
+    			it->set_repeat();
+    		}
+    	}
+    }
+    return eurelian;
 }
 
 std::vector<Edge> Graph::solvePRPP(){

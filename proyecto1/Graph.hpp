@@ -75,7 +75,7 @@ inline std::ostream& operator<<(std::ostream &os, Edge &edge) {
     return os;
 }
 
-void printEdges(std::ostream &os, std::vector<Edge> &edges) {
+void printEdges(std::ostream &os, std::vector<Edge> edges) {
     for(std::vector<Edge>::iterator it= edges.begin(); it != edges.end(); ++it) {
 		it -> print(os);
 	}
@@ -93,10 +93,9 @@ bool isConnected(int n_vertex, std::vector<Edge> edges) {
     int v1, v2; // Edge
 
     // Initialize array of vertexes
-    for (int i = 0; i < n_vertex; i++) {
+    for (int i = 0; i < n_vertex; ++i) {
         n_edges[i] = 0;
     }
-
     for(std::vector<Edge>::iterator edge = edges.begin(); edge != edges.end(); ++edge) {
         v1 = edge -> get_v1() - 1;
         v2 = edge -> get_v2() - 1;
@@ -105,42 +104,12 @@ bool isConnected(int n_vertex, std::vector<Edge> edges) {
     }
 
     int count = 0;
-    for (int i = 0; i < n_vertex; i++) {
+    for (int i = 0; i < n_vertex; ++i) {
         if (n_edges[i] == 1) { // A vertex does not have an even number of edges
             ++count;
-            if (count > 2){
+            if (count > 2) {
                 return false;
             }
-        }
-    }
-    return true;
-}
-
-/**
- *  Checks if an vector of edges is an eulerian cycle
- *  @param n_vertex: number of vertexes of the graph
- *  @param edges: vector of edges (graph) to be checked
- *  @return true/false
- */
-bool isEulerian(int n_vertex, std::vector<Edge> edges) {
-
-    int even [n_vertex]; // array to check whether a vertex has an even number of edges
-    int v1, v2; // Edge
-
-    // Initialize array of vertexes
-    for (int i = 0; i < n_vertex; i++) {
-        even[i] = 0;
-    }
-    for(std::vector<Edge>::iterator edge = edges.begin(); edge != edges.end(); ++edge) {
-        v1 = edge -> get_v1() - 1;
-        v2 = edge -> get_v2() - 1;
-        even[v1] = (even[v1] + 1) % 2;
-        even[v2] = (even[v2] + 1) % 2;
-    }
-
-    for (int i = 0; i < n_vertex; i++) {
-        if (even[i] == 1) { // A vertex does not have an even number of edges
-            return false;
         }
     }
     return true;
@@ -201,8 +170,6 @@ std::vector<Edge> makeEurelian(int n_vertex, std::vector<Edge> graph, std::vecto
     		}
     	}
     }
-
-
     return eurelian;
 }
 
@@ -212,17 +179,18 @@ std::vector<Edge> makeEurelian(int n_vertex, std::vector<Edge> graph, std::vecto
 class Graph {
     private:
 		int n_vertex;  // Number of vertex of the Graph
-        int r2_size; // Number of edges that get benefit after crossing them twice
-		int r_size;  // Number of required that get benefit after crossing them once
-		int n_size;  // Number of non required edges of the Graph
+        int r2_size;  // Number of edges that get benefit after crossing them twice
+		int r_size;   // Number of required that get benefit after crossing them once
+		int n_size;   // Number of non required edges of the Graph
 		std::vector<Edge> r2_edges; //List of required edges that get benefit after crossing them twice
         std::vector<Edge> r_edges; //List of required edges
         std::vector<Edge> n_edges; //List of non required edges
+        vector< vector<int> > path;
 
     public:
-        Graph(int vertex, int r2_size, int r_size, int n_size,std::vector<Edge> &r2_edges, std::vector<Edge> &r_edges, std::vector<Edge> &n_edges);
+        Graph(int n_vertex, int r2_size, int r_size, int n_size,std::vector<Edge> &r2_edges, std::vector<Edge> &r_edges, std::vector<Edge> &n_edges);
         int get_n_vertex()   { return this -> n_vertex; }
-        int get_r2_size()  { return this -> r_size; }
+        int get_r2_size()  { return this -> r2_size; }
         int get_r_size()   { return this -> r_size; }
         int get_n_size()   { return this -> n_size; }
         std::vector<Edge> get_r2_edges() { return this -> r2_edges; }
@@ -230,6 +198,7 @@ class Graph {
         std::vector<Edge> get_n_edges()  { return this -> n_edges; }
         //FUNCIONES QUE PODRIA TENER, AUN NO ESTOY SEGURA
         void print(std::ostream &os);
+        bool isEulerian();
         std::vector<Edge> MST();
         std::vector<Edge> solvePRPP();
 };
@@ -249,6 +218,11 @@ Graph::Graph (int n_vertex, int r2_size, int r_size, int n_size, std::vector<Edg
 	this -> r2_edges = r2_edges;
 	this -> r_edges = r_edges;
 	this -> n_edges = n_edges;
+    for (int i = 0; i < n_vertex; i++) {
+        std::vector<int> adjacent;
+        this -> path.push_back(adjacent);
+    }
+
     //we proceed to sort the lists for easy work later
 	std::sort (this -> r_edges.begin(), this -> r_edges.end(), comp);
 	std::sort (this -> n_edges.begin(), this -> n_edges.end(), comp);
@@ -258,10 +232,40 @@ Graph::Graph (int n_vertex, int r2_size, int r_size, int n_size, std::vector<Edg
 inline void Graph::print(std::ostream &os)  {
 
 	os << "Number of vertex: " << this->n_vertex << endl;
-	os << "Required edges: " << this->r_size << endl;
+	os << "Required edges: " << this-> r2_size + r_size << endl;
+    printEdges(os, this -> r2_edges);
     printEdges(os, this -> r_edges);
 	os << "Non Required edges: " << this->n_size << endl;
     printEdges(os, this -> n_edges);
+}
+
+/**
+ *  Checks if an vector of edges is an eulerian cycle
+ *  @param n_vertex: number of vertexes of the graph
+ *  @param edges: vector of edges (graph) to be checked
+ *  @return true/false
+ */
+bool Graph::isEulerian() {
+
+    int even [n_vertex]; // array to check whether a vertex has an even number of edges
+    int v1, v2; // Edge
+
+    // Initialize array of vertexes
+    for (int i = 0; i < n_vertex; i++) {
+        even[i] = 0;
+    }
+    for(std::vector<Edge>::iterator edge = r_edges.begin(); edge != r_edges.end(); ++edge) {
+        v1 = edge -> get_v1() - 1;
+        v2 = edge -> get_v2() - 1;
+        even[v1] = (even[v1] + 1) % 2;
+        even[v2] = (even[v2] + 1) % 2;
+    }
+    for (int i = 0; i < n_vertex; i++) {
+        if (even[i] == 1) { // A vertex does not have an even number of edges
+            return false;
+        }
+    }
+    return true;
 }
 
 /**
@@ -311,10 +315,7 @@ std::vector<Edge> Graph::solvePRPP(){
 
 	std::vector<Edge> solution;
 
-    if (isConnected(this -> n_vertex, this -> r2_edges)){
-        //solution = r2_edges;
-    }
-    else if (isEulerian(this -> n_vertex, this -> r_edges)){
+    if (this -> isEulerian()){
         return this -> r_edges;
     }
     else {

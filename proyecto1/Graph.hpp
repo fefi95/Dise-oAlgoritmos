@@ -12,8 +12,6 @@
 
 #include <vector>
 #include <iostream>
-#include <set>
-#include <queue>
 #include <vector>
 #include <algorithm>
 #include "Union-find.hpp"
@@ -144,6 +142,7 @@ class Graph {
         bool isEulerian();
         std::vector<Edge> makeEurelian(int n_vertex, std::vector<Edge> graph, std::vector<Edge> edges);
         std::vector<Edge> MST();
+        void improveSolution();
         std::vector<Edge> solvePRPP();
 };
 
@@ -317,6 +316,40 @@ std::vector<Edge> Graph::makeEurelian(int n_vertex, std::vector<Edge> graph, std
     	}
     }
     return eurelian;
+}
+
+void Graph::improveSolution(){
+
+    // // Step 1: Eulerian Elimination
+    // // Gsol Crear un grafo con los vertices y lados de C
+    //
+    // for (int vi = 0; vi < count; vi++) {
+    //     for(std::vector<int>::iterator vj = path[vi - 1].begin(); vj != path[vi - 1].end(); ++vj) {
+    //         for(std::vector<int>::iterator vi2 = path[*vj - 1].begin(); vi2 != path[*vj - 1].end(); ++vi2) {
+    //             if (vi == vi2) { // Duplicated edge
+    //                 if (benefit > benefit - be + 2 ce)
+    //             }
+    //         }
+    //     }
+    //     vi = path[vi - 1][0];
+    // }
+    //
+    // foreach par de lados duplicados e1 = (i;j)y e2 = (i;j) enGsol do
+    //     G2sol Eliminar los ladose1 y e2 de Gsol
+    //     if G2 sol es un grafo euleriano con mayor beneficio then
+    //     //G 0 sol es conexo y todos sus vertices tienen grado par
+    //         Gsol G2sol
+    //         C Obtener un ciclo euleriano de Gsol
+
+    // Parte 2: Eliminacion de Componente Conexa foreachpar de lados duplicados e1= (i;j)ye2= (i;j) enGsol
+    // do G 0 solEliminar los lados e1 y e2 de Gsol
+    //     if G 0 sol es un grafo desconectado then
+    //         Gcc Se crea un grafo con la componente conexa de G2sol que contiene al deposito
+    //         Ccc obtener un ciclo euleriano de Gcc
+    //         if beneficio(Ccc)>beneficio(C) then
+    //             C Ccc
+    //             Gsol Gcc
+    // return C
 }
 
 std::vector<Edge> Graph::solvePRPP(){

@@ -236,7 +236,6 @@ class Graph {
         void print(std::ostream &os);
 
         bool isEulerian();
-        std::vector<Edge> makeEurelian(int n_vertex, std::vector<Edge> graph, std::vector<Edge> edges);
         std::pair < std::vector<Edge>,std::vector<Edge> > MST();
         void improveSolution();
         std::vector<Edge> solvePRPP();
@@ -337,7 +336,7 @@ std::pair < std::vector<Edge>,std::vector<Edge> > Graph::MST(){
         	nonMst.push_back(*edge);
         }
     }
-    
+
     // All vertexes belong to the same tree
     if (uf.count() > 1) {
         for(std::vector<Edge>::iterator edge = this -> n_edges.begin(); edge != this -> n_edges.end(); ++edge) {

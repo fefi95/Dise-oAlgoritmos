@@ -222,7 +222,6 @@ class Graph {
 		std::vector<Edge> r2_edges; //List of required edges that get benefit after crossing them twice
         std::vector<Edge> r_edges; //List of required edges
         std::vector<Edge> n_edges; //List of non required edges
-        std::vector< vector<int> > path;
 
     public:
         Graph(int n_vertex, int r2_size, int r_size, int n_size,std::vector<Edge> &r2_edges, std::vector<Edge> &r_edges, std::vector<Edge> &n_edges);
@@ -233,9 +232,9 @@ class Graph {
         std::vector<Edge> get_r2_edges() { return this -> r2_edges; }
         std::vector<Edge> get_r_edges()  { return this -> r_edges; }
         std::vector<Edge> get_n_edges()  { return this -> n_edges; }
-        std::vector< vector<int> > get_path()  { return this -> path; }
-        //FUNCIONES QUE PODRIA TENER, AUN NO ESTOY SEGURA
+
         void print(std::ostream &os);
+
         bool isEulerian();
         std::vector<Edge> makeEurelian(int n_vertex, std::vector<Edge> graph, std::vector<Edge> edges);
         std::pair < std::vector<Edge>,std::vector<Edge> > MST();
@@ -258,10 +257,6 @@ Graph::Graph (int n_vertex, int r2_size, int r_size, int n_size, std::vector<Edg
 	this -> r2_edges = r2_edges;
 	this -> r_edges = r_edges;
 	this -> n_edges = n_edges;
-    for (int i = 0; i < n_vertex; i++) {
-        std::vector<int> adjacent;
-        this -> path.push_back(adjacent);
-    }
 
     //we proceed to sort the lists for easy work later
 	std::sort (this -> r_edges.begin(), this -> r_edges.end(), comp);
@@ -314,11 +309,11 @@ bool Graph::isEulerian() {
  */
 std::pair < std::vector<Edge>,std::vector<Edge> > Graph::MST(){
 
-	std::vector<Edge> mst; //Variable for the returning
-	std::vector<Edge> nonMst;
+	std::vector<Edge> mst; // MST for the original graph
+	std::vector<Edge> nonMst; // Edges that are not in the MST
     Edge edge(0,0,0,0);
-    int v1, v2;
-    Union_find uf(n_vertex);
+    int v1, v2; // Vertexes that belong to an edge
+    Union_find uf(n_vertex); // Disjoint set
 
     // connected components
     for(std::vector<Edge>::iterator edge = this -> r2_edges.begin(); edge != this -> r2_edges.end(); ++edge) {
@@ -339,11 +334,10 @@ std::pair < std::vector<Edge>,std::vector<Edge> > Graph::MST(){
         }
 
         else {
-
         	nonMst.push_back(*edge);
-
         }
     }
+    
     // All vertexes belong to the same tree
     if (uf.count() > 1) {
         for(std::vector<Edge>::iterator edge = this -> n_edges.begin(); edge != this -> n_edges.end(); ++edge) {
@@ -365,19 +359,6 @@ std::pair < std::vector<Edge>,std::vector<Edge> > Graph::MST(){
 
 void Graph::improveSolution(){
 
-    // // Step 1: Eulerian Elimination
-    // // Gsol Crear un grafo con los vertices y lados de C
-    //
-    // for (int vi = 0; vi < count; vi++) {
-    //     for(std::vector<int>::iterator vj = path[vi - 1].begin(); vj != path[vi - 1].end(); ++vj) {
-    //         for(std::vector<int>::iterator vi2 = path[*vj - 1].begin(); vi2 != path[*vj - 1].end(); ++vi2) {
-    //             if (vi == vi2) { // Duplicated edge
-    //                 if (benefit > benefit - be + 2 ce)
-    //             }
-    //         }
-    //     }
-    //     vi = path[vi - 1][0];
-    // }
     //
     // foreach par de lados duplicados e1 = (i;j)y e2 = (i;j) enGsol do
     //     G2sol Eliminar los ladose1 y e2 de Gsol

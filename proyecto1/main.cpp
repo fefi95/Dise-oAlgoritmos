@@ -17,20 +17,29 @@ using namespace std;
 
 int main(int argc, char **argv) {
     Graph graph = readFile(argv[1]);
-    // std::cout << "graph \n" << graph << std::endl;
-    // std::cout << "isConnected: " << isConnected(graph.get_n_vertex(), graph.get_r2_edges()) << std::endl;
+    cout << "Grafo Original" << endl;
+    cout << graph << endl;
     std::cout << "isEulerian: " << graph.isEulerian() << std::endl;
 
-    std::cout << "MST" << std::endl;
-    std::vector<Edge> mst = graph.MST();
-    for(std::vector<Edge>::iterator edge = mst.begin(); edge != mst.end(); ++edge) {
-        edge -> print(std::cout);
+
+    std::pair < std::vector<Edge>,std::vector<Edge> > FinalGraph = graph.MST();
+    std::vector<Edge> mst = FinalGraph.first;
+    std::vector<Edge> nonmst = FinalGraph.second;
+
+    cout << "GRAFO MST" << endl << endl;
+    for (std::vector<Edge>::iterator it = mst.begin(); it != mst.end(); ++it){
+    	cout << *it;
     }
-    // std::cout << "eurelian" << std::endl;
-    // std::vector<Edge> eurelian = graph.makeEurelian(mst.size(), mst, graph.get_r_edges());
-    // for(std::vector<Edge>::iterator edge = eurelian.begin(); edge != eurelian.end(); ++edge) {
-    //     edge -> print(std::cout);
-    // }
+
+    cout << endl;
+    cout << "GRAFO EURELIANO" << endl;
+    cout << endl;
+
+    //We assume that mst can visit the whole graph nodes
+    std::vector<Edge> eurelian = makeEurelian(graph.get_n_vertex(), mst, nonmst);
+    for(std::vector<Edge>::iterator euIt = eurelian.begin(); euIt != eurelian.end(); ++euIt){
+    	cout << *euIt;
+    }
 
     // test solution
     // int one[] = {2};

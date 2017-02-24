@@ -21,37 +21,39 @@ using namespace std;
 /**************************************************************************//**
  *  Edge. Information of an edge of the graph, it's benefit and cost.
  *****************************************************************************/
-class Edge {
-    private:
-        int v1, v2;  // Edge of the graph
-        int be;      // Edge's benefit
-        int ce;      // Edge's cost
-        bool repeat; // Defines if the edge is a two way path
+ class Edge {
+     private:
+         int v1, v2;  // Edge of the graph
+         int be;      // Edge's benefit
+         int ce;      // Edge's cost
+         bool two_way; // Defines if the edge is a two way path
 
-    public:
-        Edge(int, int, int, int);
+     public:
+         Edge(int, int, int, int);
 
-        //Prints the current Edge Info
-        void print(std::ostream &os);
+         //Prints the current Edge Info
+         void print(std::ostream &os);
 
-        int get_v1() { return this -> v1; }
-        int get_v2() { return this -> v2; }
-        int get_cost() {return this -> ce;}
-        int get_benefit() {return this -> be;}
-        void set_repeat() {this->repeat = true;}
-        // bool operator< (const Edge &edge) const {
-        //     return this -> crossE2 < edge.crossE2;
-        // }
-};
+         int get_v1() { return this -> v1; }
+         int get_v2() { return this -> v2; }
+         int get_cost() {return this -> ce;}
+         int get_benefit() {return this -> be;}
+         bool is_two_way() {return (this->be > (2*(this->ce)));}
+         void set_two_way() {this->two_way = true;}
+         bool get_two_way() {return this->two_way;}
+         // bool operator< (const Edge &edge) const {
+         //     return this -> crossE2 < edge.crossE2;
+         // }
+ };
 
-// Constructor
-Edge::Edge (int v1, int v2, int ce, int be) {
-  this -> v1 = v1;
-  this -> v2 = v2;
-  this -> be = be;
-  this -> ce = ce;
-  this -> repeat  = false;
-}
+ // Constructor
+ Edge::Edge (int v1, int v2, int ce, int be) {
+   this -> v1 = v1;
+   this -> v2 = v2;
+   this -> be = be;
+   this -> ce = ce;
+   this -> two_way  = false;
+ }
 
 inline void Edge::print(std::ostream &os)  {
 
@@ -113,6 +115,101 @@ bool isConnected(int n_vertex, std::vector<Edge> edges) {
     return true;
 }
 
+/**
+ *  Add edges to a connected graph so it becames an eurelian cycle
+ *  @param n_vertex: number of vertexes of the graph
+ *  @param graph: vector of edges. Initial graph
+ *  @param edges: vector of edges to be added to the graph
+ *  @return true/false
+ */
+
+std::vector<Edge> makeEurelian(int n_vertex, std::vector<Edge> graph, std::vector<Edge> extras){
+
+    std::vector<Edge> eurelian; // Variable for the returning of the functions
+    std::vector<Edge>::iterator extraIt; //Iterator for the extra edges list
+    int even [n_vertex]; // array to check if a vertex is already an origin
+    int v1; //Origin of the edge
+    int v2; //Destiny of the edge
+    int evenNodes; // Variable to check if the graph is already connected
+    bool found; //Variable for the founded edge for completin the graph
+
+    // Initialize array of vertexes
+    for (int i = 0; i < n_vertex; i++) {
+        even[i] = 0;
+    }
+
+    //We proceed to set even property for each node
+    for (std::vector<Edge>::iterator it = graph.begin(); it != graph.end(); ++it){
+
+    	v1 = it->get_v1() -1 ;
+    	v2 = it->get_v2() - 1;
+    	even[v1] = (even[v1] + 1) % 2;
+    	even[v2] = (even[v2] + 1) % 2;
+    	eurelian.push_back(*it);
+
+    }
+
+    for (std::vector<Edge>::iterator it = graph.begin(); it != graph.end(); ++it){
+
+    	v1 = it->get_v1() - 1;
+    	//For each vertex, we must see if is has already a pair grade, if not
+    	if (even[v1] != 0){
+    		extraIt = extras.begin();
+    		found = false;
+
+    		while((!found) && (extraIt != extras.end())){
+    			found = (v1+1) == (extraIt->get_v1());
+    			v2 = extraIt->get_v2()-1;
+    			//If adding the new edge, sets both vertexes grade even, then
+    			if(found && ((even[v2]+1)%2 == 0)){
+    				even[v1] = (even[v1] + 1) % 2;
+    				even[v2] = (even[v2] + 1) % 2;
+    				eurelian.push_back(*extraIt);
+    			}
+    			++extraIt;
+    		}
+    		//Now, we see if the graph is already connected for avoiding to set the complete graph again
+    		evenNodes = 0;
+    		for(int i = 0; i < n_vertex; ++i){
+    			if (even[i] == 0) {++evenNodes;}
+    		}
+    		if (evenNodes == n_vertex) {return eurelian;}
+    	}
+    }
+
+    //Now we have to delete the odd vertexes of the current graph, in case they decrease the benefit
+
+    for (std::vector<Edge>::iterator euIt = eurelian.begin(); euIt != eurelian.end(); ++euIt){
+
+    	v1 = euIt->get_v1() - 1;
+    	v2 = euIt->get_v2() - 1;
+    	//If the edge isnt even, we should see if its usefull to pass it twice to create a cicle
+    	if ((even[v1]) != 0 && (even[v2] != 0)) {
+    		if (euIt->is_two_way()){
+    			euIt->set_two_way();
+    			even[v1] = 0;
+    			even[v2] = 0;
+    		}
+    		else{
+    			even[v1] = (even[v1]-1)%2;
+    			even[v2] = (even[v2]-1)%2;
+    			eurelian.erase(euIt);
+    		}
+    	}
+    }
+
+    return eurelian;
+}
+
+std::pair<vector<int>,int> getPath(std::vector<Edge> graph){
+
+	vector<int> path;
+	int benefit = 0;
+
+	std::pair<vector<int>,int> result(path,benefit);
+	return result;
+}
+
 /**************************************************************************//**
  *  Graph. vector of the edges and it's benefits and costs
  *****************************************************************************/
@@ -141,7 +238,7 @@ class Graph {
         void print(std::ostream &os);
         bool isEulerian();
         std::vector<Edge> makeEurelian(int n_vertex, std::vector<Edge> graph, std::vector<Edge> edges);
-        std::vector<Edge> MST();
+        std::pair < std::vector<Edge>,std::vector<Edge> > MST();
         void improveSolution();
         std::vector<Edge> solvePRPP();
 };
@@ -215,9 +312,10 @@ bool Graph::isEulerian() {
  * Creates the Minimum Spanning Tree (Variation Of Kruskall) for non-required
  * edges connecting isolated connected components
  */
-std::vector<Edge> Graph::MST(){
+std::pair < std::vector<Edge>,std::vector<Edge> > Graph::MST(){
 
 	std::vector<Edge> mst; //Variable for the returning
+	std::vector<Edge> nonMst;
     Edge edge(0,0,0,0);
     int v1, v2;
     Union_find uf(n_vertex);
@@ -230,8 +328,6 @@ std::vector<Edge> Graph::MST(){
             uf.set_union(v1, v2);
         }
         mst.push_back(*edge);
-        this -> path[v1].push_back(v2);
-        this -> path[v2].push_back(v1);
     }
 
     for(std::vector<Edge>::iterator edge = this -> r_edges.begin(); edge != this -> r_edges.end(); ++edge) {
@@ -240,8 +336,12 @@ std::vector<Edge> Graph::MST(){
         if(!uf.connected(v1, v2)) {
             mst.push_back(*edge);
             uf.set_union(v1, v2);
-            this -> path[v1].push_back(v2);
-            this -> path[v2].push_back(v1);
+        }
+
+        else {
+
+        	nonMst.push_back(*edge);
+
         }
     }
     // All vertexes belong to the same tree
@@ -252,70 +352,15 @@ std::vector<Edge> Graph::MST(){
             if(!uf.connected(v1, v2)) {
                 mst.push_back(*edge);
                 uf.set_union(v1, v2);
-                this -> path[v1].push_back(v2);
-                this -> path[v2].push_back(v1);
+            }
+
+            else {
+            	nonMst.push_back(*edge);
             }
         }
     }
-    return mst;
-}
-
-/**
- *  Add edges to a connected graph so it becames an eurelian cycle
- *  @param n_vertex: number of vertexes of the graph
- *  @param graph: vector of edges. Initial graph
- *  @param edges: vector of edges to be added to the graph
- *  @return true/false
- */
-std::vector<Edge> Graph::makeEurelian(int n_vertex, std::vector<Edge> graph, std::vector<Edge> edges){
-
-    // EN PATH TIENES EL CAMINO DEL MST EN FORMA DE LISTA DE ADYACENCIAS
-    std::vector<Edge> eurelian;
-    int even [n_vertex]; // array to check if a vertex is already an origin
-    int v1, v2; // Edge
-
-    // Initialize array of vertexes
-    for (int i = 0; i < n_vertex; i++) {
-        even[i] = 0;
-    }
-
-    //we must sort the edges to obtain the less cost's edge
-    //std::sort(edges.begin(),edges.end(),comp);
-
-    //we make sure to include all the initial graph to the eurelian answer
-    for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge) {
-        v1 = edge -> get_v1() - 1;
-        v2 = edge -> get_v2() - 1;
-        even[v1] = (even[v1]+1)%2;
-        even[v2] = (even[v2]+1)%2;
-        eurelian.push_back(*edge);
-    }
-    //We study each edge to make sure ever vertex is even
-    for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge){
-    	v1 = edge -> get_v1() - 1;
-    	v2 = edge -> get_v2() - 1;
-    	bool found = false;
-    	std::vector<Edge>::iterator it;
-    	if (even[v1] != 0) {
-    		it = edges.begin();
-    		//we try to find the best edge
-    		while((!found) || (it != edges.end())){
-
-    			found = ((v1+1) == it->get_v1());
-    			if (found && (even[it->get_v2()-1] != 0)) {
-    				even[it->get_v1()-1] = (even[it->get_v1()-1]+1)%2;
-    				even[it->get_v2()-1] = (even[it->get_v2()-1]+1)%2;
-    				eurelian.push_back(*it);
-    			}
-    			++it;
-    		}
-    		//If there is no path, we set a double path edge (a -> b and b -> a)
-    		if (!found){
-    			it->set_repeat();
-    		}
-    	}
-    }
-    return eurelian;
+    std::pair < std::vector<Edge>,std::vector<Edge> > Edges(mst,nonMst);
+    return Edges;
 }
 
 void Graph::improveSolution(){

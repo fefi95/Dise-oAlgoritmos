@@ -43,8 +43,11 @@ int main(int argc, char **argv) {
     std::vector< vector<int> > sol  = graphAA.solvePRPP();
     timeEnd = time(NULL);
     tHeur = difftime(timeEnd, timeStart);
+    // get standard deviations
+    dvhp = pStd(vo, vhp);
+    dHeur = pStd(vo, vHeur);
     writeFile("ALBAIDAANoRPP-salida.txt", sol, vHeur);
-    aFile << "ALBAIDAA, " << vo << ", " << vhp << ", " << dHeur << ", " << tHeur << std::endl;
+    aFile << "ALBAIDAA, " << vo << ", " << dvhp << ", " << dHeur << ", " << tHeur << std::endl;
 
     //ALBAIDAB
     Graph graphAB = readFile("instanciasPRPP/ALBAIDAA/ALBAIDABNoRPP");

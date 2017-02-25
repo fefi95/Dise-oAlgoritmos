@@ -342,7 +342,7 @@ class Graph {
         bool isEulerian();
         std::pair < std::vector<Edge>,std::vector<Edge> > MST();
         void improveSolution();
-        std::vector<Edge> solvePRPP();
+        std::pair < int,std::vector<int> > solvePRPP();
 };
 
 inline std::ostream& operator<<(std::ostream &os, Graph &graph) {
@@ -481,16 +481,32 @@ void Graph::improveSolution(){
     // return C
 }
 
-std::vector<Edge> Graph::solvePRPP(){
+std::pair < int,std::vector<int> > Graph::solvePRPP(){
 
-	std::vector<Edge> solution;
+	std::pair < int,std::vector<int> > solution;
 
     if (this -> isEulerian()){
-        return this -> r_edges;
+
+        std::vector< vector<int> > path;
+        for (int i = 0; i < n_vertex; i++) {
+            std::vector<int> adjacent;
+            path.push_back(adjacent);
+        }
+
+        int v1, v2;
+        for(std::vector<Edge>::iterator edge = this -> r2_edges.begin(); edge != this -> r2_edges.end(); ++edge) {
+            v1 = edge -> get_v1() - 1;
+            v2 = edge -> get_v2() - 1;
+            path[v1].push_back(v2);
+            path[v2].push_back(v1);
+        }
+        return getPath(path, this-> r2_edges);
     }
     else {
-        //std::vector<Edge> mst = this -> MST();
-        // solution = makeEurelian(..., mst);
+        std::pair < std::vector<Edge>,std::vector<Edge> > FinalGraph = this -> MST();
+        std::vector<Edge> mst = FinalGraph.first;
+        std::vector<Edge> nonmst = FinalGraph.second;
+        solution = makeEurelian(this -> n_vertex, mst, nonmst);
     }
     return solution;
 }

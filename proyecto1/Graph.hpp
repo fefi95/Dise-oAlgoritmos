@@ -116,51 +116,82 @@ bool isConnected(int n_vertex, std::vector<Edge> edges) {
     return true;
 }
 
-std::vector<int> getPath(std::vector< vector<int> > path){
-    int u = 0;  //source
-    std::vector<int> eulerian;
-    eulerian.push_back(u + 1);
-    std::cout << u + 1 << std::endl;
-    int vi = path[u][0];
-    path[vi].erase(path[u].begin() + vi);
-    bool flag = true;
-    int posvj;
-    int getBack;
+std::vector<int> getPath(std::vector< vector<int> > path, std::vector<Edge> graph){
 
-    while (!path[0].empty() || u != 0 || flag) {
-        std::cout << "actual " << vi + 1 << std::endl;
-        posvj = 0;
-        getBack = true;
-        for(std::vector<int>::iterator vjp = path[vi].begin(); vjp != path[vi].end(); ++vjp) {
-            int vj = *vjp;
-            std::cout << "(" << vi + 1 << " " << vj + 1 << ")" << std::endl;
-            if (vj != u) {
-                std::cout << "diferente " << std::endl;
-                eulerian.push_back(vi + 1);
-                std::cout << vi + 1 << std::endl;
-                std::cout << "erase " << vi + 1 << " " << *(path[vi].begin() + posvj) + 1  << std::endl;
-                if (*(path[vi].begin() + posvj) == vj) {
-                    std::cout << "erase2 " << *(path[vi].begin() + posvj) + 1<< std::endl;
-                    path[vi].erase(path[vi].begin() + posvj);
-                }
-                u = vi;
-                vi = vj;
-                std::cout << vi + 1 << std::endl;
-                getBack = false;
-                break;
-            }
-            ++posvj;
+    for (int vi = 0; vi < path.size(); vi++) {
+        for(std::vector<int>::iterator vj = path[vi].begin(); vj != path[vi].end(); ++vj) {
+            std::cout << "(" << vi + 1 << " " << *vj + 1 << ")" << std::endl;
         }
-        if (getBack) { // come back where you came from
-            std::cout << "get back" << std::endl;
-            std::cout << "erase " << *(path[vi].begin()) << std::endl;
-            path[vi].erase(path[vi].begin());
-            vi = u;
-        }
-        flag = false;
     }
+    int benefit = 0;
+    std::vector<int> twice;
+    for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge) {
+        benefit += edge -> get_benefit() - edge -> get_cost();
+        twice.push_back(0);
+    }
+
+    std::vector<int> eulerian;
+    for(std::vector<int>::iterator adj0 = path[0].begin(); adj0 != path[0].end(); ++adj0) {
+        int u = 0;  //source
+        eulerian.push_back(u + 1);
+        std::cout << u + 1 << " ";
+        int vi = *adj0;
+        int getBack;
+        while (vi != 0) {
+            getBack = true;
+            for (int j = 0; j < path[vi].size(); ++j) {
+                int vj = path[vi][0];
+                path[vi].erase(path[vi].begin());
+                path[vi].push_back(vj);
+                // std::cout << "d" << vj + 1 << std::endl;
+                if (u != vj) {
+                    // std::cout << "u" << std::endl;
+                    // std::cout << vi + 1 << " " << vj + 1 << std::endl;
+                    std::cout << vi + 1 << " ";
+                    eulerian.push_back(vi + 1);
+                    int pose = 0;
+                    for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge) {
+                        ++pose;
+                        if ((edge -> get_v1() == vi && edge -> get_v2() == vj) || (edge -> get_v1() == vj && edge -> get_v2() == vi)) {
+                            benefit += - edge -> get_cost();
+                            ++twice[pose];
+                            break;
+                        }
+                    }
+                    u = vi;
+                    vi = vj;
+                    getBack = false;
+                    break;
+                }
+            }
+            if (getBack) {
+                // std::cout << vi + 1 << " " << u + 1 << std::endl;
+                std::cout << vi + 1 << " ";
+                eulerian.push_back(vi + 1);
+                vi = u;
+                int pose = 0;
+                for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge) {
+                    if ((edge -> get_v1() == vi && edge -> get_v2() == u) || (edge -> get_v1() == u && edge -> get_v2() == vi)) {
+                        benefit += - edge -> get_cost();
+                        ++twice[pose];
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
     eulerian.push_back(1);
     std::cout << 1 << std::endl;
+    int i = 0;
+    // for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge) {
+    //     if (twice[i] != 0){
+    //         benefit += - edge -> get_cost();
+    //     }
+    //     std::cout << twice[i] << " ";
+    //     ++i;
+    // }
+    std::cout << benefit << std::endl;
     return eulerian;
 }
 
@@ -274,7 +305,7 @@ std::vector<Edge> makeEurelian(int n_vertex, std::vector<Edge> graph, std::vecto
             eulerian.push_back(*edge);
         // }
     }
-    std::vector<int> p = getPath(path);
+    std::vector<int> p = getPath(path, eulerian);
     return eulerian;
 }
 

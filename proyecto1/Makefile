@@ -8,7 +8,7 @@ main: main.cpp
 runProject: runProject.cpp
 	$(CXX) $(OPT) runProject.cpp -o $@
 	rm -f $*.c
-	
+
 .PHONY: clean
 clean:
-	rm -f main *.o *~
+	rm -f main runProject *.o *~

@@ -362,6 +362,7 @@ Graph::Graph (int n_vertex, int r2_size, int r_size, int n_size, std::vector<Edg
 	this -> n_edges = n_edges;
 
     //we proceed to sort the lists for easy work later
+    // std::sort (this -> r2_edges.begin(), this -> r2_edges.end(), comp);
 	std::sort (this -> r_edges.begin(), this -> r_edges.end(), comp);
 	std::sort (this -> n_edges.begin(), this -> n_edges.end(), comp);
 }

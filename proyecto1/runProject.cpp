@@ -97,6 +97,7 @@ int main(int argc, char **argv) {
     // DEGREE
     ofstream dFile;
     dFile.open("degree.csv");
+    dFile << "Instancia, Vo, \%dHeurPlanos, \%dHeur, tHeur (seg) " << std::endl;
     int dVo[36] = {109,115,274,172,210,313,166,260,457,160,0,398,280,717,810,702,980,1115,515,509,457,1000,989,968,1463,1317,1625,549,815,55,1378,1503,1066,2074,1806,1901};
     int dVhp[36] = {109,115,274,172,210,313,166,260,457,160,0,398,280,662,810,702,965,1070,515,509,457,976,989,968,1463,1317,1610,501,786,517,1378,1503,1028,2074,1806,1820};
     for (int i = 0; i < 36; i++) {
@@ -118,6 +119,7 @@ int main(int argc, char **argv) {
     // GRID
     ofstream grFile;
     grFile.open("grid.csv");
+    grFile << "Instancia, Vo, \%dHeurPlanos, \%dHeur, tHeur (seg) " << std::endl;
     int grVo[36] = {0,0,0,2,0,4,9,1,4,2,0,4,15,11,14,26,20,24,8,6,9,32,32,33,57,46,57,14,23,14,50,54,57,92,86,88};
     int grVhp[36] = {0,0,0,2,0,4,9,1,4,2,0,4,15,11,14,26,20,24,8,6,9,32,31,33,57,46,57,14,22,13,50,54,55,92,86,87};
     for (int i = 0; i < 36; i++) {
@@ -139,6 +141,7 @@ int main(int argc, char **argv) {
     // RANDOM
     ofstream rFile;
     rFile.open("random.csv");
+    rFile << "Instancia, Vo, \%dHeurPlanos, \%dHeur, tHeur (seg) " << std::endl;
     int rVo[20] = {1742,4253,5638,18453,17316,398,12478,9405,14847,17405,7125,1493,32453,30732,27791,10533,4276,28462,26873};
     int rVhp[20] = {1742,4253,5638,18453,17316,398,12478,9405,14847,17405,7125,1493,30464,30732,27791,10533,4001,28462,26873};
     for (int i = 0; i < 20; i++) {
@@ -152,7 +155,7 @@ int main(int argc, char **argv) {
         dvhp = pStd(rVo[i], rVhp[i]);
         dHeur = pStd(rVo[i], sol.first);
         writeFile(strcat(file,"-salida.txt"), sol);
-        grFile << "R" << i << ", " << rVo << ", " << dvhp << ", " << dHeur << ", " << tHeur << std::endl;
+        rFile << "R" << i << ", " << rVo[i] << ", " << dvhp << ", " << dHeur << ", " << tHeur << std::endl;
         memset(file, '\0', 1024);
     }
     rFile.close();

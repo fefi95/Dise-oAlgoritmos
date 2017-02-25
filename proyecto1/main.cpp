@@ -36,11 +36,11 @@ int main(int argc, char **argv) {
     cout << endl;
 
     //We assume that mst can visit the whole graph nodes
-    std::vector<Edge> eurelian = makeEurelian(graph.get_n_vertex(), mst, nonmst);
-    for(std::vector<Edge>::iterator euIt = eurelian.begin(); euIt != eurelian.end(); ++euIt){
-        std::cout << euIt -> get_two_way();
-    	cout << *euIt;
-    }
+    std::pair < int,std::vector<int> > result = makeEurelian(graph.get_n_vertex(), mst, nonmst);
+    // for(std::vector<Edge>::iterator euIt = eurelian.begin(); euIt != eurelian.end(); ++euIt){
+    //     std::cout << euIt -> get_two_way();
+    // 	cout << *euIt;
+    // }
 
     // test solution
     // int one[] = {2};
@@ -60,7 +60,7 @@ int main(int argc, char **argv) {
     // path.push_back(tFour);
     // path.push_back(tFive);
     //
-    // writeFile(strcat(argv[1], "-salida.txt"), path, 14);
+    writeFile(strcat(argv[1], "-salida.txt"), result);
     // std::cout << "benefit=" << graph.get_path_benefit() << std::endl;
 
     // GraphPRPP.solvePRPP();

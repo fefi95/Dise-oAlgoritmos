@@ -116,7 +116,7 @@ bool isConnected(int n_vertex, std::vector<Edge> edges) {
     return true;
 }
 
-std::vector<int> getPath(std::vector< vector<int> > path, std::vector<Edge> graph){
+std::pair < int,std::vector<int> > getPath(std::vector< vector<int> > path, std::vector<Edge> graph){
 
     for (int vi = 0; vi < path.size(); vi++) {
         for(std::vector<int>::iterator vj = path[vi].begin(); vj != path[vi].end(); ++vj) {
@@ -197,7 +197,8 @@ std::vector<int> getPath(std::vector< vector<int> > path, std::vector<Edge> grap
         ++i;
     }
     std::cout << "b: " << benefit << std::endl;
-    return eulerian;
+    std::pair < int,std::vector<int> > result(benefit, eulerian);
+    return result;
 }
 
 /**
@@ -208,7 +209,7 @@ std::vector<int> getPath(std::vector< vector<int> > path, std::vector<Edge> grap
  *  @return true/false
  */
 
-std::vector<Edge> makeEurelian(int n_vertex, std::vector<Edge> graph, std::vector<Edge> extras){
+std::pair < int,std::vector<int> > makeEurelian(int n_vertex, std::vector<Edge> graph, std::vector<Edge> extras){
 
     int even [n_vertex]; // array to check whether a vertex has an even number of edges
     int v1, v2; // Edge
@@ -310,8 +311,7 @@ std::vector<Edge> makeEurelian(int n_vertex, std::vector<Edge> graph, std::vecto
             eulerian.push_back(*edge);
         // }
     }
-    std::vector<int> p = getPath(path, eulerian);
-    return eulerian;
+    return getPath(path, eulerian);
 }
 
 /**************************************************************************//**

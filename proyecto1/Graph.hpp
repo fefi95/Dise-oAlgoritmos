@@ -15,6 +15,7 @@
 #include <vector>
 #include <algorithm>
 #include "Union-find.hpp"
+#include "Writer.hpp"
 
 using namespace std;
 
@@ -115,6 +116,54 @@ bool isConnected(int n_vertex, std::vector<Edge> edges) {
     return true;
 }
 
+std::vector<int> getPath(std::vector< vector<int> > path){
+    int u = 0;  //source
+    std::vector<int> eulerian;
+    eulerian.push_back(u + 1);
+    std::cout << u + 1 << std::endl;
+    int vi = path[u][0];
+    path[vi].erase(path[u].begin() + vi);
+    bool flag = true;
+    int posvj;
+    int getBack;
+
+    while (!path[0].empty() || u != 0 || flag) {
+        std::cout << "actual " << vi + 1 << std::endl;
+        posvj = 0;
+        getBack = true;
+        for(std::vector<int>::iterator vjp = path[vi].begin(); vjp != path[vi].end(); ++vjp) {
+            int vj = *vjp;
+            std::cout << "(" << vi + 1 << " " << vj + 1 << ")" << std::endl;
+            if (vj != u) {
+                std::cout << "diferente " << std::endl;
+                eulerian.push_back(vi + 1);
+                std::cout << vi + 1 << std::endl;
+                std::cout << "erase " << vi + 1 << " " << *(path[vi].begin() + posvj) + 1  << std::endl;
+                if (*(path[vi].begin() + posvj) == vj) {
+                    std::cout << "erase2 " << *(path[vi].begin() + posvj) + 1<< std::endl;
+                    path[vi].erase(path[vi].begin() + posvj);
+                }
+                u = vi;
+                vi = vj;
+                std::cout << vi + 1 << std::endl;
+                getBack = false;
+                break;
+            }
+            ++posvj;
+        }
+        if (getBack) { // come back where you came from
+            std::cout << "get back" << std::endl;
+            std::cout << "erase " << *(path[vi].begin()) << std::endl;
+            path[vi].erase(path[vi].begin());
+            vi = u;
+        }
+        flag = false;
+    }
+    eulerian.push_back(1);
+    std::cout << 1 << std::endl;
+    return eulerian;
+}
+
 /**
  *  Add edges to a connected graph so it becames an eurelian cycle
  *  @param n_vertex: number of vertexes of the graph
@@ -125,89 +174,108 @@ bool isConnected(int n_vertex, std::vector<Edge> edges) {
 
 std::vector<Edge> makeEurelian(int n_vertex, std::vector<Edge> graph, std::vector<Edge> extras){
 
-    std::vector<Edge> eurelian; // Variable for the returning of the functions
-    std::vector<Edge>::iterator extraIt; //Iterator for the extra edges list
-    int even [n_vertex]; // array to check if a vertex is already an origin
-    int v1; //Origin of the edge
-    int v2; //Destiny of the edge
-    int evenNodes; // Variable to check if the graph is already connected
-    bool found; //Variable for the founded edge for completin the graph
+    int even [n_vertex]; // array to check whether a vertex has an even number of edges
+    int v1, v2; // Edge
+    // int benefit;
 
     // Initialize array of vertexes
     for (int i = 0; i < n_vertex; i++) {
         even[i] = 0;
     }
 
-    //We proceed to set even property for each node
-    for (std::vector<Edge>::iterator it = graph.begin(); it != graph.end(); ++it){
-
-    	v1 = it->get_v1() -1 ;
-    	v2 = it->get_v2() - 1;
-    	even[v1] = (even[v1] + 1) % 2;
-    	even[v2] = (even[v2] + 1) % 2;
-    	eurelian.push_back(*it);
-
+    for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge) {
+        v1 = edge -> get_v1() - 1;
+        v2 = edge -> get_v2() - 1;
+        even[v1] = (even[v1] + 1) % 2;
+        even[v2] = (even[v2] + 1) % 2;
     }
 
-    for (std::vector<Edge>::iterator it = graph.begin(); it != graph.end(); ++it){
-
-    	v1 = it->get_v1() - 1;
-    	//For each vertex, we must see if is has already a pair grade, if not
-    	if (even[v1] != 0){
-    		extraIt = extras.begin();
-    		found = false;
-
-    		while((!found) && (extraIt != extras.end())){
-    			found = (v1+1) == (extraIt->get_v1());
-    			v2 = extraIt->get_v2()-1;
-    			//If adding the new edge, sets both vertexes grade even, then
-    			if(found && ((even[v2]+1)%2 == 0)){
-    				even[v1] = (even[v1] + 1) % 2;
-    				even[v2] = (even[v2] + 1) % 2;
-    				eurelian.push_back(*extraIt);
-    			}
-    			++extraIt;
-    		}
-    		//Now, we see if the graph is already connected for avoiding to set the complete graph again
-    		evenNodes = 0;
-    		for(int i = 0; i < n_vertex; ++i){
-    			if (even[i] == 0) {++evenNodes;}
-    		}
-    		if (evenNodes == n_vertex) {return eurelian;}
-    	}
+    std::vector< vector<int> > path;
+    for (int i = 0; i < n_vertex; i++) {
+        std::vector<int> adjacent;
+        path.push_back(adjacent);
     }
 
-    //Now we have to delete the odd vertexes of the current graph, in case they decrease the benefit
-
-    for (std::vector<Edge>::iterator euIt = eurelian.begin(); euIt != eurelian.end(); ++euIt){
-
-    	v1 = euIt->get_v1() - 1;
-    	v2 = euIt->get_v2() - 1;
-    	//If the edge isnt even, we should see if its usefull to pass it twice to create a cicle
-    	if ((even[v1]) != 0 && (even[v2] != 0)) {
-    		if (euIt->is_two_way()){
-    			euIt->set_two_way();
-    			even[v1] = 0;
-    			even[v2] = 0;
-    		}
-    		else{
-    			even[v1] = (even[v1]-1)%2;
-    			even[v2] = (even[v2]-1)%2;
-    			eurelian.erase(euIt);
-    		}
-    	}
+    std::vector<Edge> eulerian;
+    int v1p, v2p;
+    for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge) {
+        v1 = edge -> get_v1() - 1;
+        v2 = edge -> get_v2() - 1;
+        // if (even[v1] == 1 && even[v2] == 1) { // they are both odd vertices
+        //     // std::cout << v1 << " both odd " << v2 << std::endl;
+        //     if (edge -> get_benefit() - edge -> get_cost() > 0) { // It might be worth it to keep the edge that connects v1 and v2
+        //         path[v1p].push_back(v2p);
+        //         path[v2p].push_back(v1p);
+        //         std::cout << "odd " << *edge << std::endl;
+        //         eulerian.push_back(*edge);
+        //     }
+        //     else {
+        //         even[v1] = 0;
+        //         even[v2] = 0;
+        //     }
+        // }
+        // else if (even[v1] == 1 && even[v2] == 0) { // v1 is odd
+        //     // std::cout << v1 << " v1 odd " << v2 << std::endl;
+        //     if (edge -> get_benefit() - edge -> get_cost() > 0) { // It might be worth it to keep the edge that connects v1 and v2
+        //         for(std::vector<Edge>::iterator edgep = extras.begin(); edgep != extras.end(); ++edgep) {
+        //             v1p = edgep -> get_v1() - 1;
+        //             v2p = edgep -> get_v2() - 1;
+        //             if (v1 == v1p || v1 == v2p) { // one of the edges leaving v1
+        //                 bool isBetter = edgep -> get_benefit() - edgep -> get_cost() > - edge -> get_cost();
+        //                 // std::cout << isBetter << std::endl;
+        //                 if (isBetter) {
+        //                     even[v1p] = (even[v1p] + 1) % 2;
+        //                     even[v2p] = (even[v2p] + 1) % 2;
+        //                     path[v1p].push_back(v2p);
+        //                     path[v2p].push_back(v1p);
+        //                     std::cout << "pair v2"<< *edgep << std::endl;
+        //                     eulerian.push_back(*edgep);
+        //                 }
+        //                 break;
+        //             }
+        //         }
+        //         path[v1].push_back(v2);
+        //         path[v2].push_back(v1);
+        //         std::cout << "pair v2"<< *edge << std::endl;
+        //         eulerian.push_back(*edge);
+        //     }
+        // }
+        // else if (even[v1] == 0 && even[v2] == 1) { // v2 is odd
+        //     // std::cout << v1 << " v2 odd " << v2 << std::endl;
+        //     if (edge -> get_benefit() - edge -> get_cost() > 0) {
+        //         for(std::vector<Edge>::iterator edgep = extras.begin(); edgep != extras.end(); ++edgep) {
+        //             v1p = edgep -> get_v1() - 1;
+        //             v2p = edgep -> get_v2() - 1;
+        //             if (v2 == v1p || v2 == v2p) { // one of the edges leaving v2
+        //                 bool isBetter = edgep -> get_benefit() - edgep -> get_cost() > - edge -> get_cost();
+        //                 // std::cout << isBetter << std::endl;
+        //                 if (isBetter) {
+        //                     even[v1p] = (even[v1p] + 1) % 2;
+        //                     even[v2p] = (even[v2p] + 1) % 2;
+        //                     path[v1p].push_back(v2p);
+        //                     path[v2p].push_back(v1p);
+        //                     std::cout << "pair v1 " << *edge << std::endl;
+        //                     std::cout << *edgep << std::endl;
+        //                     eulerian.push_back(*edgep);
+        //                 }
+        //                 break;
+        //             }
+        //         }
+        //         path[v1].push_back(v2);
+        //         path[v2].push_back(v1);
+        //         std::cout << "pair v1 " << *edge << std::endl;
+        //         eulerian.push_back(*edge);
+        //     }
+        // }
+        // else {
+            path[v1].push_back(v2);
+            path[v2].push_back(v1);
+            std::cout << "pair " <<*edge << std::endl;
+            eulerian.push_back(*edge);
+        // }
     }
-
-    return eurelian;
-}
-
-std::pair<vector<int>,int> getPath(std::vector<Edge> graph){
-
-	vector<int> path;
-	int benefit = 0;
-
-	std::pair<vector<int>,int> result(path,benefit);
-	return result;
+    std::vector<int> p = getPath(path);
+    return eulerian;
 }
 
 /**************************************************************************//**

@@ -27,7 +27,6 @@ using namespace std;
          int v1, v2;  // Edge of the graph
          int be;      // Edge's benefit
          int ce;      // Edge's cost
-         bool two_way; // Defines if the edge is a two way path
          int times;
 
      public:
@@ -40,9 +39,6 @@ using namespace std;
          int get_v2() { return this -> v2; }
          int get_cost() {return this -> ce;}
          int get_benefit() {return this -> be;}
-         bool is_two_way() {return (this->be > (2*(this->ce)));}
-         void set_two_way() {this->two_way = true;}
-         bool get_two_way() {return this->two_way;}
          int set_times(int t) {return this -> times = t;}
          int get_times() {return this -> times;}
          // bool operator< (const Edge &edge) const {
@@ -56,7 +52,6 @@ using namespace std;
    this -> v2 = v2;
    this -> be = be;
    this -> ce = ce;
-   this -> two_way  = false;
    this -> times = 0;
  }
 
@@ -157,7 +152,6 @@ std::pair < int,std::vector<int> > getPath(std::vector< vector<int> > path, std:
                         if ((edge -> get_v1() == vi+1 && edge -> get_v2() == vj+1) || (edge -> get_v1() == vj+1 && edge -> get_v2() == vi+1)) {
                             int t = edge -> get_times();
                             edge -> set_times(t + 1);
-                            // std::cout << "loco " << vi + 1 << " " << vj + 1 << "pos" << pose << std::endl;
                             break;
                         }
                     }
@@ -175,13 +169,13 @@ std::pair < int,std::vector<int> > getPath(std::vector< vector<int> > path, std:
                     if ((edge -> get_v1() == vi+1 && edge -> get_v2() == u+1) || (edge -> get_v1() == u+1 && edge -> get_v2() == vi+1)) {
                         int t = edge -> get_times();
                         edge -> set_times(t + 1);
-                        // std::cout << "what? " << vi + 1 << " " << u + 1  << "pos" << pose << std::endl;
                         break;
                     }
                 }
                 vi = u;
             }
         }
+        break;
     }
 
     eulerian.push_back(1);

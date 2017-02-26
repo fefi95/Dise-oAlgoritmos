@@ -19,8 +19,10 @@ using namespace std;
 
 // % Standard deviation
 float pStd(int vo, int vh) {
-    // return 100*((vo - vh)/vo);
-    return 0.0;
+    if (vo == 0){
+        return 0;
+    }
+    return 100*((vo - vh)/vo);
 }
 
 int main(int argc, char **argv) {

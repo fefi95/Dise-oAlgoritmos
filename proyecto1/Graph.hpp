@@ -204,6 +204,9 @@ std::pair < int,std::vector<int> > getPath(std::vector< vector<int> > path, std:
 
 std::pair < int,std::vector<int> > makeEurelian(int n_vertex, std::vector<Edge> graph, std::vector<Edge> extras){
 
+    for (std::vector<Edge>::iterator it = extras.begin(); it != extras.end(); ++it){
+    	cout << *it;
+    }
     int even [n_vertex]; // array to check whether a vertex has an even number of edges
     int v1, v2; // Edge
     // int benefit;
@@ -213,6 +216,7 @@ std::pair < int,std::vector<int> > makeEurelian(int n_vertex, std::vector<Edge> 
         even[i] = 0;
     }
 
+    // Is eulerian
     for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge) {
         v1 = edge -> get_v1() - 1;
         v2 = edge -> get_v2() - 1;
@@ -220,6 +224,7 @@ std::pair < int,std::vector<int> > makeEurelian(int n_vertex, std::vector<Edge> 
         even[v2] = (even[v2] + 1) % 2;
     }
 
+    // Initialize path
     std::vector< vector<int> > path;
     for (int i = 0; i < n_vertex; i++) {
         std::vector<int> adjacent;
@@ -228,82 +233,124 @@ std::pair < int,std::vector<int> > makeEurelian(int n_vertex, std::vector<Edge> 
 
     std::vector<Edge> eulerian;
     int v1p, v2p;
+
     for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge) {
         v1 = edge -> get_v1() - 1;
         v2 = edge -> get_v2() - 1;
-        // if (even[v1] == 1 && even[v2] == 1) { // they are both odd vertices
-        //     // std::cout << v1 << " both odd " << v2 << std::endl;
-        //     if (edge -> get_benefit() - edge -> get_cost() > 0) { // It might be worth it to keep the edge that connects v1 and v2
-        //         path[v1p].push_back(v2p);
-        //         path[v2p].push_back(v1p);
-        //         std::cout << "odd " << *edge << std::endl;
-        //         eulerian.push_back(*edge);
-        //     }
-        //     else {
-        //         even[v1] = 0;
-        //         even[v2] = 0;
-        //     }
-        // }
-        // else if (even[v1] == 1 && even[v2] == 0) { // v1 is odd
-        //     // std::cout << v1 << " v1 odd " << v2 << std::endl;
-        //     if (edge -> get_benefit() - edge -> get_cost() > 0) { // It might be worth it to keep the edge that connects v1 and v2
-        //         for(std::vector<Edge>::iterator edgep = extras.begin(); edgep != extras.end(); ++edgep) {
-        //             v1p = edgep -> get_v1() - 1;
-        //             v2p = edgep -> get_v2() - 1;
-        //             if (v1 == v1p || v1 == v2p) { // one of the edges leaving v1
-        //                 bool isBetter = edgep -> get_benefit() - edgep -> get_cost() > - edge -> get_cost();
-        //                 // std::cout << isBetter << std::endl;
-        //                 if (isBetter) {
-        //                     even[v1p] = (even[v1p] + 1) % 2;
-        //                     even[v2p] = (even[v2p] + 1) % 2;
-        //                     path[v1p].push_back(v2p);
-        //                     path[v2p].push_back(v1p);
-        //                     std::cout << "pair v2"<< *edgep << std::endl;
-        //                     eulerian.push_back(*edgep);
-        //                 }
-        //                 break;
-        //             }
-        //         }
-        //         path[v1].push_back(v2);
-        //         path[v2].push_back(v1);
-        //         std::cout << "pair v2"<< *edge << std::endl;
-        //         eulerian.push_back(*edge);
-        //     }
-        // }
-        // else if (even[v1] == 0 && even[v2] == 1) { // v2 is odd
-        //     // std::cout << v1 << " v2 odd " << v2 << std::endl;
-        //     if (edge -> get_benefit() - edge -> get_cost() > 0) {
-        //         for(std::vector<Edge>::iterator edgep = extras.begin(); edgep != extras.end(); ++edgep) {
-        //             v1p = edgep -> get_v1() - 1;
-        //             v2p = edgep -> get_v2() - 1;
-        //             if (v2 == v1p || v2 == v2p) { // one of the edges leaving v2
-        //                 bool isBetter = edgep -> get_benefit() - edgep -> get_cost() > - edge -> get_cost();
-        //                 // std::cout << isBetter << std::endl;
-        //                 if (isBetter) {
-        //                     even[v1p] = (even[v1p] + 1) % 2;
-        //                     even[v2p] = (even[v2p] + 1) % 2;
-        //                     path[v1p].push_back(v2p);
-        //                     path[v2p].push_back(v1p);
-        //                     std::cout << "pair v1 " << *edge << std::endl;
-        //                     std::cout << *edgep << std::endl;
-        //                     eulerian.push_back(*edgep);
-        //                 }
-        //                 break;
-        //             }
-        //         }
-        //         path[v1].push_back(v2);
-        //         path[v2].push_back(v1);
-        //         std::cout << "pair v1 " << *edge << std::endl;
-        //         eulerian.push_back(*edge);
-        //     }
-        // }
-        // else {
+        std::cout << "arista a revisar: " << v1 + 1 << " " << v2 + 1 << std::endl;
+        if (even[v1] == 1 && even[v2] == 1) { // v1 and v2 is odd
+            std::cout << "1" << std::endl;
+            std::cout << v1 + 1 << " " << v2 + 1 << std::endl;
             path[v1].push_back(v2);
             path[v2].push_back(v1);
-            std::cout << "pair " <<*edge << std::endl;
             eulerian.push_back(*edge);
-        // }
+            even[v1] = 0;
+            even[v2] = 0;
+        }
+        else if (even[v1] == 1) { // v1 is odd
+            path[v1].push_back(v2);
+            path[v2].push_back(v1);
+            eulerian.push_back(*edge);
+            std::cout << "2" << std::endl;
+            bool found = false;
+            // std::cout << "223" << std::endl;
+            for(std::vector<Edge>::iterator edgep = graph.begin(); edgep != graph.end(); ++edgep) {
+                v1p = edgep -> get_v1() - 1;
+                v2p = edgep -> get_v2() - 1;
+                if ((v1 == v1p && even[v2p] == 1) || (v1 == v2p && even[v1p] == 1)) { // edgep is adajacent to v1
+                    std::cout << v1p + 1 << " " << v2p + 1 << std::endl;
+                    path[v1p].push_back(v2p);
+                    path[v2p].push_back(v1p);
+                    eulerian.push_back(*edgep);
+                    even[v1p] = 0;
+                    even[v2p] = 0;
+                    found = true;
+                }
+            }
+            // std::cout << "sdsdsdsd" << std::endl;
+            if (!found) {
+                // std::cout << "holisssssss" << std::endl;
+                for(std::vector<Edge>::iterator edgep = extras.begin(); edgep != extras.end(); ++edgep) {
+                    // std::cout << extras.size() << std::endl;
+                    v1p = edgep -> get_v1() - 1;
+                    v2p = edgep -> get_v2() - 1;
+                    if ((v1 == v1p && even[v2p] == 1) || (v1 == v2p && even[v1p] == 1)) { // edgep is adajacent to v1
+                        std::cout << v1p + 1 << " " << v2p + 1<< std::endl;
+                        path[v1p].push_back(v2p);
+                        path[v2p].push_back(v1p);
+                        eulerian.push_back(*edgep);
+                        even[v1p] = 0;
+                        even[v2p] = 0;
+                    }
+                }
+            }
+        }
+        else if (even[v2] == 1) { // v2 is odd
+            path[v1].push_back(v2);
+            path[v2].push_back(v1);
+            eulerian.push_back(*edge);
+            std::cout << "3" << std::endl;
+            bool found = false;
+            for(std::vector<Edge>::iterator edgep = graph.begin(); edgep != graph.end(); ++edgep) {
+                v1p = edgep -> get_v1() - 1;
+                v2p = edgep -> get_v2() - 1;
+                if ((v2 == v1p && even[v2p] == 1) || (v2 == v2p && even[v1p] == 1)) { // edgep is adajacent to v2
+                    std::cout << v1p + 1 << " " << v2p + 1<< std::endl;
+                    path[v1p].push_back(v2p);
+                    path[v2p].push_back(v1p);
+                    eulerian.push_back(*edgep);
+                    even[v1p] = 0;
+                    even[v2p] = 0;
+                    found = true;
+                }
+            }
+            if (!found) {
+                for(std::vector<Edge>::iterator edgep = extras.begin(); edgep != extras.end(); ++edgep) {
+                    v1p = edgep -> get_v1() - 1;
+                    v2p = edgep -> get_v2() - 1;
+                    if ((v1 == v1p && even[v2p] == 1) || (v1 == v2p && even[v1p] == 1)) { // edgep is adajacent to v1
+                        std::cout << v1p + 1 << " " << v2p + 1<< std::endl;
+                        path[v1p].push_back(v2p);
+                        path[v2p].push_back(v1p);
+                        eulerian.push_back(*edgep);
+                        even[v1p] = 0;
+                        even[v2p] = 0;
+                    }
+                }
+            }
+        }
+        else {
+            std::cout << "4" << std::endl;
+            path[v1].push_back(v2);
+            path[v2].push_back(v1);
+            eulerian.push_back(*edge);
+            std::cout << v1 + 1 << " " << v2 + 1<< std::endl;
+        }
     }
+
+    for (int vi = 0; vi < n_vertex; vi++) {
+        if (even[vi] == 1){
+            for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge) {
+                v1 = edge -> get_v1() - 1;
+                v2 = edge -> get_v2() - 1;
+                if (vi == v1 || vi == v2) {
+                    path[v1].push_back(v2);
+                    path[v2].push_back(v1);
+                    eulerian.push_back(*edge);
+                    even[vi] = 0;
+                }
+            }
+        }
+    }
+
+    std::cout << "eulerian" << std::endl;
+    for(std::vector<Edge>::iterator edge = eulerian.begin(); edge != eulerian.end(); ++edge) {
+        v1 = edge -> get_v1();
+        v2 = edge -> get_v2();
+        std::cout << v1 << " " << v2 << std::endl;
+    }
+    std::cout << "fin" << std::endl;
+
     return getPath(path, eulerian);
 }
 

@@ -114,12 +114,10 @@ Graph readFile(const char* path){
 			getline(sourcefile,line);
 			negative_benefit.push_back(get_edge(line));
 		}
-
-		sourcefile.close();
-
 	}
 
 	else { cout << "Unable to read specified file..." << endl; }
+	sourcefile.close();
 
 	Graph result(size,r2_edges,r_edges-r2_edges,n_edges,twice_benefit,positive_benefit,negative_benefit); //Structure that contains the resulting Graph
 	return result;

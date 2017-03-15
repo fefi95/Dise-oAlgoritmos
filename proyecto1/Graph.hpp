@@ -274,9 +274,9 @@ std::pair < int,std::vector<int> > makeEurelian(int n_vertex, std::vector<Edge> 
                 v2p = edgep -> get_v2() - 1;
                 if ((v1 == v1p && even[v2p] == 1) || (v1 == v2p && even[v1p] == 1)) { // edgep is adajacent to v1
                     std::cout << v1p + 1 << " " << v2p + 1 << std::endl;
-                    path[v1p].push_back(v2p);
-                    path[v2p].push_back(v1p);
-                    eulerian.push_back(*edgep);
+                    // path[v1p].push_back(v2p);
+                    // path[v2p].push_back(v1p);
+                    // eulerian.push_back(*edgep);
                     even[v1p] = 0;
                     even[v2p] = 0;
                     found = true;
@@ -311,9 +311,9 @@ std::pair < int,std::vector<int> > makeEurelian(int n_vertex, std::vector<Edge> 
                 v2p = edgep -> get_v2() - 1;
                 if ((v2 == v1p && even[v2p] == 1) || (v2 == v2p && even[v1p] == 1)) { // edgep is adajacent to v2
                     std::cout << v1p + 1 << " " << v2p + 1<< std::endl;
-                    path[v1p].push_back(v2p);
-                    path[v2p].push_back(v1p);
-                    eulerian.push_back(*edgep);
+                    // path[v1p].push_back(v2p);
+                    // path[v2p].push_back(v1p);
+                    // eulerian.push_back(*edgep);
                     even[v1p] = 0;
                     even[v2p] = 0;
                     found = true;

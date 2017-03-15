@@ -175,7 +175,6 @@ std::pair < int,std::vector<int> > getPath(std::vector< vector<int> > path, std:
                 vi = u;
             }
         }
-        break;
     }
 
     eulerian.push_back(1);
@@ -330,7 +329,7 @@ std::pair < int,std::vector<int> > makeEurelian(int n_vertex, std::vector<Edge> 
 
     for (int vi = 0; vi < n_vertex; vi++) {
         if (even[vi] == 1){
-            for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge) {
+            for(std::vector<Edge>::iterator edge = extras.begin(); edge != extras.end(); ++edge) {
                 v1 = edge -> get_v1() - 1;
                 v2 = edge -> get_v2() - 1;
                 if (vi == v1 || vi == v2) {

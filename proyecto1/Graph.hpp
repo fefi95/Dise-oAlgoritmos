@@ -128,8 +128,6 @@ std::pair < int,std::vector<int> > getPath(std::vector< vector<int> > path, std:
     // Find adjacent to source vertex
     for(std::vector<int>::iterator adj0 = path[0].begin(); adj0 != path[0].end(); ++adj0) {
         int u = 0;  //source
-        eulerian.push_back(u + 1);
-        std::cout << u + 1 << " ";
         int vi = *adj0;
         bool visited = false;
         for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge) {
@@ -139,13 +137,16 @@ std::pair < int,std::vector<int> > getPath(std::vector< vector<int> > path, std:
                     visited = true;
                 }
                 else {
+                    visited = false;
                     edge -> set_times(t + 1);
+                    break;
                 }
-                break;
             }
         }
         if (!visited){
             int getBack;
+            std::cout << u + 1 << " ";
+            eulerian.push_back(u + 1);
             while (vi != 0) {
                 getBack = true;
                 for (int j = 0; j < path[vi].size(); ++j) {
@@ -189,9 +190,9 @@ std::pair < int,std::vector<int> > getPath(std::vector< vector<int> > path, std:
     }
 
     // Calculate the benefit
-    // eulerian.push_back(1);
-    // std::cout << 1 << std::endl;
-    std::cout << "" << std::endl;
+    eulerian.push_back(1);
+    std::cout << 1 << std::endl;
+    // std::cout << "" << std::endl;
     int benefit = 0;
     int b, t, c;
     for(std::vector<Edge>::iterator edge = graph.begin(); edge != graph.end(); ++edge) {

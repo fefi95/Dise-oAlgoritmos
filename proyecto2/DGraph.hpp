@@ -73,9 +73,11 @@ inline std::ostream& operator<<(std::ostream &os, DEdge &edge) {
 }
 
 void printEdges(std::ostream &os, std::vector<DEdge> edges) {
+    os << "[";
     for(std::vector<DEdge>::iterator it= edges.begin(); it != edges.end(); ++it) {
 		it -> print(os);
 	}
+    os << "]" << endl;
 }
 
 /**************************************************************************//**
@@ -90,7 +92,7 @@ class DGraph {
         DGraph(int n_vertex, vector< vector<DEdge> > graph);
         int get_n_vertex()   { return this -> n_vertex; }
         std::vector< vector<DEdge> > get_graph() { return this -> graph; }
-
+        std::vector<DEdge> get_successor_list(int vOut);
         void print(std::ostream &os);
 };
 
@@ -106,18 +108,20 @@ DGraph::DGraph (int n_vertex, vector< vector<DEdge> > graph) {
 	this -> graph = graph;
 
     //we proceed to sort the lists for easy work later
-    for (int vi = 0; vi < this -> n_vertex; vi++) {
-        std::sort(graph[vi].begin(), graph[vi].end(), comp);
-    }
+    // for (int vi = 0; vi < this -> n_vertex; vi++) {
+    //     std::sort(graph[vi].begin(), graph[vi].end(), comp);
+    // }
 }
 
+std::vector<DEdge> DGraph::get_successor_list(int vOut){
+    return this-> graph[vOut];
+}
 //Prints the current Graph Info
 inline void DGraph::print(std::ostream &os)  {
 
     for (int vi = 0; vi < this -> n_vertex; vi++) {
-        os << vi + 1 << " -> [";
+        os << vi + 1 << " -> ";
         printEdges(os, this-> graph[vi]);
-        os << "]" << endl;
     }
 }
 

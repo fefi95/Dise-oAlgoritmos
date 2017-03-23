@@ -113,8 +113,14 @@ DGraph::DGraph (int n_vertex, vector< vector<DEdge> > graph) {
     // }
 }
 
-std::vector<DEdge> DGraph::get_successor_list(int vOut){
+std::vector<DEdge> DGraph::get_successor_list(int vOut){ //CAMBIAR
+    // ORDENAR
     return this-> graph[vOut];
+}
+
+int DGraph::beneficio(){
+    //inserte su codigo aqui
+    return 0;
 }
 //Prints the current Graph Info
 inline void DGraph::print(std::ostream &os)  {

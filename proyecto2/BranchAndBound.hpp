@@ -1,3 +1,70 @@
+/**
+ *  Universidad Simon Bolivar
+ *  CI-5651 - Diseño de Algoritmos I
+ *  @author : Salvador Di Renzo 10-10296
+ *  @author : Stefani Castellanos 11-11394
+ *
+ *  Information of the graph
+ */
+
+DGraph grafo = readFile2(argv[1]);
+std::vector< vector< DEdge > sol;
+std::vector<DEdge> sucesores_d;
+sol.push_back(sucesores_d);
+DGraph solParcial(1, sol);
+Dgraph mejorSol(1, sol);
+int beneficioDisponible = obtener_max_beneficio(); // benefit of the greedy algorithm
+
+void DFS(int v) {
+    if (v == 0 && (solParcial.beneficio()) > mejorSol.beneficio())) {
+        mejorSol = solParcial; //clone
+    }
+    L = grafo.get_successor_list(v);
+    for (int i = 0; i < L.size(); i++) {
+        DEdge e = L[i];
+        int vj = e.get_vIn();
+        int be = e.get_benefit();
+        int ce = e.get_cost();
+        if (!ciclo_negativo(v, e, solParcial) &&
+            !esta_lado_en_sol_parcial(v, e, solParcial) &&
+            !repite_ciclo(v, e, solParcial) &&
+            !cumple_acotamiento(v, e, solParcial)
+            ) {
+                agragar_lado(v, e, solParcial);
+                beneficioDisponible = beneficioDisponible − max(0, be − ce);
+                DFS(vj);
+            }
+    }
+
+    DEdge e = eliminar_ultimo_lado(solParcial);
+    int be = e.get_benefit();
+    int ce = e.get_cost();
+    beneficioDisponible = beneficioDisponible + max(0, be − ce);
+}
+
+DEdge eliminar_ultimo_lado(solParcial){
+    // inserte su codigo aqui
+}
+
+bool ciclo_negativo(v, e, solParcial) {
+    // inserte su codigo aqui
+    return false;
+}
+
+bool esta_lado_en_sol_parcial(v, e, solParcial) {
+    // insert su codigo aqui
+    return false;
+}
+
+bool repite_ciclo(v, e, solParcial) {
+    // inserte su codigo aqui
+    return false;
+}
+
+bool cumple_acotamiento(v, e, solParcial) {
+    // inserte su codigo aqui
+    return true;
+}
 // Input: Un grafo G = (V, E) y un ciclo solInicial soluci´on de PRPP
 // Output: Un ciclo C , soluci´on ´optima de PRPP
 // begin

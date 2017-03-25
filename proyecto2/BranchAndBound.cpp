@@ -8,12 +8,21 @@
  */
 
 #include <algorithm>
+#include <unordered_set>
+#include <ctime>
+#include <iostream>
+#include <fstream>
 #include "Reader.hpp"
 #include "DGraph.hpp"
 
 std::vector< vector<DEdge> > solParcial;
 std::vector< vector<DEdge> > mejorSol;
 int beneficioDisponible; //obtener_max_beneficio(); // benefit of the greedy algorithm
+std::unordered_set<int> vertexInSol = {0};
+time_t timeStart;
+time_t timeEnd;
+double tDiff;
+ofstream statsFile; //File to be read
 
 int benefit(std::vector< vector<DEdge> > graph) {
     int benefit = 0;
@@ -44,6 +53,10 @@ void printSol(std::vector< vector<DEdge> > sol) {
     // std::cout << std::endl;
 }
 void agregar_lado(int v, DEdge e, std::vector< vector<DEdge> >& solParcial){
+    vertexInSol.insert(e.get_vIn());
+    std::cout << "myset contains:";
+    for ( int x: vertexInSol ) std::cout << " " << x+1;
+    std::cout << std::endl;
     solParcial[v].push_back(e);
 }
 
@@ -61,47 +74,24 @@ DEdge eliminar_ultimo_lado(std::vector< vector<DEdge> > sol, std::vector< vector
         vOut = edge.get_vIn();
     }
     DEdge e(vOut, ce, be);
-    std::cout << "edge to delete "<< vToDelete+1 << e << std::endl;
+    // std::cout << "edge to delete "<< vToDelete+1 << e << std::endl;
     if (!solParcial[vToDelete].empty()){
         printEdges(cout, solParcial[vToDelete]);
         // std::cout << *(solParcial[vToDelete].begin() + vOut) << std::endl;
         // std::vector< vector<DEdge> >::iterator it = solParcial[vToDelete].begin();
         // it += vOut;
         solParcial[vToDelete].erase(solParcial[vToDelete].end());
+        vertexInSol.erase(vOut);
     }
     return e;
 }
-
-// func ciclo-negativo(e: arista, solParcial: Secuencia de aristas)
-//      begin
-//      if al agregar la arista e a la soluci´on parcial solParcial se forma un ciclo con beneficio negativo then
-//         return Verdadero
-//      return Falso
-//
-
-bool ciclo_negativo(int v, DEdge e, std::vector< vector<DEdge> > solParcial) {
-    // inserte su codigo aqui
-    return false;
-}
-
-// func esta-lado-en-sol-parcial(e: arista, solParcial: Secuencia de aristas)
-//     begin
-//     if la arista e no se encuentra en solParcial then
-//         return Falso
-//     else if la arista e se encuentra una vez en solParcial then
-//         if be = 0 then // La arista se recorre por segunda vez
-//             return Falso
-//         else
-//             return Verdadero
-//     else
-//         return Verdadero
 
 bool esta_lado_en_sol_parcial(int v, DEdge e, std::vector< vector<DEdge> > solParcial) {
 
     for(std::vector<DEdge>::iterator edge = solParcial[v].begin(); edge != solParcial[v].end(); ++edge) {
         // Edge was found
         if (e == *edge) {
-            std::cout << "esta lado " << v+1 << " - " << e << std::endl;
+            // std::cout << "esta lado " << v+1 << " - " << e << std::endl;
             return true;
         }
     }
@@ -114,14 +104,42 @@ bool esta_lado_en_sol_parcial(int v, DEdge e, std::vector< vector<DEdge> > solPa
             //     return false;
             // }
             // else {
-                std::cout << "esta lado " << v+1 << " - " << e << std::endl;
+                // std::cout << "esta lado " << v+1 << " - " << e << std::endl;
                 return true;
-                std::cout << " tu mama" << std::endl;
             // }
         }
     }
     std::cout << "noooooooooo" <<  v+1 << " - " << e << std::endl;
     return false;
+}
+
+// func ciclo-negativo(e: arista, solParcial: Secuencia de aristas)
+//      begin
+//      if al agregar la arista e a la soluci´on parcial solParcial se forma un ciclo con beneficio negativo then
+//         return Verdadero
+//      return Falso
+//
+
+bool ciclo_negativo(int v, DEdge e, std::vector< vector<DEdge> > solParcial) {
+    std::unordered_set<int>::iterator find = vertexInSol.find(v);
+
+    if ( find != vertexInSol.end() ) { // is not a cycle
+        return false;
+    }
+    else {
+        int benefit = 0;
+        int vOut = v; // source
+        // std::cout << "" << std::endl;
+        while (!solParcial[vOut].empty() && vOut < solParcial.size()) {
+            DEdge edge = solParcial[vOut][0]; // First element
+            // std::cout <<  edge << std::endl;
+            (solParcial[vOut]).erase((solParcial[vOut]).begin());
+            benefit += edge.get_benefit() - edge.get_cost();
+            vOut = edge.get_vIn();
+        }
+        // std::cout << "" << std::endl;
+    }
+    return (benefit < 0);
 }
 
 // func repite-ciclo(L(v): Lista de Aristas, e: arista, solParcial: Secuencia de aristas)
@@ -153,31 +171,12 @@ bool cumple_acotamiento(int v, DEdge e, std::vector< vector<DEdge> > solParcial)
     // int maxBeneficio = beneficioSolParcial;
     std::cout << "compara beneficio " << maxBeneficio << " " << benefit(mejorSol)  << std::endl;
     if (maxBeneficio <= benefit(mejorSol)){
-        std::cout << " no cumple_acotamiento" << std::endl;
+        // std::cout << " no cumple_acotamiento" << std::endl;
         return false;
     }
-    std::cout << "cumple_acotamiento" << std::endl;
+    // std::cout << "cumple_acotamiento" << std::endl;
     return true;
 }
-
-// busqueda-en-Profundidad()
-// begin
-//      v ← vertice-mas-externo(solParcial)
-//      // Vemos si se encuentra una mejor soluci´on factible
-//       if (v = d) then
-//          if (beneficio(solParcial) > beneficio(mejorSol)) then
-//          mejorSol ← solParcial
-//       L(v) ← obtener-lista-de-sucesores(v) // Lista de aristas
-//       foreach e ∈ L(v) do
-//           if (¬ciclo-negativo(e, solParcial) ∧
-//          ¬esta-lado-en-sol-parcial(e, solParcial) ∧
-//          ¬repite-ciclo(L(v), e, solParcial) ∧
-//          cumple-acotamiento(e, solParcial)) then
-//           agregar-lado(e, solParcial)
-//           beneficioDisponible = beneficioDisponible − max(0, be − ce)
-//           busqueda-en-Profundidad()
-//       e = eliminar-ultimo-lado(solParcial)
-//       beneficioDisponible = beneficioDisponible + max(0, be − ce)
 
 void DFS(int v, DGraph& grafo) {
     // std::cout << "benefit " << benefit(solParcial) << " " << benefit(mejorSol) << std::endl;
@@ -204,6 +203,14 @@ void DFS(int v, DGraph& grafo) {
                 // int nrows;
                 // cin >> nrows;
                 beneficioDisponible = beneficioDisponible - max(0, be - ce);
+                std::cout << "Beneficio dispon" << beneficioDisponible << std::endl;
+                timeEnd = time(NULL);
+                tDiff = difftime(timeEnd, timeStart);
+                if (tDiff > 600) { // 10 min
+                    std::cout << "TIME OUT" << std::endl;
+                    statsFile << "-T-" << std::endl;
+                    exit(0);
+                }
                 DFS(vj, grafo);
             }
     }
@@ -215,6 +222,7 @@ void DFS(int v, DGraph& grafo) {
     int be = e.get_benefit();
     int ce = e.get_cost();
     beneficioDisponible = beneficioDisponible + max(0, be - ce);
+    std::cout << "Beneficio dispon" << beneficioDisponible << std::endl;
 }
 
 // Input: Un grafo G = (V, E) y un ciclo solInicial soluci´on de PRPP
@@ -225,8 +233,17 @@ void DFS(int v, DGraph& grafo) {
 //      beneficioDisponible ← obtener-max-beneficio(G) // Variable Global
 //      busqueda-en-Profundidad()
 
+// % Standard deviation
+float pStd(float vo, float vh) {
+    if (vo == 0){
+        return 0;
+    }
+    return 100*((vo - vh)/vo);
+}
+
 int main(int argc, char **argv) {
     DGraph grafo = readFile2(argv[1]);
+    statsFile.open(argv[2], std::ios::out | std::ios::app);
     for (int i = 0; i < grafo.get_n_vertex(); i++) {
         std::vector<DEdge> adjacent;
         solParcial.push_back(adjacent);
@@ -236,7 +253,14 @@ int main(int argc, char **argv) {
     if (beneficioDisponible < 0) {
         beneficioDisponible = 0;
     }
+    std::cout << "Beneficio dispon" << beneficioDisponible << std::endl;
+    // name, optimum, heuristic value, heuristic deviation,
+    float optimum = stof(argv[4]);
+    statsFile << argv[3] << "," << optimum << "," << beneficioDisponible << "," << pStd(optimum, beneficioDisponible) << "," << std::endl;
+    timeStart = time(NULL);
     DFS(0, grafo);
     printSol(mejorSol);
     std::cout << benefit(mejorSol) << std::endl;
+    // time bnb
+    statsFile << tDiff << std::endl;
 }

@@ -1,5 +1,5 @@
 CXX = g++
-OPT = -g -Wall -O3 -Wsign-compare
+OPT = -g -Wall -O3 -Wsign-compare -std=c++11
 
 main: main.cpp
 	$(CXX) $(OPT) main.cpp -o $@

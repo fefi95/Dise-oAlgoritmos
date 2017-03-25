@@ -13,18 +13,21 @@
 
 std::vector< vector<DEdge> > solParcial;
 std::vector< vector<DEdge> > mejorSol;
-int beneficioDisponible = 12; //obtener_max_beneficio(); // benefit of the greedy algorithm
+int beneficioDisponible; //obtener_max_beneficio(); // benefit of the greedy algorithm
 
 int benefit(std::vector< vector<DEdge> > graph) {
     int benefit = 0;
     int vOut = 0; // source
-
-    while (!(graph[vOut]).empty() && vOut < graph.size()) {
+    std::cout << "" << std::endl;
+    std::cout << "BENEFICIOOOOOO    " << std::endl;
+    while (!graph[vOut].empty() && vOut < graph.size()) {
         DEdge edge = graph[vOut][0]; // First element
+        std::cout <<  edge << std::endl;
         (graph[vOut]).erase((graph[vOut]).begin());
         benefit += edge.get_benefit() - edge.get_cost();
         vOut = edge.get_vIn();
     }
+    std::cout << "" << std::endl;
     return benefit;
 }
 
@@ -32,13 +35,13 @@ void printSol(std::vector< vector<DEdge> > sol) {
     int vOut = 0; // source
     while (!sol[vOut].empty() && vOut < sol.size()) {
         DEdge edge = sol[vOut][0]; // First element
-        // std::cout << vOut + 1 << " - ";
-        std::cout << edge << std::endl;
+        std::cout << vOut + 1 << " - ";
+        // std::cout << edge << std::endl;
         sol[vOut].erase(sol[vOut].begin());
         vOut = edge.get_vIn();
     }
-    // std::cout << vOut + 1 << std::endl;
-    std::cout << std::endl;
+    std::cout << vOut + 1 << std::endl;
+    // std::cout << std::endl;
 }
 void agregar_lado(int v, DEdge e, std::vector< vector<DEdge> >& solParcial){
     solParcial[v].push_back(e);
@@ -57,13 +60,24 @@ DEdge eliminar_ultimo_lado(std::vector< vector<DEdge> > sol, std::vector< vector
         vToDelete = vOut;
         vOut = edge.get_vIn();
     }
-    std::cout << "edge to delete"<< vToDelete << vOut << std::endl;
-    if (solParcial[vToDelete].empty()){
-        solParcial[vToDelete].erase(solParcial[vToDelete].begin() + vOut);
-    }
     DEdge e(vOut, ce, be);
+    std::cout << "edge to delete "<< vToDelete+1 << e << std::endl;
+    if (!solParcial[vToDelete].empty()){
+        printEdges(cout, solParcial[vToDelete]);
+        // std::cout << *(solParcial[vToDelete].begin() + vOut) << std::endl;
+        // std::vector< vector<DEdge> >::iterator it = solParcial[vToDelete].begin();
+        // it += vOut;
+        solParcial[vToDelete].erase(solParcial[vToDelete].end());
+    }
     return e;
 }
+
+// func ciclo-negativo(e: arista, solParcial: Secuencia de aristas)
+//      begin
+//      if al agregar la arista e a la soluci´on parcial solParcial se forma un ciclo con beneficio negativo then
+//         return Verdadero
+//      return Falso
+//
 
 bool ciclo_negativo(int v, DEdge e, std::vector< vector<DEdge> > solParcial) {
     // inserte su codigo aqui
@@ -110,6 +124,15 @@ bool esta_lado_en_sol_parcial(int v, DEdge e, std::vector< vector<DEdge> > solPa
     return false;
 }
 
+// func repite-ciclo(L(v): Lista de Aristas, e: arista, solParcial: Secuencia de aristas)
+//     begin
+//     if al agregar e en solParcial se forma un ciclo con una arista e' then
+//     if (e' ∈ solParcial ∧ ((be − ce) < (be' − ce'))) then
+//         return Falso
+//     else
+//         return Verdadero
+//     return Falso
+
 bool repite_ciclo(int v, DEdge e, std::vector< vector<DEdge> > solParcial) {
     // inserte su codigo aqui
     return false;
@@ -125,7 +148,10 @@ bool repite_ciclo(int v, DEdge e, std::vector< vector<DEdge> > solParcial) {
 bool cumple_acotamiento(int v, DEdge e, std::vector< vector<DEdge> > solParcial) {
     int beneficioE = e.get_benefit() - e.get_cost();
     int beneficioSolParcial = benefit(solParcial) + beneficioE;
+    std::cout << "benefit parcial" << beneficioSolParcial << std::endl;
     int maxBeneficio = beneficioDisponible - max(0, beneficioE) + beneficioSolParcial;
+    // int maxBeneficio = beneficioSolParcial;
+    std::cout << "compara beneficio " << maxBeneficio << " " << benefit(mejorSol)  << std::endl;
     if (maxBeneficio <= benefit(mejorSol)){
         std::cout << " no cumple_acotamiento" << std::endl;
         return false;
@@ -133,50 +159,6 @@ bool cumple_acotamiento(int v, DEdge e, std::vector< vector<DEdge> > solParcial)
     std::cout << "cumple_acotamiento" << std::endl;
     return true;
 }
-
-void DFS(int v, DGraph& grafo) {
-    std::cout << "benefit " << benefit(solParcial) << " " << benefit(mejorSol) << std::endl;
-    std::cout << "v" << v << std::endl;
-    if (v == 0 && (benefit(solParcial) > benefit(mejorSol))) {
-        mejorSol = solParcial; //clone
-    }
-    std::vector<DEdge> L = grafo.get_successor_list(v);
-    printEdges(cout, L);
-    for (int i = 0; i < L.size(); i++) {
-        DEdge e = L[i];
-        int vj = e.get_vIn();
-        int be = e.get_benefit();
-        int ce = e.get_cost();
-        if (!ciclo_negativo(v, e, solParcial) &&
-            !esta_lado_en_sol_parcial(v, e, solParcial) &&
-            !repite_ciclo(v, e, solParcial) &&
-            cumple_acotamiento(v, e, solParcial)
-            ) {
-                std::cout << "agregando lado.." << v+1 << e << std::endl;
-                agregar_lado(v, e, solParcial);
-                printSol(solParcial);
-                int nrows;
-                cin >> nrows;
-                beneficioDisponible = beneficioDisponible - max(0, be - ce);
-                std::cout << "b" << std::endl;
-                DFS(vj, grafo);
-            }
-    }
-
-    DEdge e = eliminar_ultimo_lado(solParcial, solParcial);
-    printSol(solParcial);
-    int be = e.get_benefit();
-    int ce = e.get_cost();
-    beneficioDisponible = beneficioDisponible + max(0, be - ce);
-}
-
-// Input: Un grafo G = (V, E) y un ciclo solInicial soluci´on de PRPP
-// Output: Un ciclo C , soluci´on ´optima de PRPP
-// begin
-//      solParcial ←< d > // Variable Global
-//      mejorSol ←solInicial // Variable Global
-//      beneficioDisponible ← obtener-max-beneficio(G) // Variable Global
-//      busqueda-en-Profundidad()
 
 // busqueda-en-Profundidad()
 // begin
@@ -197,29 +179,51 @@ void DFS(int v, DGraph& grafo) {
 //       e = eliminar-ultimo-lado(solParcial)
 //       beneficioDisponible = beneficioDisponible + max(0, be − ce)
 
-// func obtener-lista-de-sucesores(v: v´ertice)
-// begin
-//     L(v) ← ∅
-//     foreach arista e incidente a v do
-//     L(v) ← agregar una arista e1 con beneficio be y costo ce
-//     L(v) ← agregar una arista e2 con beneficio 0 y costo ce
-//     Ordenar de manera descendente a L(v) seg´un su beneficio
-//     return L(v)
-// func ciclo-negativo(e: arista, solParcial: Secuencia de aristas)
-//      begin
-//      if al agregar la arista e a la soluci´on parcial solParcial se forma un ciclo con beneficio negativo then
-//         return Verdadero
-//      return Falso
-//
+void DFS(int v, DGraph& grafo) {
+    // std::cout << "benefit " << benefit(solParcial) << " " << benefit(mejorSol) << std::endl;
+    std::cout << "v " << v+1 << std::endl;
+    if (v == 0 && (benefit(solParcial) > benefit(mejorSol))) {
+        std::cout << "COPY" << std::endl;
+        std::copy(solParcial.begin(), solParcial.end(), mejorSol.begin());
+    }
+    std::vector<DEdge> L = grafo.get_successor_list(v);
+    printEdges(cout, L);
+    for (int i = 0; i < L.size(); i++) {
+        DEdge e = L[i];
+        int vj = e.get_vIn();
+        int be = e.get_benefit();
+        int ce = e.get_cost();
+        if (!ciclo_negativo(v, e, solParcial) &&
+            !esta_lado_en_sol_parcial(v, e, solParcial) &&
+            !repite_ciclo(v, e, solParcial) &&
+            cumple_acotamiento(v, e, solParcial)
+            ) {
+                std::cout << "agregando lado.." << v+1 << e << std::endl;
+                agregar_lado(v, e, solParcial);
+                printSol(solParcial);
+                // int nrows;
+                // cin >> nrows;
+                beneficioDisponible = beneficioDisponible - max(0, be - ce);
+                DFS(vj, grafo);
+            }
+    }
 
-// func repite-ciclo(L(v): Lista de Aristas, e: arista, solParcial: Secuencia de aristas)
-//     begin
-//     if al agregar e en solParcial se forma un ciclo con una arista e' then
-//     if (e' ∈ solParcial ∧ ((be − ce) < (be' − ce'))) then
-//         return Falso
-//     else
-//         return Verdadero
-//     return Falso
+    std::cout << "ANTES DE ELIMINAR" << std::endl;
+    printSol(solParcial);
+    DEdge e = eliminar_ultimo_lado(solParcial, solParcial);
+    printSol(solParcial);
+    int be = e.get_benefit();
+    int ce = e.get_cost();
+    beneficioDisponible = beneficioDisponible + max(0, be - ce);
+}
+
+// Input: Un grafo G = (V, E) y un ciclo solInicial soluci´on de PRPP
+// Output: Un ciclo C , soluci´on ´optima de PRPP
+// begin
+//      solParcial ←< d > // Variable Global
+//      mejorSol ←solInicial // Variable Global
+//      beneficioDisponible ← obtener-max-beneficio(G) // Variable Global
+//      busqueda-en-Profundidad()
 
 int main(int argc, char **argv) {
     DGraph grafo = readFile2(argv[1]);
@@ -227,6 +231,10 @@ int main(int argc, char **argv) {
         std::vector<DEdge> adjacent;
         solParcial.push_back(adjacent);
         mejorSol.push_back(adjacent);
+    }
+    beneficioDisponible = get_max_benefit(strcat(argv[1],"-salida.txt"));
+    if (beneficioDisponible < 0) {
+        beneficioDisponible = 0;
     }
     DFS(0, grafo);
     printSol(mejorSol);

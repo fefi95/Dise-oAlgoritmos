@@ -40,7 +40,7 @@ int main(int argc, char **argv) {
     float chVo[24] = {3,66,56,45,35,60,89,90,46,41,9,10,5,128,43,113,42,21,90,246,258,474,360,237};
     float chVhp[24] = {3,66,56,45,35,60,89,90,45,41,9,10,5,128,39,106,39,17,90,246,252,474,360,230};
     char file[1024];
-    for (int i = 1; i < 20; i++) {
+    for (int i = 1; i < 21; i++) {
         if (i < 10){
             sprintf(file, "instanciasPRPP/CHRISTOFIDES/P0%dNoRPP", i);
         }

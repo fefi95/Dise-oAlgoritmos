@@ -213,4 +213,16 @@ DGraph readFile2(const char* path){
 	return dgraph;
 }
 
+int get_max_benefit(const char* path){
+
+		int maxBenefit;    //Number of vertex
+		ifstream sourcefile(path); //File to be read
+
+		//Make sure the file exists
+		if(sourcefile.is_open()){
+			sourcefile >> maxBenefit;
+		}
+
+	return maxBenefit;
+}
 #endif // READER_HPP_

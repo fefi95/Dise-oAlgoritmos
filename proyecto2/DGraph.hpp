@@ -42,6 +42,13 @@ class DEdge {
         // bool operator< (const Edge &edge) const {
         //     return this -> crossE2 < edge.crossE2;
         // }
+        inline bool operator== (DEdge& edge) {
+            return (this->get_vIn() == edge.get_vIn() &&
+                    this->get_cost() == edge.get_cost() &&
+                    this->get_benefit() == edge.get_benefit()
+                    );
+        }
+
 };
 
 // Constructor
@@ -61,7 +68,7 @@ inline void DEdge::print(std::ostream &os)  {
 
 //Aux function to specify the order to sort a list
 //Does not form part of the namesapce Edge
-bool comp (DEdge a, DEdge b) {
+bool comp2 (DEdge a, DEdge b) {
 
 	return ((a.get_benefit() - a.get_cost()) > (b.get_benefit() - b.get_cost()));
 
@@ -103,25 +110,24 @@ inline std::ostream& operator<<(std::ostream &os, DGraph &graph) {
 
 // Constructor
 DGraph::DGraph (int n_vertex, vector< vector<DEdge> > graph) {
-
 	this -> n_vertex = n_vertex;
 	this -> graph = graph;
-
-    //we proceed to sort the lists for easy work later
-    // for (int vi = 0; vi < this -> n_vertex; vi++) {
-    //     std::sort(graph[vi].begin(), graph[vi].end(), comp);
-    // }
 }
 
 std::vector<DEdge> DGraph::get_successor_list(int vOut){ //CAMBIAR
-    // ORDENAR
-    return this-> graph[vOut];
+    std::vector<DEdge> sucessors;
+    std::vector<DEdge> adjacent = this -> graph[vOut];
+    for(std::vector<DEdge>::iterator edge = adjacent.begin(); edge != adjacent.end(); ++edge) {
+        sucessors.push_back(*edge);
+        int vIn = edge -> get_vIn();
+        int ce = edge -> get_cost();
+        DEdge edge2(vIn, ce, 0);
+        sucessors.push_back(edge2);
+    }
+    std::sort(sucessors.begin(), sucessors.end(), comp2);
+    return sucessors;
 }
 
-int DGraph::beneficio(){
-    //inserte su codigo aqui
-    return 0;
-}
 //Prints the current Graph Info
 inline void DGraph::print(std::ostream &os)  {
 

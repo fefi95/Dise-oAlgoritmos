@@ -19,8 +19,8 @@ int main(int argc, char **argv) {
     DGraph graph = readFile2(argv[1]);
     cout << "Grafo Original" << endl;
     cout << graph << endl;
-    // std::vector<DEdge> s = graph.get_successor_list(0);
-    // printEdges(cout, s);
+    std::vector<DEdge> s = graph.get_successor_list(0);
+    printEdges(cout, s);
 
     // std::cout << "isEulerian: " << graph.isEulerian() << std::endl;
     //

@@ -1,5 +1,5 @@
 CXX = g++
-OPT = -g -Wall -O3
+OPT = -g -Wall -O3 -Wsign-compare
 
 main: main.cpp
 	$(CXX) $(OPT) main.cpp -o $@
@@ -9,6 +9,10 @@ runProject: runProject.cpp
 	$(CXX) $(OPT) runProject.cpp -o $@
 	rm -f $*.c
 
+BranchAndBound: BranchAndBound.cpp
+	$(CXX) $(OPT) BranchAndBound.cpp -o $@
+	rm -f $*.c
+
 .PHONY: clean
 clean:
-	rm -f main runProject *.o *~
+	rm -f main runProject BranchAndBound *.o *~

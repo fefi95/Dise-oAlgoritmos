@@ -102,10 +102,11 @@ bool esta_lado_en_sol_parcial(int v, DEdge e, std::vector< vector<DEdge> > solPa
             // else {
                 std::cout << "esta lado " << v+1 << " - " << e << std::endl;
                 return true;
+                std::cout << " tu mama" << std::endl;
             // }
         }
     }
-    std::cout << "noooooooooo" <<  v+1 << " - " << e.get_vIn() + 1 << std::endl;
+    std::cout << "noooooooooo" <<  v+1 << " - " << e << std::endl;
     return false;
 }
 
@@ -140,6 +141,7 @@ void DFS(int v, DGraph& grafo) {
         mejorSol = solParcial; //clone
     }
     std::vector<DEdge> L = grafo.get_successor_list(v);
+    printEdges(cout, L);
     for (int i = 0; i < L.size(); i++) {
         DEdge e = L[i];
         int vj = e.get_vIn();
@@ -162,6 +164,7 @@ void DFS(int v, DGraph& grafo) {
     }
 
     DEdge e = eliminar_ultimo_lado(solParcial, solParcial);
+    printSol(solParcial);
     int be = e.get_benefit();
     int ce = e.get_cost();
     beneficioDisponible = beneficioDisponible + max(0, be - ce);

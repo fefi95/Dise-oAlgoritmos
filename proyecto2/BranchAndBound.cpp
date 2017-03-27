@@ -9,11 +9,13 @@
 
 #include <algorithm>
 #include <unordered_set>
+#include <set>
 #include <ctime>
 #include <iostream>
 #include <fstream>
 #include "Reader.hpp"
 #include "DGraph.hpp"
+#include "Graph.hpp"
 
 std::vector< vector<DEdge> > solParcial;
 std::vector< vector<DEdge> > mejorSol;
@@ -123,12 +125,12 @@ bool esta_lado_en_sol_parcial(int v, DEdge e, std::vector< vector<DEdge> > solPa
 bool ciclo_negativo(int v, DEdge e, std::vector< vector<DEdge> > solParcial) {
     std::unordered_set<int>::iterator find = vertexInSol.find(v);
 
-    if ( find != vertexInSol.end() ) { // is not a cycle
+    if ( find == vertexInSol.end() ) { // is not a cycle
         return false;
     }
     else {
         int benefit = 0;
-        int vOut = v; // source
+        int vOut = e.get_vIn(); // source
         // std::cout << "" << std::endl;
         while (!solParcial[vOut].empty() && vOut < solParcial.size()) {
             DEdge edge = solParcial[vOut][0]; // First element
@@ -137,6 +139,7 @@ bool ciclo_negativo(int v, DEdge e, std::vector< vector<DEdge> > solParcial) {
             benefit += edge.get_benefit() - edge.get_cost();
             vOut = edge.get_vIn();
         }
+        benefit += e.get_benefit() - e.get_cost();
         // std::cout << "" << std::endl;
     }
     return (benefit < 0);
@@ -242,22 +245,74 @@ float pStd(float vo, float vh) {
 }
 
 int main(int argc, char **argv) {
+
+    // Greedy solution
+    Graph graph = readFile(argv[1]);
+    std::pair < int,std::vector<int> > sol  = graph.solvePRPP();
+
     DGraph grafo = readFile2(argv[1]);
-    statsFile.open(argv[2], std::ios::out | std::ios::app);
+    cout << grafo << endl;
+
+
     for (int i = 0; i < grafo.get_n_vertex(); i++) {
         std::vector<DEdge> adjacent;
         solParcial.push_back(adjacent);
         mejorSol.push_back(adjacent);
     }
-    beneficioDisponible = get_max_benefit(strcat(argv[1],"-salida.txt"));
-    if (beneficioDisponible < 0) {
-        beneficioDisponible = 0;
+
+    std::set< pair <int, int> > isInSol;
+    std::pair<int, int> edgeInSol;
+    int be = 0;
+    int ce = 0;
+    int v1, v2;
+
+    // cout << "MI TAMANO FINAL ES: " << sol.second.size() << endl;
+    // cout << "EL TAMANO DE MI MEJOR SOLUCION ES: " << mejorSol.size() << endl;
+    for (int i = 0; i < sol.second.size()-1; i++) {
+        v1 = sol.second[i]-1;
+        v2 = sol.second[i+1]-1;
+        std::cout << "arista" << v1 << "," << v2 << std::endl;
+
+        edgeInSol.first = v2;
+        edgeInSol.second = v1;
+        std::set<pair<int, int>>::iterator find = isInSol.find(edgeInSol);
+        std::cout << "myset contains:";
+        for ( pair<int,int> x: isInSol ) std::cout << "(" << x.first << " "  << x.second << ") ";
+        std::cout << "mas bonito " << find -> first << find -> second << std::endl;
+        std::vector<DEdge> adjacent = grafo.get_graph()[v1];
+        for(std::vector<DEdge>::iterator it =  adjacent.begin(); it != adjacent.end(); ++it) {
+            std::cout << *it << "vs" << *grafo.get_graph()[v1].end() << std::endl;
+            if (it -> get_vIn() == v2) {
+                be = it -> get_benefit();
+                ce = it -> get_cost();
+                break;
+            }
+        }
+        if (find != isInSol.end()) { // not found
+            be = 0;
+        }
+        cout << "AYUDAME JESUS... el valor de i es: " << i <<  endl;
+        DEdge e(v2, ce, be);
+        mejorSol[v1].push_back(e);
+        // cout << "acceso de la sol.second de: " << i << endl;
+        std::pair<int,int> e2(v1,v2);
+        isInSol.insert(e2);
     }
+    std::cout << "what?" << std::endl;
+    std::cout << benefit(mejorSol) << " sooool " << sol.first << std::endl;
+    statsFile.open(argv[2], std::ios::out | std::ios::app);
+
+
+    beneficioDisponible = get_max_benefit(strcat(argv[1],"-salida.txt"));
+    // if (beneficioDisponible < 0) {
+    beneficioDisponible = atoi(argv[4]);
+    // }
     std::cout << "Beneficio dispon" << beneficioDisponible << std::endl;
     // name, optimum, heuristic value, heuristic deviation,
     float optimum = stof(argv[4]);
     statsFile << argv[3] << "," << optimum << "," << beneficioDisponible << "," << pStd(optimum, beneficioDisponible) << "," << std::endl;
     timeStart = time(NULL);
+    //exit(0);
     DFS(0, grafo);
     printSol(mejorSol);
     std::cout << benefit(mejorSol) << std::endl;

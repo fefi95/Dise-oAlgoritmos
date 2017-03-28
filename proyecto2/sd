@@ -1,0 +1,3835 @@
+1 -> [(vertex: 3, cost: 5, benefit: 15 ) (vertex: 4, cost: 9, benefit: 3 ) (vertex: 5, cost: 17, benefit: 13 ) (vertex: 7, cost: 19, benefit: 5 ) (vertex: 8, cost: 27, benefit: 7 ) (vertex: 10, cost: 22, benefit: 7 ) (vertex: 13, cost: 13, benefit: 1 ) ]
+2 -> [(vertex: 3, cost: 9, benefit: 10 ) (vertex: 5, cost: 14, benefit: 9 ) (vertex: 7, cost: 21, benefit: 15 ) (vertex: 8, cost: 29, benefit: 23 ) (vertex: 10, cost: 24, benefit: 21 ) ]
+3 -> [(vertex: 1, cost: 5, benefit: 15 ) (vertex: 2, cost: 9, benefit: 10 ) (vertex: 4, cost: 11, benefit: 22 ) (vertex: 5, cost: 18, benefit: 9 ) (vertex: 7, cost: 23, benefit: 17 ) (vertex: 8, cost: 31, benefit: 14 ) (vertex: 10, cost: 26, benefit: 12 ) ]
+4 -> [(vertex: 3, cost: 11, benefit: 22 ) (vertex: 1, cost: 9, benefit: 3 ) ]
+5 -> [(vertex: 6, cost: 8, benefit: 23 ) (vertex: 7, cost: 10, benefit: 29 ) (vertex: 1, cost: 17, benefit: 13 ) (vertex: 2, cost: 14, benefit: 9 ) (vertex: 3, cost: 18, benefit: 9 ) (vertex: 10, cost: 20, benefit: 5 ) (vertex: 13, cost: 26, benefit: 15 ) ]
+6 -> [(vertex: 5, cost: 8, benefit: 23 ) (vertex: 7, cost: 2, benefit: 3 ) ]
+7 -> [(vertex: 6, cost: 2, benefit: 3 ) (vertex: 5, cost: 10, benefit: 29 ) (vertex: 1, cost: 19, benefit: 5 ) (vertex: 2, cost: 21, benefit: 15 ) (vertex: 3, cost: 23, benefit: 17 ) (vertex: 8, cost: 10, benefit: 0 ) (vertex: 10, cost: 13, benefit: 6 ) ]
+8 -> [(vertex: 9, cost: 4, benefit: 9 ) (vertex: 1, cost: 27, benefit: 7 ) (vertex: 2, cost: 29, benefit: 23 ) (vertex: 3, cost: 31, benefit: 14 ) (vertex: 7, cost: 10, benefit: 0 ) ]
+9 -> [(vertex: 8, cost: 4, benefit: 9 ) (vertex: 10, cost: 8, benefit: 8 ) (vertex: 12, cost: 13, benefit: 38 ) ]
+10 -> [(vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 2 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) ]
+11 -> [(vertex: 10, cost: 1, benefit: 2 ) (vertex: 12, cost: 7, benefit: 10 ) ]
+12 -> [(vertex: 11, cost: 7, benefit: 10 ) (vertex: 9, cost: 13, benefit: 38 ) (vertex: 10, cost: 3, benefit: 0 ) ]
+13 -> [(vertex: 14, cost: 2, benefit: 3 ) (vertex: 1, cost: 13, benefit: 1 ) (vertex: 5, cost: 26, benefit: 15 ) (vertex: 10, cost: 10, benefit: 0 ) ]
+14 -> [(vertex: 13, cost: 2, benefit: 3 ) (vertex: 10, cost: 10, benefit: 5 ) ]
+
+Beneficio dispon66
+v 1
+COPY
+[(vertex: 3, cost: 5, benefit: 15 ) (vertex: 5, cost: 17, benefit: 13 ) (vertex: 3, cost: 5, benefit: 0 ) (vertex: 4, cost: 9, benefit: 3 ) (vertex: 4, cost: 9, benefit: 0 ) (vertex: 13, cost: 13, benefit: 1 ) (vertex: 13, cost: 13, benefit: 0 ) (vertex: 7, cost: 19, benefit: 5 ) (vertex: 10, cost: 22, benefit: 7 ) (vertex: 5, cost: 17, benefit: 0 ) (vertex: 7, cost: 19, benefit: 0 ) (vertex: 8, cost: 27, benefit: 7 ) (vertex: 10, cost: 22, benefit: 0 ) (vertex: 8, cost: 27, benefit: 0 ) ]
+benefit parcial10
+compara beneficio 66 0
+agregando lado..1(vertex: 3, cost: 5, benefit: 15 ) 
+myset contains: 3 1
+1 - 3
+Beneficio dispon56
+v 3
+[(vertex: 4, cost: 11, benefit: 22 ) (vertex: 1, cost: 5, benefit: 15 ) (vertex: 2, cost: 9, benefit: 10 ) (vertex: 1, cost: 5, benefit: 0 ) (vertex: 7, cost: 23, benefit: 17 ) (vertex: 2, cost: 9, benefit: 0 ) (vertex: 5, cost: 18, benefit: 9 ) (vertex: 4, cost: 11, benefit: 0 ) (vertex: 10, cost: 26, benefit: 12 ) (vertex: 8, cost: 31, benefit: 14 ) (vertex: 5, cost: 18, benefit: 0 ) (vertex: 7, cost: 23, benefit: 0 ) (vertex: 10, cost: 26, benefit: 0 ) (vertex: 8, cost: 31, benefit: 0 ) ]
+benefit parcial21
+compara beneficio 66 0
+agregando lado..3(vertex: 4, cost: 11, benefit: 22 ) 
+myset contains: 4 3 1
+1 - 3 - 4
+Beneficio dispon45
+v 4
+[(vertex: 3, cost: 11, benefit: 22 ) (vertex: 1, cost: 9, benefit: 3 ) (vertex: 1, cost: 9, benefit: 0 ) (vertex: 3, cost: 11, benefit: 0 ) ]
+benefit parcial15
+compara beneficio 60 0
+agregando lado..4(vertex: 1, cost: 9, benefit: 3 ) 
+myset contains: 4 3 1
+1 - 3 - 4 - 1
+Beneficio dispon45
+v 1
+COPY
+[(vertex: 3, cost: 5, benefit: 15 ) (vertex: 5, cost: 17, benefit: 13 ) (vertex: 3, cost: 5, benefit: 0 ) (vertex: 4, cost: 9, benefit: 3 ) (vertex: 4, cost: 9, benefit: 0 ) (vertex: 13, cost: 13, benefit: 1 ) (vertex: 13, cost: 13, benefit: 0 ) (vertex: 7, cost: 19, benefit: 5 ) (vertex: 10, cost: 22, benefit: 7 ) (vertex: 5, cost: 17, benefit: 0 ) (vertex: 7, cost: 19, benefit: 0 ) (vertex: 8, cost: 27, benefit: 7 ) (vertex: 10, cost: 22, benefit: 0 ) (vertex: 8, cost: 27, benefit: 0 ) ]
+benefit parcial11
+compara beneficio 56 15
+agregando lado..1(vertex: 5, cost: 17, benefit: 13 ) 
+myset contains: 5 4 3 1
+1 - 3 - 4 - 1 - 5
+Beneficio dispon45
+v 5
+[(vertex: 7, cost: 10, benefit: 29 ) (vertex: 6, cost: 8, benefit: 23 ) (vertex: 1, cost: 17, benefit: 13 ) (vertex: 2, cost: 14, benefit: 9 ) (vertex: 6, cost: 8, benefit: 0 ) (vertex: 3, cost: 18, benefit: 9 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 13, cost: 26, benefit: 15 ) (vertex: 2, cost: 14, benefit: 0 ) (vertex: 10, cost: 20, benefit: 5 ) (vertex: 1, cost: 17, benefit: 0 ) (vertex: 3, cost: 18, benefit: 0 ) (vertex: 10, cost: 20, benefit: 0 ) (vertex: 13, cost: 26, benefit: 0 ) ]
+benefit parcial30
+compara beneficio 56 15
+agregando lado..5(vertex: 7, cost: 10, benefit: 29 ) 
+myset contains: 7 1 3 4 5
+1 - 3 - 4 - 1 - 5 - 7
+Beneficio dispon26
+v 7
+[(vertex: 5, cost: 10, benefit: 29 ) (vertex: 6, cost: 2, benefit: 3 ) (vertex: 6, cost: 2, benefit: 0 ) (vertex: 2, cost: 21, benefit: 15 ) (vertex: 3, cost: 23, benefit: 17 ) (vertex: 10, cost: 13, benefit: 6 ) (vertex: 5, cost: 10, benefit: 0 ) (vertex: 8, cost: 10, benefit: 0 ) (vertex: 8, cost: 10, benefit: 0 ) (vertex: 10, cost: 13, benefit: 0 ) (vertex: 1, cost: 19, benefit: 5 ) (vertex: 1, cost: 19, benefit: 0 ) (vertex: 2, cost: 21, benefit: 0 ) (vertex: 3, cost: 23, benefit: 0 ) ]
+benefit parcial31
+compara beneficio 56 15
+agregando lado..7(vertex: 6, cost: 2, benefit: 3 ) 
+myset contains: 6 7 1 3 4 5
+1 - 3 - 4 - 1 - 5 - 7 - 6
+Beneficio dispon25
+v 6
+[(vertex: 5, cost: 8, benefit: 23 ) (vertex: 7, cost: 2, benefit: 3 ) (vertex: 7, cost: 2, benefit: 0 ) (vertex: 5, cost: 8, benefit: 0 ) ]
+benefit parcial46
+compara beneficio 56 15
+agregando lado..6(vertex: 5, cost: 8, benefit: 23 ) 
+myset contains: 6 7 1 3 4 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5
+Beneficio dispon10
+v 5
+[(vertex: 7, cost: 10, benefit: 29 ) (vertex: 6, cost: 8, benefit: 23 ) (vertex: 1, cost: 17, benefit: 13 ) (vertex: 2, cost: 14, benefit: 9 ) (vertex: 6, cost: 8, benefit: 0 ) (vertex: 3, cost: 18, benefit: 9 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 13, cost: 26, benefit: 15 ) (vertex: 2, cost: 14, benefit: 0 ) (vertex: 10, cost: 20, benefit: 5 ) (vertex: 1, cost: 17, benefit: 0 ) (vertex: 3, cost: 18, benefit: 0 ) (vertex: 10, cost: 20, benefit: 0 ) (vertex: 13, cost: 26, benefit: 0 ) ]
+benefit parcial41
+compara beneficio 51 15
+agregando lado..5(vertex: 2, cost: 14, benefit: 9 ) 
+myset contains: 2 6 7 1 3 4 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2
+Beneficio dispon10
+v 2
+[(vertex: 3, cost: 9, benefit: 10 ) (vertex: 10, cost: 24, benefit: 21 ) (vertex: 5, cost: 14, benefit: 9 ) (vertex: 7, cost: 21, benefit: 15 ) (vertex: 8, cost: 29, benefit: 23 ) (vertex: 3, cost: 9, benefit: 0 ) (vertex: 5, cost: 14, benefit: 0 ) (vertex: 7, cost: 21, benefit: 0 ) (vertex: 10, cost: 24, benefit: 0 ) (vertex: 8, cost: 29, benefit: 0 ) ]
+benefit parcial42
+compara beneficio 51 15
+agregando lado..2(vertex: 3, cost: 9, benefit: 10 ) 
+myset contains: 2 6 7 1 3 4 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3
+Beneficio dispon9
+v 3
+[(vertex: 4, cost: 11, benefit: 22 ) (vertex: 1, cost: 5, benefit: 15 ) (vertex: 2, cost: 9, benefit: 10 ) (vertex: 1, cost: 5, benefit: 0 ) (vertex: 7, cost: 23, benefit: 17 ) (vertex: 2, cost: 9, benefit: 0 ) (vertex: 5, cost: 18, benefit: 9 ) (vertex: 4, cost: 11, benefit: 0 ) (vertex: 10, cost: 26, benefit: 12 ) (vertex: 8, cost: 31, benefit: 14 ) (vertex: 5, cost: 18, benefit: 0 ) (vertex: 7, cost: 23, benefit: 0 ) (vertex: 10, cost: 26, benefit: 0 ) (vertex: 8, cost: 31, benefit: 0 ) ]
+benefit parcial37
+compara beneficio 46 15
+agregando lado..3(vertex: 1, cost: 5, benefit: 0 ) 
+myset contains: 2 6 7 1 3 4 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 1
+Beneficio dispon9
+v 1
+COPY
+[(vertex: 3, cost: 5, benefit: 15 ) (vertex: 5, cost: 17, benefit: 13 ) (vertex: 3, cost: 5, benefit: 0 ) (vertex: 4, cost: 9, benefit: 3 ) (vertex: 4, cost: 9, benefit: 0 ) (vertex: 13, cost: 13, benefit: 1 ) (vertex: 13, cost: 13, benefit: 0 ) (vertex: 7, cost: 19, benefit: 5 ) (vertex: 10, cost: 22, benefit: 7 ) (vertex: 5, cost: 17, benefit: 0 ) (vertex: 7, cost: 19, benefit: 0 ) (vertex: 8, cost: 27, benefit: 7 ) (vertex: 10, cost: 22, benefit: 0 ) (vertex: 8, cost: 27, benefit: 0 ) ]
+benefit parcial28
+compara beneficio 37 37
+agregando lado..1(vertex: 4, cost: 9, benefit: 0 ) 
+myset contains: 2 6 7 1 3 4 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 1 - 4
+Beneficio dispon9
+v 4
+[(vertex: 3, cost: 11, benefit: 22 ) (vertex: 1, cost: 9, benefit: 3 ) (vertex: 1, cost: 9, benefit: 0 ) (vertex: 3, cost: 11, benefit: 0 ) ]
+benefit parcial17
+compara beneficio 26 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 1 - 4
+[(vertex: 3, cost: 5, benefit: 15 ) (vertex: 5, cost: 17, benefit: 13 ) (vertex: 4, cost: 9, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 1
+Beneficio dispon9
+benefit parcial25
+compara beneficio 34 37
+benefit parcial24
+compara beneficio 33 37
+benefit parcial23
+compara beneficio 32 37
+benefit parcial22
+compara beneficio 31 37
+benefit parcial20
+compara beneficio 29 37
+benefit parcial18
+compara beneficio 27 37
+benefit parcial17
+compara beneficio 26 37
+benefit parcial15
+compara beneficio 24 37
+benefit parcial10
+compara beneficio 19 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 1
+[(vertex: 4, cost: 11, benefit: 22 ) (vertex: 1, cost: 5, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3
+Beneficio dispon9
+benefit parcial36
+compara beneficio 45 37
+agregando lado..3(vertex: 7, cost: 23, benefit: 17 ) 
+myset contains: 2 6 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7
+Beneficio dispon9
+v 7
+[(vertex: 5, cost: 10, benefit: 29 ) (vertex: 6, cost: 2, benefit: 3 ) (vertex: 6, cost: 2, benefit: 0 ) (vertex: 2, cost: 21, benefit: 15 ) (vertex: 3, cost: 23, benefit: 17 ) (vertex: 10, cost: 13, benefit: 6 ) (vertex: 5, cost: 10, benefit: 0 ) (vertex: 8, cost: 10, benefit: 0 ) (vertex: 8, cost: 10, benefit: 0 ) (vertex: 10, cost: 13, benefit: 0 ) (vertex: 1, cost: 19, benefit: 5 ) (vertex: 1, cost: 19, benefit: 0 ) (vertex: 2, cost: 21, benefit: 0 ) (vertex: 3, cost: 23, benefit: 0 ) ]
+benefit parcial34
+compara beneficio 43 37
+agregando lado..7(vertex: 6, cost: 2, benefit: 0 ) 
+myset contains: 2 6 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 6
+Beneficio dispon9
+v 6
+[(vertex: 5, cost: 8, benefit: 23 ) (vertex: 7, cost: 2, benefit: 3 ) (vertex: 7, cost: 2, benefit: 0 ) (vertex: 5, cost: 8, benefit: 0 ) ]
+benefit parcial26
+compara beneficio 35 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 6
+[(vertex: 6, cost: 2, benefit: 3 ) (vertex: 6, cost: 2, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7
+Beneficio dispon9
+benefit parcial30
+compara beneficio 39 37
+agregando lado..7(vertex: 2, cost: 21, benefit: 15 ) 
+myset contains: 2 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 2
+Beneficio dispon9
+v 2
+[(vertex: 3, cost: 9, benefit: 10 ) (vertex: 10, cost: 24, benefit: 21 ) (vertex: 5, cost: 14, benefit: 9 ) (vertex: 7, cost: 21, benefit: 15 ) (vertex: 8, cost: 29, benefit: 23 ) (vertex: 3, cost: 9, benefit: 0 ) (vertex: 5, cost: 14, benefit: 0 ) (vertex: 7, cost: 21, benefit: 0 ) (vertex: 10, cost: 24, benefit: 0 ) (vertex: 8, cost: 29, benefit: 0 ) ]
+benefit parcial27
+compara beneficio 36 37
+benefit parcial24
+compara beneficio 33 37
+benefit parcial21
+compara beneficio 30 37
+benefit parcial16
+compara beneficio 25 37
+benefit parcial9
+compara beneficio 18 37
+benefit parcial6
+compara beneficio 15 37
+benefit parcial1
+compara beneficio 10 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 2
+[(vertex: 6, cost: 2, benefit: 3 ) (vertex: 2, cost: 21, benefit: 15 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7
+Beneficio dispon9
+benefit parcial29
+compara beneficio 38 37
+agregando lado..7(vertex: 10, cost: 13, benefit: 6 ) 
+myset contains: 10 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10
+Beneficio dispon9
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial30
+compara beneficio 38 37
+agregando lado..10(vertex: 11, cost: 1, benefit: 2 ) 
+myset contains: 11 10 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11
+Beneficio dispon8
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial33
+compara beneficio 38 37
+agregando lado..11(vertex: 12, cost: 7, benefit: 10 ) 
+myset contains: 12 11 10 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12
+Beneficio dispon5
+v 12
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 11, cost: 7, benefit: 10 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 11, cost: 7, benefit: 0 ) (vertex: 9, cost: 13, benefit: 0 ) ]
+benefit parcial58
+compara beneficio 38 37
+agregando lado..12(vertex: 9, cost: 13, benefit: 38 ) 
+myset contains: 9 12 11 10 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12 - 9
+Beneficio dispon-20
+v 9
+[(vertex: 12, cost: 13, benefit: 38 ) (vertex: 8, cost: 4, benefit: 9 ) (vertex: 10, cost: 8, benefit: 8 ) (vertex: 8, cost: 4, benefit: 0 ) (vertex: 10, cost: 8, benefit: 0 ) (vertex: 12, cost: 13, benefit: 0 ) ]
+benefit parcial63
+compara beneficio 38 37
+agregando lado..9(vertex: 8, cost: 4, benefit: 9 ) 
+myset contains: 8 9 12 11 10 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12 - 9 - 8
+Beneficio dispon-25
+v 8
+[(vertex: 9, cost: 4, benefit: 9 ) (vertex: 9, cost: 4, benefit: 0 ) (vertex: 2, cost: 29, benefit: 23 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 3, cost: 31, benefit: 14 ) (vertex: 1, cost: 27, benefit: 7 ) (vertex: 1, cost: 27, benefit: 0 ) (vertex: 2, cost: 29, benefit: 0 ) (vertex: 3, cost: 31, benefit: 0 ) ]
+benefit parcial59
+compara beneficio 34 37
+benefit parcial57
+compara beneficio 32 37
+benefit parcial53
+compara beneficio 28 37
+benefit parcial53
+compara beneficio 28 37
+benefit parcial46
+compara beneficio 21 37
+benefit parcial43
+compara beneficio 18 37
+benefit parcial36
+compara beneficio 11 37
+benefit parcial34
+compara beneficio 9 37
+benefit parcial32
+compara beneficio 7 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12 - 9 - 8
+[(vertex: 8, cost: 4, benefit: 9 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12 - 9
+Beneficio dispon-20
+benefit parcial58
+compara beneficio 38 37
+agregando lado..9(vertex: 10, cost: 8, benefit: 8 ) 
+myset contains: 9 12 11 10 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12 - 9 - 10
+Beneficio dispon-20
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial57
+compara beneficio 37 37
+agregando lado..10(vertex: 11, cost: 1, benefit: 0 ) 
+myset contains: 9 12 11 10 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12 - 9 - 10 - 11
+Beneficio dispon-20
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial50
+compara beneficio 30 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12 - 9 - 10 - 11
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 11, cost: 1, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12 - 9 - 10
+Beneficio dispon-20
+benefit parcial55
+compara beneficio 35 37
+benefit parcial55
+compara beneficio 35 37
+benefit parcial55
+compara beneficio 35 37
+benefit parcial53
+compara beneficio 33 37
+benefit parcial50
+compara beneficio 30 37
+benefit parcial48
+compara beneficio 28 37
+benefit parcial48
+compara beneficio 28 37
+benefit parcial48
+compara beneficio 28 37
+benefit parcial45
+compara beneficio 25 37
+benefit parcial44
+compara beneficio 24 37
+benefit parcial43
+compara beneficio 23 37
+benefit parcial43
+compara beneficio 23 37
+benefit parcial38
+compara beneficio 18 37
+benefit parcial36
+compara beneficio 16 37
+benefit parcial34
+compara beneficio 14 37
+benefit parcial32
+compara beneficio 12 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12 - 9 - 10
+[(vertex: 10, cost: 8, benefit: 8 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12 - 9
+Beneficio dispon-20
+benefit parcial54
+compara beneficio 34 37
+benefit parcial50
+compara beneficio 30 37
+benefit parcial45
+compara beneficio 25 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12 - 9
+[(vertex: 9, cost: 13, benefit: 38 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12
+Beneficio dispon5
+benefit parcial30
+compara beneficio 35 37
+benefit parcial30
+compara beneficio 35 37
+benefit parcial26
+compara beneficio 31 37
+benefit parcial20
+compara beneficio 25 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12
+[(vertex: 12, cost: 7, benefit: 10 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11
+Beneficio dispon8
+benefit parcial29
+compara beneficio 37 37
+agregando lado..11(vertex: 10, cost: 1, benefit: 0 ) 
+myset contains: 10 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 10
+Beneficio dispon8
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial29
+compara beneficio 37 37
+agregando lado..10(vertex: 9, cost: 8, benefit: 8 ) 
+myset contains: 9 10 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 10 - 9
+Beneficio dispon8
+v 9
+[(vertex: 12, cost: 13, benefit: 38 ) (vertex: 8, cost: 4, benefit: 9 ) (vertex: 10, cost: 8, benefit: 8 ) (vertex: 8, cost: 4, benefit: 0 ) (vertex: 10, cost: 8, benefit: 0 ) (vertex: 12, cost: 13, benefit: 0 ) ]
+benefit parcial54
+compara beneficio 37 37
+agregando lado..9(vertex: 12, cost: 13, benefit: 38 ) 
+myset contains: 12 9 10 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 10 - 9 - 12
+Beneficio dispon-17
+v 12
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 11, cost: 7, benefit: 10 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 11, cost: 7, benefit: 0 ) (vertex: 9, cost: 13, benefit: 0 ) ]
+benefit parcial57
+compara beneficio 37 37
+agregando lado..12(vertex: 11, cost: 7, benefit: 10 ) 
+myset contains: 11 12 9 10 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 10 - 9 - 12 - 11
+Beneficio dispon-20
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial50
+compara beneficio 30 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 10 - 9 - 12 - 11
+[(vertex: 11, cost: 7, benefit: 10 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 10 - 9 - 12
+Beneficio dispon-17
+benefit parcial51
+compara beneficio 34 37
+benefit parcial51
+compara beneficio 34 37
+benefit parcial47
+compara beneficio 30 37
+benefit parcial41
+compara beneficio 24 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 10 - 9 - 12
+[(vertex: 12, cost: 13, benefit: 38 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 10 - 9
+Beneficio dispon8
+benefit parcial34
+compara beneficio 37 37
+agregando lado..9(vertex: 8, cost: 4, benefit: 9 ) 
+myset contains: 8 9 10 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 10 - 9 - 8
+Beneficio dispon3
+v 8
+[(vertex: 9, cost: 4, benefit: 9 ) (vertex: 9, cost: 4, benefit: 0 ) (vertex: 2, cost: 29, benefit: 23 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 3, cost: 31, benefit: 14 ) (vertex: 1, cost: 27, benefit: 7 ) (vertex: 1, cost: 27, benefit: 0 ) (vertex: 2, cost: 29, benefit: 0 ) (vertex: 3, cost: 31, benefit: 0 ) ]
+benefit parcial30
+compara beneficio 33 37
+benefit parcial28
+compara beneficio 31 37
+benefit parcial24
+compara beneficio 27 37
+benefit parcial24
+compara beneficio 27 37
+benefit parcial17
+compara beneficio 20 37
+benefit parcial14
+compara beneficio 17 37
+benefit parcial7
+compara beneficio 10 37
+benefit parcial5
+compara beneficio 8 37
+benefit parcial3
+compara beneficio 6 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 10 - 9 - 8
+[(vertex: 8, cost: 4, benefit: 9 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 10 - 9
+Beneficio dispon8
+benefit parcial25
+compara beneficio 33 37
+benefit parcial21
+compara beneficio 29 37
+benefit parcial16
+compara beneficio 24 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 10 - 9
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 10
+Beneficio dispon8
+benefit parcial26
+compara beneficio 34 37
+benefit parcial26
+compara beneficio 34 37
+benefit parcial26
+compara beneficio 34 37
+benefit parcial24
+compara beneficio 32 37
+benefit parcial21
+compara beneficio 29 37
+benefit parcial19
+compara beneficio 27 37
+benefit parcial19
+compara beneficio 27 37
+benefit parcial19
+compara beneficio 27 37
+benefit parcial16
+compara beneficio 24 37
+benefit parcial15
+compara beneficio 23 37
+benefit parcial14
+compara beneficio 22 37
+benefit parcial14
+compara beneficio 22 37
+benefit parcial9
+compara beneficio 17 37
+benefit parcial7
+compara beneficio 15 37
+benefit parcial5
+compara beneficio 13 37
+benefit parcial3
+compara beneficio 11 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 10
+[(vertex: 10, cost: 1, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11
+Beneficio dispon8
+benefit parcial23
+compara beneficio 31 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11
+[(vertex: 11, cost: 1, benefit: 2 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10
+Beneficio dispon9
+benefit parcial29
+compara beneficio 38 37
+agregando lado..10(vertex: 9, cost: 8, benefit: 8 ) 
+myset contains: 9 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 9
+Beneficio dispon9
+v 9
+[(vertex: 12, cost: 13, benefit: 38 ) (vertex: 8, cost: 4, benefit: 9 ) (vertex: 10, cost: 8, benefit: 8 ) (vertex: 8, cost: 4, benefit: 0 ) (vertex: 10, cost: 8, benefit: 0 ) (vertex: 12, cost: 13, benefit: 0 ) ]
+benefit parcial54
+compara beneficio 38 37
+agregando lado..9(vertex: 12, cost: 13, benefit: 38 ) 
+myset contains: 12 9 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 9 - 12
+Beneficio dispon-16
+v 12
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 11, cost: 7, benefit: 10 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 11, cost: 7, benefit: 0 ) (vertex: 9, cost: 13, benefit: 0 ) ]
+benefit parcial57
+compara beneficio 38 37
+agregando lado..12(vertex: 11, cost: 7, benefit: 10 ) 
+myset contains: 11 12 9 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 9 - 12 - 11
+Beneficio dispon-19
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial58
+compara beneficio 38 37
+agregando lado..11(vertex: 10, cost: 1, benefit: 2 ) 
+myset contains: 10 11 12 9 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 9 - 12 - 11 - 10
+Beneficio dispon-20
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial57
+compara beneficio 37 37
+agregando lado..10(vertex: 11, cost: 1, benefit: 0 ) 
+myset contains: 10 11 12 9 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 9 - 12 - 11 - 10 - 11
+Beneficio dispon-20
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial50
+compara beneficio 30 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 9 - 12 - 11 - 10 - 11
+[(vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 9 - 12 - 11 - 10
+Beneficio dispon-20
+benefit parcial55
+compara beneficio 35 37
+benefit parcial55
+compara beneficio 35 37
+benefit parcial55
+compara beneficio 35 37
+benefit parcial53
+compara beneficio 33 37
+benefit parcial50
+compara beneficio 30 37
+benefit parcial48
+compara beneficio 28 37
+benefit parcial48
+compara beneficio 28 37
+benefit parcial48
+compara beneficio 28 37
+benefit parcial45
+compara beneficio 25 37
+benefit parcial44
+compara beneficio 24 37
+benefit parcial43
+compara beneficio 23 37
+benefit parcial43
+compara beneficio 23 37
+benefit parcial38
+compara beneficio 18 37
+benefit parcial36
+compara beneficio 16 37
+benefit parcial34
+compara beneficio 14 37
+benefit parcial32
+compara beneficio 12 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 9 - 12 - 11 - 10
+[(vertex: 10, cost: 1, benefit: 2 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 9 - 12 - 11
+Beneficio dispon-19
+benefit parcial56
+compara beneficio 37 37
+agregando lado..11(vertex: 10, cost: 1, benefit: 0 ) 
+myset contains: 10 12 9 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 9 - 12 - 11 - 10
+Beneficio dispon-19
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial55
+compara beneficio 36 37
+benefit parcial53
+compara beneficio 34 37
+benefit parcial53
+compara beneficio 34 37
+benefit parcial53
+compara beneficio 34 37
+benefit parcial51
+compara beneficio 32 37
+benefit parcial48
+compara beneficio 29 37
+benefit parcial46
+compara beneficio 27 37
+benefit parcial46
+compara beneficio 27 37
+benefit parcial46
+compara beneficio 27 37
+benefit parcial43
+compara beneficio 24 37
+benefit parcial42
+compara beneficio 23 37
+benefit parcial41
+compara beneficio 22 37
+benefit parcial41
+compara beneficio 22 37
+benefit parcial36
+compara beneficio 17 37
+benefit parcial34
+compara beneficio 15 37
+benefit parcial32
+compara beneficio 13 37
+benefit parcial30
+compara beneficio 11 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 9 - 12 - 11 - 10
+[(vertex: 10, cost: 1, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 9 - 12 - 11
+Beneficio dispon-19
+benefit parcial50
+compara beneficio 31 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 9 - 12 - 11
+[(vertex: 11, cost: 7, benefit: 10 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 9 - 12
+Beneficio dispon-16
+benefit parcial51
+compara beneficio 35 37
+benefit parcial51
+compara beneficio 35 37
+benefit parcial47
+compara beneficio 31 37
+benefit parcial41
+compara beneficio 25 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 9 - 12
+[(vertex: 12, cost: 13, benefit: 38 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 9
+Beneficio dispon9
+benefit parcial34
+compara beneficio 38 37
+agregando lado..9(vertex: 8, cost: 4, benefit: 9 ) 
+myset contains: 8 9 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 9 - 8
+Beneficio dispon4
+v 8
+[(vertex: 9, cost: 4, benefit: 9 ) (vertex: 9, cost: 4, benefit: 0 ) (vertex: 2, cost: 29, benefit: 23 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 3, cost: 31, benefit: 14 ) (vertex: 1, cost: 27, benefit: 7 ) (vertex: 1, cost: 27, benefit: 0 ) (vertex: 2, cost: 29, benefit: 0 ) (vertex: 3, cost: 31, benefit: 0 ) ]
+benefit parcial30
+compara beneficio 34 37
+benefit parcial28
+compara beneficio 32 37
+benefit parcial24
+compara beneficio 28 37
+benefit parcial24
+compara beneficio 28 37
+benefit parcial17
+compara beneficio 21 37
+benefit parcial14
+compara beneficio 18 37
+benefit parcial7
+compara beneficio 11 37
+benefit parcial5
+compara beneficio 9 37
+benefit parcial3
+compara beneficio 7 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 9 - 8
+[(vertex: 8, cost: 4, benefit: 9 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 9
+Beneficio dispon9
+benefit parcial25
+compara beneficio 34 37
+benefit parcial21
+compara beneficio 30 37
+benefit parcial16
+compara beneficio 25 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 9
+[(vertex: 9, cost: 8, benefit: 8 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10
+Beneficio dispon9
+benefit parcial28
+compara beneficio 37 37
+agregando lado..10(vertex: 11, cost: 1, benefit: 0 ) 
+myset contains: 11 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11
+Beneficio dispon9
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial31
+compara beneficio 37 37
+agregando lado..11(vertex: 12, cost: 7, benefit: 10 ) 
+myset contains: 12 11 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12
+Beneficio dispon6
+v 12
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 11, cost: 7, benefit: 10 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 11, cost: 7, benefit: 0 ) (vertex: 9, cost: 13, benefit: 0 ) ]
+benefit parcial56
+compara beneficio 37 37
+agregando lado..12(vertex: 9, cost: 13, benefit: 38 ) 
+myset contains: 9 12 11 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12 - 9
+Beneficio dispon-19
+v 9
+[(vertex: 12, cost: 13, benefit: 38 ) (vertex: 8, cost: 4, benefit: 9 ) (vertex: 10, cost: 8, benefit: 8 ) (vertex: 8, cost: 4, benefit: 0 ) (vertex: 10, cost: 8, benefit: 0 ) (vertex: 12, cost: 13, benefit: 0 ) ]
+benefit parcial61
+compara beneficio 37 37
+agregando lado..9(vertex: 8, cost: 4, benefit: 9 ) 
+myset contains: 8 9 12 11 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12 - 9 - 8
+Beneficio dispon-24
+v 8
+[(vertex: 9, cost: 4, benefit: 9 ) (vertex: 9, cost: 4, benefit: 0 ) (vertex: 2, cost: 29, benefit: 23 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 3, cost: 31, benefit: 14 ) (vertex: 1, cost: 27, benefit: 7 ) (vertex: 1, cost: 27, benefit: 0 ) (vertex: 2, cost: 29, benefit: 0 ) (vertex: 3, cost: 31, benefit: 0 ) ]
+benefit parcial57
+compara beneficio 33 37
+benefit parcial55
+compara beneficio 31 37
+benefit parcial51
+compara beneficio 27 37
+benefit parcial51
+compara beneficio 27 37
+benefit parcial44
+compara beneficio 20 37
+benefit parcial41
+compara beneficio 17 37
+benefit parcial34
+compara beneficio 10 37
+benefit parcial32
+compara beneficio 8 37
+benefit parcial30
+compara beneficio 6 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12 - 9 - 8
+[(vertex: 8, cost: 4, benefit: 9 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12 - 9
+Beneficio dispon-19
+benefit parcial56
+compara beneficio 37 37
+agregando lado..9(vertex: 10, cost: 8, benefit: 8 ) 
+myset contains: 10 9 12 11 7 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12 - 9 - 10
+Beneficio dispon-19
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial55
+compara beneficio 36 37
+benefit parcial53
+compara beneficio 34 37
+benefit parcial53
+compara beneficio 34 37
+benefit parcial53
+compara beneficio 34 37
+benefit parcial51
+compara beneficio 32 37
+benefit parcial48
+compara beneficio 29 37
+benefit parcial46
+compara beneficio 27 37
+benefit parcial46
+compara beneficio 27 37
+benefit parcial46
+compara beneficio 27 37
+benefit parcial43
+compara beneficio 24 37
+benefit parcial42
+compara beneficio 23 37
+benefit parcial41
+compara beneficio 22 37
+benefit parcial41
+compara beneficio 22 37
+benefit parcial36
+compara beneficio 17 37
+benefit parcial34
+compara beneficio 15 37
+benefit parcial32
+compara beneficio 13 37
+benefit parcial30
+compara beneficio 11 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12 - 9 - 10
+[(vertex: 10, cost: 8, benefit: 8 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12 - 9
+Beneficio dispon-19
+benefit parcial52
+compara beneficio 33 37
+benefit parcial48
+compara beneficio 29 37
+benefit parcial43
+compara beneficio 24 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12 - 9
+[(vertex: 9, cost: 13, benefit: 38 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12
+Beneficio dispon6
+benefit parcial28
+compara beneficio 34 37
+benefit parcial28
+compara beneficio 34 37
+benefit parcial24
+compara beneficio 30 37
+benefit parcial18
+compara beneficio 24 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11 - 12
+[(vertex: 12, cost: 7, benefit: 10 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11
+Beneficio dispon9
+benefit parcial27
+compara beneficio 36 37
+benefit parcial21
+compara beneficio 30 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10 - 11
+[(vertex: 11, cost: 1, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10
+Beneficio dispon9
+benefit parcial26
+compara beneficio 35 37
+benefit parcial26
+compara beneficio 35 37
+benefit parcial26
+compara beneficio 35 37
+benefit parcial24
+compara beneficio 33 37
+benefit parcial21
+compara beneficio 30 37
+benefit parcial19
+compara beneficio 28 37
+benefit parcial19
+compara beneficio 28 37
+benefit parcial19
+compara beneficio 28 37
+benefit parcial16
+compara beneficio 25 37
+benefit parcial15
+compara beneficio 24 37
+benefit parcial14
+compara beneficio 23 37
+benefit parcial14
+compara beneficio 23 37
+benefit parcial9
+compara beneficio 18 37
+benefit parcial7
+compara beneficio 16 37
+benefit parcial5
+compara beneficio 14 37
+benefit parcial3
+compara beneficio 12 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7 - 10
+[(vertex: 6, cost: 2, benefit: 3 ) (vertex: 10, cost: 13, benefit: 6 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7
+Beneficio dispon9
+benefit parcial26
+compara beneficio 35 37
+benefit parcial26
+compara beneficio 35 37
+benefit parcial26
+compara beneficio 35 37
+benefit parcial23
+compara beneficio 32 37
+benefit parcial22
+compara beneficio 31 37
+benefit parcial17
+compara beneficio 26 37
+benefit parcial15
+compara beneficio 24 37
+benefit parcial13
+compara beneficio 22 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 7
+[(vertex: 4, cost: 11, benefit: 22 ) (vertex: 7, cost: 23, benefit: 17 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3
+Beneficio dispon9
+benefit parcial33
+compara beneficio 42 37
+agregando lado..3(vertex: 2, cost: 9, benefit: 0 ) 
+myset contains: 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2
+Beneficio dispon9
+v 2
+[(vertex: 3, cost: 9, benefit: 10 ) (vertex: 10, cost: 24, benefit: 21 ) (vertex: 5, cost: 14, benefit: 9 ) (vertex: 7, cost: 21, benefit: 15 ) (vertex: 8, cost: 29, benefit: 23 ) (vertex: 3, cost: 9, benefit: 0 ) (vertex: 5, cost: 14, benefit: 0 ) (vertex: 7, cost: 21, benefit: 0 ) (vertex: 10, cost: 24, benefit: 0 ) (vertex: 8, cost: 29, benefit: 0 ) ]
+benefit parcial30
+compara beneficio 39 37
+agregando lado..2(vertex: 10, cost: 24, benefit: 21 ) 
+myset contains: 10 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10
+Beneficio dispon9
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial31
+compara beneficio 39 37
+agregando lado..10(vertex: 11, cost: 1, benefit: 2 ) 
+myset contains: 11 10 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11
+Beneficio dispon8
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial34
+compara beneficio 39 37
+agregando lado..11(vertex: 12, cost: 7, benefit: 10 ) 
+myset contains: 12 11 10 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12
+Beneficio dispon5
+v 12
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 11, cost: 7, benefit: 10 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 11, cost: 7, benefit: 0 ) (vertex: 9, cost: 13, benefit: 0 ) ]
+benefit parcial59
+compara beneficio 39 37
+agregando lado..12(vertex: 9, cost: 13, benefit: 38 ) 
+myset contains: 9 12 11 10 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9
+Beneficio dispon-20
+v 9
+[(vertex: 12, cost: 13, benefit: 38 ) (vertex: 8, cost: 4, benefit: 9 ) (vertex: 10, cost: 8, benefit: 8 ) (vertex: 8, cost: 4, benefit: 0 ) (vertex: 10, cost: 8, benefit: 0 ) (vertex: 12, cost: 13, benefit: 0 ) ]
+benefit parcial64
+compara beneficio 39 37
+agregando lado..9(vertex: 8, cost: 4, benefit: 9 ) 
+myset contains: 8 9 12 11 10 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9 - 8
+Beneficio dispon-25
+v 8
+[(vertex: 9, cost: 4, benefit: 9 ) (vertex: 9, cost: 4, benefit: 0 ) (vertex: 2, cost: 29, benefit: 23 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 3, cost: 31, benefit: 14 ) (vertex: 1, cost: 27, benefit: 7 ) (vertex: 1, cost: 27, benefit: 0 ) (vertex: 2, cost: 29, benefit: 0 ) (vertex: 3, cost: 31, benefit: 0 ) ]
+benefit parcial60
+compara beneficio 35 37
+benefit parcial58
+compara beneficio 33 37
+benefit parcial54
+compara beneficio 29 37
+benefit parcial54
+compara beneficio 29 37
+benefit parcial47
+compara beneficio 22 37
+benefit parcial44
+compara beneficio 19 37
+benefit parcial37
+compara beneficio 12 37
+benefit parcial35
+compara beneficio 10 37
+benefit parcial33
+compara beneficio 8 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9 - 8
+[(vertex: 8, cost: 4, benefit: 9 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9
+Beneficio dispon-20
+benefit parcial59
+compara beneficio 39 37
+agregando lado..9(vertex: 10, cost: 8, benefit: 8 ) 
+myset contains: 9 12 11 10 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9 - 10
+Beneficio dispon-20
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial58
+compara beneficio 38 37
+agregando lado..10(vertex: 11, cost: 1, benefit: 0 ) 
+myset contains: 9 12 11 10 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9 - 10 - 11
+Beneficio dispon-20
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial51
+compara beneficio 31 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9 - 10 - 11
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 11, cost: 1, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9 - 10
+Beneficio dispon-20
+benefit parcial56
+compara beneficio 36 37
+benefit parcial56
+compara beneficio 36 37
+benefit parcial54
+compara beneficio 34 37
+benefit parcial52
+compara beneficio 32 37
+benefit parcial51
+compara beneficio 31 37
+benefit parcial49
+compara beneficio 29 37
+benefit parcial49
+compara beneficio 29 37
+benefit parcial49
+compara beneficio 29 37
+benefit parcial46
+compara beneficio 26 37
+benefit parcial45
+compara beneficio 25 37
+benefit parcial44
+compara beneficio 24 37
+benefit parcial44
+compara beneficio 24 37
+benefit parcial39
+compara beneficio 19 37
+benefit parcial37
+compara beneficio 17 37
+benefit parcial35
+compara beneficio 15 37
+benefit parcial33
+compara beneficio 13 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9 - 10
+[(vertex: 10, cost: 8, benefit: 8 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9
+Beneficio dispon-20
+benefit parcial55
+compara beneficio 35 37
+benefit parcial51
+compara beneficio 31 37
+benefit parcial46
+compara beneficio 26 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9
+[(vertex: 9, cost: 13, benefit: 38 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12
+Beneficio dispon5
+benefit parcial31
+compara beneficio 36 37
+benefit parcial31
+compara beneficio 36 37
+benefit parcial27
+compara beneficio 32 37
+benefit parcial21
+compara beneficio 26 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12
+[(vertex: 12, cost: 7, benefit: 10 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11
+Beneficio dispon8
+benefit parcial30
+compara beneficio 38 37
+agregando lado..11(vertex: 10, cost: 1, benefit: 0 ) 
+myset contains: 10 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10
+Beneficio dispon8
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial30
+compara beneficio 38 37
+agregando lado..10(vertex: 9, cost: 8, benefit: 8 ) 
+myset contains: 9 10 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9
+Beneficio dispon8
+v 9
+[(vertex: 12, cost: 13, benefit: 38 ) (vertex: 8, cost: 4, benefit: 9 ) (vertex: 10, cost: 8, benefit: 8 ) (vertex: 8, cost: 4, benefit: 0 ) (vertex: 10, cost: 8, benefit: 0 ) (vertex: 12, cost: 13, benefit: 0 ) ]
+benefit parcial55
+compara beneficio 38 37
+agregando lado..9(vertex: 12, cost: 13, benefit: 38 ) 
+myset contains: 12 9 10 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9 - 12
+Beneficio dispon-17
+v 12
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 11, cost: 7, benefit: 10 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 11, cost: 7, benefit: 0 ) (vertex: 9, cost: 13, benefit: 0 ) ]
+benefit parcial58
+compara beneficio 38 37
+agregando lado..12(vertex: 11, cost: 7, benefit: 10 ) 
+myset contains: 11 12 9 10 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9 - 12 - 11
+Beneficio dispon-20
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial51
+compara beneficio 31 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9 - 12 - 11
+[(vertex: 11, cost: 7, benefit: 10 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9 - 12
+Beneficio dispon-17
+benefit parcial52
+compara beneficio 35 37
+benefit parcial52
+compara beneficio 35 37
+benefit parcial48
+compara beneficio 31 37
+benefit parcial42
+compara beneficio 25 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9 - 12
+[(vertex: 12, cost: 13, benefit: 38 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9
+Beneficio dispon8
+benefit parcial35
+compara beneficio 38 37
+agregando lado..9(vertex: 8, cost: 4, benefit: 9 ) 
+myset contains: 8 9 10 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9 - 8
+Beneficio dispon3
+v 8
+[(vertex: 9, cost: 4, benefit: 9 ) (vertex: 9, cost: 4, benefit: 0 ) (vertex: 2, cost: 29, benefit: 23 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 3, cost: 31, benefit: 14 ) (vertex: 1, cost: 27, benefit: 7 ) (vertex: 1, cost: 27, benefit: 0 ) (vertex: 2, cost: 29, benefit: 0 ) (vertex: 3, cost: 31, benefit: 0 ) ]
+benefit parcial31
+compara beneficio 34 37
+benefit parcial29
+compara beneficio 32 37
+benefit parcial25
+compara beneficio 28 37
+benefit parcial25
+compara beneficio 28 37
+benefit parcial18
+compara beneficio 21 37
+benefit parcial15
+compara beneficio 18 37
+benefit parcial8
+compara beneficio 11 37
+benefit parcial6
+compara beneficio 9 37
+benefit parcial4
+compara beneficio 7 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9 - 8
+[(vertex: 8, cost: 4, benefit: 9 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9
+Beneficio dispon8
+benefit parcial26
+compara beneficio 34 37
+benefit parcial22
+compara beneficio 30 37
+benefit parcial17
+compara beneficio 25 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10
+Beneficio dispon8
+benefit parcial27
+compara beneficio 35 37
+benefit parcial27
+compara beneficio 35 37
+benefit parcial25
+compara beneficio 33 37
+benefit parcial23
+compara beneficio 31 37
+benefit parcial22
+compara beneficio 30 37
+benefit parcial20
+compara beneficio 28 37
+benefit parcial20
+compara beneficio 28 37
+benefit parcial20
+compara beneficio 28 37
+benefit parcial17
+compara beneficio 25 37
+benefit parcial16
+compara beneficio 24 37
+benefit parcial15
+compara beneficio 23 37
+benefit parcial15
+compara beneficio 23 37
+benefit parcial10
+compara beneficio 18 37
+benefit parcial8
+compara beneficio 16 37
+benefit parcial6
+compara beneficio 14 37
+benefit parcial4
+compara beneficio 12 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10
+[(vertex: 10, cost: 1, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11
+Beneficio dispon8
+benefit parcial24
+compara beneficio 32 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11
+[(vertex: 11, cost: 1, benefit: 2 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10
+Beneficio dispon9
+benefit parcial30
+compara beneficio 39 37
+agregando lado..10(vertex: 9, cost: 8, benefit: 8 ) 
+myset contains: 9 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9
+Beneficio dispon9
+v 9
+[(vertex: 12, cost: 13, benefit: 38 ) (vertex: 8, cost: 4, benefit: 9 ) (vertex: 10, cost: 8, benefit: 8 ) (vertex: 8, cost: 4, benefit: 0 ) (vertex: 10, cost: 8, benefit: 0 ) (vertex: 12, cost: 13, benefit: 0 ) ]
+benefit parcial55
+compara beneficio 39 37
+agregando lado..9(vertex: 12, cost: 13, benefit: 38 ) 
+myset contains: 12 9 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9 - 12
+Beneficio dispon-16
+v 12
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 11, cost: 7, benefit: 10 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 11, cost: 7, benefit: 0 ) (vertex: 9, cost: 13, benefit: 0 ) ]
+benefit parcial58
+compara beneficio 39 37
+agregando lado..12(vertex: 11, cost: 7, benefit: 10 ) 
+myset contains: 11 12 9 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9 - 12 - 11
+Beneficio dispon-19
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial59
+compara beneficio 39 37
+agregando lado..11(vertex: 10, cost: 1, benefit: 2 ) 
+myset contains: 10 11 12 9 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9 - 12 - 11 - 10
+Beneficio dispon-20
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial58
+compara beneficio 38 37
+agregando lado..10(vertex: 11, cost: 1, benefit: 0 ) 
+myset contains: 10 11 12 9 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9 - 12 - 11 - 10 - 11
+Beneficio dispon-20
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial51
+compara beneficio 31 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9 - 12 - 11 - 10 - 11
+[(vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9 - 12 - 11 - 10
+Beneficio dispon-20
+benefit parcial56
+compara beneficio 36 37
+benefit parcial56
+compara beneficio 36 37
+benefit parcial54
+compara beneficio 34 37
+benefit parcial52
+compara beneficio 32 37
+benefit parcial51
+compara beneficio 31 37
+benefit parcial49
+compara beneficio 29 37
+benefit parcial49
+compara beneficio 29 37
+benefit parcial49
+compara beneficio 29 37
+benefit parcial46
+compara beneficio 26 37
+benefit parcial45
+compara beneficio 25 37
+benefit parcial44
+compara beneficio 24 37
+benefit parcial44
+compara beneficio 24 37
+benefit parcial39
+compara beneficio 19 37
+benefit parcial37
+compara beneficio 17 37
+benefit parcial35
+compara beneficio 15 37
+benefit parcial33
+compara beneficio 13 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9 - 12 - 11 - 10
+[(vertex: 10, cost: 1, benefit: 2 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9 - 12 - 11
+Beneficio dispon-19
+benefit parcial57
+compara beneficio 38 37
+agregando lado..11(vertex: 10, cost: 1, benefit: 0 ) 
+myset contains: 10 12 9 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9 - 12 - 11 - 10
+Beneficio dispon-19
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial56
+compara beneficio 37 37
+agregando lado..10(vertex: 11, cost: 1, benefit: 0 ) 
+myset contains: 11 10 12 9 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9 - 12 - 11 - 10 - 11
+Beneficio dispon-19
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial49
+compara beneficio 30 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9 - 12 - 11 - 10 - 11
+[(vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9 - 12 - 11 - 10
+Beneficio dispon-19
+benefit parcial54
+compara beneficio 35 37
+benefit parcial54
+compara beneficio 35 37
+benefit parcial52
+compara beneficio 33 37
+benefit parcial50
+compara beneficio 31 37
+benefit parcial49
+compara beneficio 30 37
+benefit parcial47
+compara beneficio 28 37
+benefit parcial47
+compara beneficio 28 37
+benefit parcial47
+compara beneficio 28 37
+benefit parcial44
+compara beneficio 25 37
+benefit parcial43
+compara beneficio 24 37
+benefit parcial42
+compara beneficio 23 37
+benefit parcial42
+compara beneficio 23 37
+benefit parcial37
+compara beneficio 18 37
+benefit parcial35
+compara beneficio 16 37
+benefit parcial33
+compara beneficio 14 37
+benefit parcial31
+compara beneficio 12 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9 - 12 - 11 - 10
+[(vertex: 10, cost: 1, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9 - 12 - 11
+Beneficio dispon-19
+benefit parcial51
+compara beneficio 32 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9 - 12 - 11
+[(vertex: 11, cost: 7, benefit: 10 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9 - 12
+Beneficio dispon-16
+benefit parcial52
+compara beneficio 36 37
+benefit parcial52
+compara beneficio 36 37
+benefit parcial48
+compara beneficio 32 37
+benefit parcial42
+compara beneficio 26 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9 - 12
+[(vertex: 12, cost: 13, benefit: 38 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9
+Beneficio dispon9
+benefit parcial35
+compara beneficio 39 37
+agregando lado..9(vertex: 8, cost: 4, benefit: 9 ) 
+myset contains: 8 9 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9 - 8
+Beneficio dispon4
+v 8
+[(vertex: 9, cost: 4, benefit: 9 ) (vertex: 9, cost: 4, benefit: 0 ) (vertex: 2, cost: 29, benefit: 23 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 3, cost: 31, benefit: 14 ) (vertex: 1, cost: 27, benefit: 7 ) (vertex: 1, cost: 27, benefit: 0 ) (vertex: 2, cost: 29, benefit: 0 ) (vertex: 3, cost: 31, benefit: 0 ) ]
+benefit parcial31
+compara beneficio 35 37
+benefit parcial29
+compara beneficio 33 37
+benefit parcial25
+compara beneficio 29 37
+benefit parcial25
+compara beneficio 29 37
+benefit parcial18
+compara beneficio 22 37
+benefit parcial15
+compara beneficio 19 37
+benefit parcial8
+compara beneficio 12 37
+benefit parcial6
+compara beneficio 10 37
+benefit parcial4
+compara beneficio 8 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9 - 8
+[(vertex: 8, cost: 4, benefit: 9 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9
+Beneficio dispon9
+benefit parcial26
+compara beneficio 35 37
+benefit parcial22
+compara beneficio 31 37
+benefit parcial17
+compara beneficio 26 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 9
+[(vertex: 9, cost: 8, benefit: 8 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10
+Beneficio dispon9
+benefit parcial29
+compara beneficio 38 37
+agregando lado..10(vertex: 11, cost: 1, benefit: 0 ) 
+myset contains: 11 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11
+Beneficio dispon9
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial32
+compara beneficio 38 37
+agregando lado..11(vertex: 12, cost: 7, benefit: 10 ) 
+myset contains: 12 11 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12
+Beneficio dispon6
+v 12
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 11, cost: 7, benefit: 10 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 11, cost: 7, benefit: 0 ) (vertex: 9, cost: 13, benefit: 0 ) ]
+benefit parcial57
+compara beneficio 38 37
+agregando lado..12(vertex: 9, cost: 13, benefit: 38 ) 
+myset contains: 9 12 11 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9
+Beneficio dispon-19
+v 9
+[(vertex: 12, cost: 13, benefit: 38 ) (vertex: 8, cost: 4, benefit: 9 ) (vertex: 10, cost: 8, benefit: 8 ) (vertex: 8, cost: 4, benefit: 0 ) (vertex: 10, cost: 8, benefit: 0 ) (vertex: 12, cost: 13, benefit: 0 ) ]
+benefit parcial62
+compara beneficio 38 37
+agregando lado..9(vertex: 8, cost: 4, benefit: 9 ) 
+myset contains: 8 9 12 11 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9 - 8
+Beneficio dispon-24
+v 8
+[(vertex: 9, cost: 4, benefit: 9 ) (vertex: 9, cost: 4, benefit: 0 ) (vertex: 2, cost: 29, benefit: 23 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 3, cost: 31, benefit: 14 ) (vertex: 1, cost: 27, benefit: 7 ) (vertex: 1, cost: 27, benefit: 0 ) (vertex: 2, cost: 29, benefit: 0 ) (vertex: 3, cost: 31, benefit: 0 ) ]
+benefit parcial58
+compara beneficio 34 37
+benefit parcial56
+compara beneficio 32 37
+benefit parcial52
+compara beneficio 28 37
+benefit parcial52
+compara beneficio 28 37
+benefit parcial45
+compara beneficio 21 37
+benefit parcial42
+compara beneficio 18 37
+benefit parcial35
+compara beneficio 11 37
+benefit parcial33
+compara beneficio 9 37
+benefit parcial31
+compara beneficio 7 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9 - 8
+[(vertex: 8, cost: 4, benefit: 9 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9
+Beneficio dispon-19
+benefit parcial57
+compara beneficio 38 37
+agregando lado..9(vertex: 10, cost: 8, benefit: 8 ) 
+myset contains: 10 9 12 11 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9 - 10
+Beneficio dispon-19
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial56
+compara beneficio 37 37
+agregando lado..10(vertex: 11, cost: 1, benefit: 0 ) 
+myset contains: 10 9 12 11 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9 - 10 - 11
+Beneficio dispon-19
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial49
+compara beneficio 30 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9 - 10 - 11
+[(vertex: 11, cost: 1, benefit: 0 ) (vertex: 11, cost: 1, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9 - 10
+Beneficio dispon-19
+benefit parcial54
+compara beneficio 35 37
+benefit parcial54
+compara beneficio 35 37
+benefit parcial52
+compara beneficio 33 37
+benefit parcial50
+compara beneficio 31 37
+benefit parcial49
+compara beneficio 30 37
+benefit parcial47
+compara beneficio 28 37
+benefit parcial47
+compara beneficio 28 37
+benefit parcial47
+compara beneficio 28 37
+benefit parcial44
+compara beneficio 25 37
+benefit parcial43
+compara beneficio 24 37
+benefit parcial42
+compara beneficio 23 37
+benefit parcial42
+compara beneficio 23 37
+benefit parcial37
+compara beneficio 18 37
+benefit parcial35
+compara beneficio 16 37
+benefit parcial33
+compara beneficio 14 37
+benefit parcial31
+compara beneficio 12 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9 - 10
+[(vertex: 10, cost: 8, benefit: 8 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9
+Beneficio dispon-19
+benefit parcial53
+compara beneficio 34 37
+benefit parcial49
+compara beneficio 30 37
+benefit parcial44
+compara beneficio 25 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12 - 9
+[(vertex: 9, cost: 13, benefit: 38 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12
+Beneficio dispon6
+benefit parcial29
+compara beneficio 35 37
+benefit parcial29
+compara beneficio 35 37
+benefit parcial25
+compara beneficio 31 37
+benefit parcial19
+compara beneficio 25 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 12
+[(vertex: 12, cost: 7, benefit: 10 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11
+Beneficio dispon9
+benefit parcial28
+compara beneficio 37 37
+agregando lado..11(vertex: 10, cost: 1, benefit: 0 ) 
+myset contains: 10 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10
+Beneficio dispon9
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial28
+compara beneficio 37 37
+agregando lado..10(vertex: 9, cost: 8, benefit: 8 ) 
+myset contains: 9 10 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9
+Beneficio dispon9
+v 9
+[(vertex: 12, cost: 13, benefit: 38 ) (vertex: 8, cost: 4, benefit: 9 ) (vertex: 10, cost: 8, benefit: 8 ) (vertex: 8, cost: 4, benefit: 0 ) (vertex: 10, cost: 8, benefit: 0 ) (vertex: 12, cost: 13, benefit: 0 ) ]
+benefit parcial53
+compara beneficio 37 37
+agregando lado..9(vertex: 12, cost: 13, benefit: 38 ) 
+myset contains: 12 9 10 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9 - 12
+Beneficio dispon-16
+v 12
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 11, cost: 7, benefit: 10 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 11, cost: 7, benefit: 0 ) (vertex: 9, cost: 13, benefit: 0 ) ]
+benefit parcial56
+compara beneficio 37 37
+agregando lado..12(vertex: 11, cost: 7, benefit: 10 ) 
+myset contains: 11 12 9 10 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9 - 12 - 11
+Beneficio dispon-19
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial49
+compara beneficio 30 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9 - 12 - 11
+[(vertex: 11, cost: 7, benefit: 10 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9 - 12
+Beneficio dispon-16
+benefit parcial50
+compara beneficio 34 37
+benefit parcial50
+compara beneficio 34 37
+benefit parcial46
+compara beneficio 30 37
+benefit parcial40
+compara beneficio 24 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9 - 12
+[(vertex: 12, cost: 13, benefit: 38 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9
+Beneficio dispon9
+benefit parcial33
+compara beneficio 37 37
+agregando lado..9(vertex: 8, cost: 4, benefit: 9 ) 
+myset contains: 8 9 10 2 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9 - 8
+Beneficio dispon4
+v 8
+[(vertex: 9, cost: 4, benefit: 9 ) (vertex: 9, cost: 4, benefit: 0 ) (vertex: 2, cost: 29, benefit: 23 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 3, cost: 31, benefit: 14 ) (vertex: 1, cost: 27, benefit: 7 ) (vertex: 1, cost: 27, benefit: 0 ) (vertex: 2, cost: 29, benefit: 0 ) (vertex: 3, cost: 31, benefit: 0 ) ]
+benefit parcial29
+compara beneficio 33 37
+benefit parcial27
+compara beneficio 31 37
+benefit parcial23
+compara beneficio 27 37
+benefit parcial23
+compara beneficio 27 37
+benefit parcial16
+compara beneficio 20 37
+benefit parcial13
+compara beneficio 17 37
+benefit parcial6
+compara beneficio 10 37
+benefit parcial4
+compara beneficio 8 37
+benefit parcial2
+compara beneficio 6 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9 - 8
+[(vertex: 8, cost: 4, benefit: 9 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9
+Beneficio dispon9
+benefit parcial24
+compara beneficio 33 37
+benefit parcial20
+compara beneficio 29 37
+benefit parcial15
+compara beneficio 24 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10 - 9
+[(vertex: 11, cost: 1, benefit: 0 ) (vertex: 9, cost: 8, benefit: 8 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10
+Beneficio dispon9
+benefit parcial25
+compara beneficio 34 37
+benefit parcial25
+compara beneficio 34 37
+benefit parcial23
+compara beneficio 32 37
+benefit parcial21
+compara beneficio 30 37
+benefit parcial20
+compara beneficio 29 37
+benefit parcial18
+compara beneficio 27 37
+benefit parcial18
+compara beneficio 27 37
+benefit parcial18
+compara beneficio 27 37
+benefit parcial15
+compara beneficio 24 37
+benefit parcial14
+compara beneficio 23 37
+benefit parcial13
+compara beneficio 22 37
+benefit parcial13
+compara beneficio 22 37
+benefit parcial8
+compara beneficio 17 37
+benefit parcial6
+compara beneficio 15 37
+benefit parcial4
+compara beneficio 13 37
+benefit parcial2
+compara beneficio 11 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11 - 10
+[(vertex: 10, cost: 1, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11
+Beneficio dispon9
+benefit parcial22
+compara beneficio 31 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10 - 11
+[(vertex: 11, cost: 1, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10
+Beneficio dispon9
+benefit parcial27
+compara beneficio 36 37
+benefit parcial27
+compara beneficio 36 37
+benefit parcial25
+compara beneficio 34 37
+benefit parcial23
+compara beneficio 32 37
+benefit parcial22
+compara beneficio 31 37
+benefit parcial20
+compara beneficio 29 37
+benefit parcial20
+compara beneficio 29 37
+benefit parcial20
+compara beneficio 29 37
+benefit parcial17
+compara beneficio 26 37
+benefit parcial16
+compara beneficio 25 37
+benefit parcial15
+compara beneficio 24 37
+benefit parcial15
+compara beneficio 24 37
+benefit parcial10
+compara beneficio 19 37
+benefit parcial8
+compara beneficio 17 37
+benefit parcial6
+compara beneficio 15 37
+benefit parcial4
+compara beneficio 13 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2 - 10
+[(vertex: 3, cost: 9, benefit: 10 ) (vertex: 10, cost: 24, benefit: 21 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2
+Beneficio dispon9
+benefit parcial27
+compara beneficio 36 37
+benefit parcial27
+compara beneficio 36 37
+benefit parcial19
+compara beneficio 28 37
+benefit parcial12
+compara beneficio 21 37
+benefit parcial9
+compara beneficio 18 37
+benefit parcial4
+compara beneficio 13 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 2
+[(vertex: 4, cost: 11, benefit: 22 ) (vertex: 2, cost: 9, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3
+Beneficio dispon9
+benefit parcial33
+compara beneficio 42 37
+agregando lado..3(vertex: 5, cost: 18, benefit: 9 ) 
+myset contains: 3 5
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 5
+Beneficio dispon9
+v 5
+[(vertex: 7, cost: 10, benefit: 29 ) (vertex: 6, cost: 8, benefit: 23 ) (vertex: 1, cost: 17, benefit: 13 ) (vertex: 2, cost: 14, benefit: 9 ) (vertex: 6, cost: 8, benefit: 0 ) (vertex: 3, cost: 18, benefit: 9 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 13, cost: 26, benefit: 15 ) (vertex: 2, cost: 14, benefit: 0 ) (vertex: 10, cost: 20, benefit: 5 ) (vertex: 1, cost: 17, benefit: 0 ) (vertex: 3, cost: 18, benefit: 0 ) (vertex: 10, cost: 20, benefit: 0 ) (vertex: 13, cost: 26, benefit: 0 ) ]
+benefit parcial25
+compara beneficio 34 37
+benefit parcial23
+compara beneficio 32 37
+benefit parcial22
+compara beneficio 31 37
+benefit parcial19
+compara beneficio 28 37
+benefit parcial18
+compara beneficio 27 37
+benefit parcial16
+compara beneficio 25 37
+benefit parcial15
+compara beneficio 24 37
+benefit parcial13
+compara beneficio 22 37
+benefit parcial7
+compara beneficio 16 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 5
+[(vertex: 4, cost: 11, benefit: 22 ) (vertex: 5, cost: 18, benefit: 9 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3
+Beneficio dispon9
+benefit parcial31
+compara beneficio 40 37
+agregando lado..3(vertex: 4, cost: 11, benefit: 0 ) 
+myset contains: 4 3
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 4
+Beneficio dispon9
+v 4
+[(vertex: 3, cost: 11, benefit: 22 ) (vertex: 1, cost: 9, benefit: 3 ) (vertex: 1, cost: 9, benefit: 0 ) (vertex: 3, cost: 11, benefit: 0 ) ]
+benefit parcial22
+compara beneficio 31 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 4
+[(vertex: 4, cost: 11, benefit: 22 ) (vertex: 4, cost: 11, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3
+Beneficio dispon9
+benefit parcial28
+compara beneficio 37 37
+agregando lado..3(vertex: 10, cost: 26, benefit: 12 ) 
+myset contains: 10 3
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10
+Beneficio dispon9
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial29
+compara beneficio 37 37
+agregando lado..10(vertex: 11, cost: 1, benefit: 2 ) 
+myset contains: 11 10 3
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 11
+Beneficio dispon8
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial32
+compara beneficio 37 37
+agregando lado..11(vertex: 12, cost: 7, benefit: 10 ) 
+myset contains: 12 11 10 3
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 11 - 12
+Beneficio dispon5
+v 12
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 11, cost: 7, benefit: 10 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 11, cost: 7, benefit: 0 ) (vertex: 9, cost: 13, benefit: 0 ) ]
+benefit parcial57
+compara beneficio 37 37
+agregando lado..12(vertex: 9, cost: 13, benefit: 38 ) 
+myset contains: 9 12 11 10 3
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 11 - 12 - 9
+Beneficio dispon-20
+v 9
+[(vertex: 12, cost: 13, benefit: 38 ) (vertex: 8, cost: 4, benefit: 9 ) (vertex: 10, cost: 8, benefit: 8 ) (vertex: 8, cost: 4, benefit: 0 ) (vertex: 10, cost: 8, benefit: 0 ) (vertex: 12, cost: 13, benefit: 0 ) ]
+benefit parcial62
+compara beneficio 37 37
+agregando lado..9(vertex: 8, cost: 4, benefit: 9 ) 
+myset contains: 8 9 12 11 10 3
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 11 - 12 - 9 - 8
+Beneficio dispon-25
+v 8
+[(vertex: 9, cost: 4, benefit: 9 ) (vertex: 9, cost: 4, benefit: 0 ) (vertex: 2, cost: 29, benefit: 23 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 3, cost: 31, benefit: 14 ) (vertex: 1, cost: 27, benefit: 7 ) (vertex: 1, cost: 27, benefit: 0 ) (vertex: 2, cost: 29, benefit: 0 ) (vertex: 3, cost: 31, benefit: 0 ) ]
+benefit parcial58
+compara beneficio 33 37
+benefit parcial56
+compara beneficio 31 37
+benefit parcial52
+compara beneficio 27 37
+benefit parcial52
+compara beneficio 27 37
+benefit parcial45
+compara beneficio 20 37
+benefit parcial42
+compara beneficio 17 37
+benefit parcial35
+compara beneficio 10 37
+benefit parcial33
+compara beneficio 8 37
+benefit parcial31
+compara beneficio 6 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 11 - 12 - 9 - 8
+[(vertex: 8, cost: 4, benefit: 9 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 11 - 12 - 9
+Beneficio dispon-20
+benefit parcial57
+compara beneficio 37 37
+agregando lado..9(vertex: 10, cost: 8, benefit: 8 ) 
+myset contains: 9 12 11 10 3
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 11 - 12 - 9 - 10
+Beneficio dispon-20
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial56
+compara beneficio 36 37
+benefit parcial54
+compara beneficio 34 37
+benefit parcial54
+compara beneficio 34 37
+benefit parcial54
+compara beneficio 34 37
+benefit parcial52
+compara beneficio 32 37
+benefit parcial50
+compara beneficio 30 37
+benefit parcial49
+compara beneficio 29 37
+benefit parcial47
+compara beneficio 27 37
+benefit parcial47
+compara beneficio 27 37
+benefit parcial47
+compara beneficio 27 37
+benefit parcial44
+compara beneficio 24 37
+benefit parcial42
+compara beneficio 22 37
+benefit parcial42
+compara beneficio 22 37
+benefit parcial37
+compara beneficio 17 37
+benefit parcial35
+compara beneficio 15 37
+benefit parcial33
+compara beneficio 13 37
+benefit parcial31
+compara beneficio 11 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 11 - 12 - 9 - 10
+[(vertex: 10, cost: 8, benefit: 8 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 11 - 12 - 9
+Beneficio dispon-20
+benefit parcial53
+compara beneficio 33 37
+benefit parcial49
+compara beneficio 29 37
+benefit parcial44
+compara beneficio 24 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 11 - 12 - 9
+[(vertex: 9, cost: 13, benefit: 38 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 11 - 12
+Beneficio dispon5
+benefit parcial29
+compara beneficio 34 37
+benefit parcial29
+compara beneficio 34 37
+benefit parcial25
+compara beneficio 30 37
+benefit parcial19
+compara beneficio 24 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 11 - 12
+[(vertex: 12, cost: 7, benefit: 10 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 11
+Beneficio dispon8
+benefit parcial28
+compara beneficio 36 37
+benefit parcial22
+compara beneficio 30 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 11
+[(vertex: 11, cost: 1, benefit: 2 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10
+Beneficio dispon9
+benefit parcial28
+compara beneficio 37 37
+agregando lado..10(vertex: 9, cost: 8, benefit: 8 ) 
+myset contains: 9 3
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 9
+Beneficio dispon9
+v 9
+[(vertex: 12, cost: 13, benefit: 38 ) (vertex: 8, cost: 4, benefit: 9 ) (vertex: 10, cost: 8, benefit: 8 ) (vertex: 8, cost: 4, benefit: 0 ) (vertex: 10, cost: 8, benefit: 0 ) (vertex: 12, cost: 13, benefit: 0 ) ]
+benefit parcial53
+compara beneficio 37 37
+agregando lado..9(vertex: 12, cost: 13, benefit: 38 ) 
+myset contains: 12 9 3
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 9 - 12
+Beneficio dispon-16
+v 12
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 11, cost: 7, benefit: 10 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 11, cost: 7, benefit: 0 ) (vertex: 9, cost: 13, benefit: 0 ) ]
+benefit parcial56
+compara beneficio 37 37
+agregando lado..12(vertex: 11, cost: 7, benefit: 10 ) 
+myset contains: 11 12 9 3
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 9 - 12 - 11
+Beneficio dispon-19
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial57
+compara beneficio 37 37
+agregando lado..11(vertex: 10, cost: 1, benefit: 2 ) 
+myset contains: 10 11 12 9 3
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 9 - 12 - 11 - 10
+Beneficio dispon-20
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial56
+compara beneficio 36 37
+benefit parcial54
+compara beneficio 34 37
+benefit parcial54
+compara beneficio 34 37
+benefit parcial54
+compara beneficio 34 37
+benefit parcial52
+compara beneficio 32 37
+benefit parcial50
+compara beneficio 30 37
+benefit parcial49
+compara beneficio 29 37
+benefit parcial47
+compara beneficio 27 37
+benefit parcial47
+compara beneficio 27 37
+benefit parcial47
+compara beneficio 27 37
+benefit parcial44
+compara beneficio 24 37
+benefit parcial42
+compara beneficio 22 37
+benefit parcial42
+compara beneficio 22 37
+benefit parcial37
+compara beneficio 17 37
+benefit parcial35
+compara beneficio 15 37
+benefit parcial33
+compara beneficio 13 37
+benefit parcial31
+compara beneficio 11 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 9 - 12 - 11 - 10
+[(vertex: 10, cost: 1, benefit: 2 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 9 - 12 - 11
+Beneficio dispon-19
+benefit parcial55
+compara beneficio 36 37
+benefit parcial49
+compara beneficio 30 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 9 - 12 - 11
+[(vertex: 11, cost: 7, benefit: 10 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 9 - 12
+Beneficio dispon-16
+benefit parcial50
+compara beneficio 34 37
+benefit parcial50
+compara beneficio 34 37
+benefit parcial46
+compara beneficio 30 37
+benefit parcial40
+compara beneficio 24 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 9 - 12
+[(vertex: 12, cost: 13, benefit: 38 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 9
+Beneficio dispon9
+benefit parcial33
+compara beneficio 37 37
+agregando lado..9(vertex: 8, cost: 4, benefit: 9 ) 
+myset contains: 8 9 3
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 9 - 8
+Beneficio dispon4
+v 8
+[(vertex: 9, cost: 4, benefit: 9 ) (vertex: 9, cost: 4, benefit: 0 ) (vertex: 2, cost: 29, benefit: 23 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 3, cost: 31, benefit: 14 ) (vertex: 1, cost: 27, benefit: 7 ) (vertex: 1, cost: 27, benefit: 0 ) (vertex: 2, cost: 29, benefit: 0 ) (vertex: 3, cost: 31, benefit: 0 ) ]
+benefit parcial29
+compara beneficio 33 37
+benefit parcial27
+compara beneficio 31 37
+benefit parcial23
+compara beneficio 27 37
+benefit parcial23
+compara beneficio 27 37
+benefit parcial16
+compara beneficio 20 37
+benefit parcial13
+compara beneficio 17 37
+benefit parcial6
+compara beneficio 10 37
+benefit parcial4
+compara beneficio 8 37
+benefit parcial2
+compara beneficio 6 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 9 - 8
+[(vertex: 8, cost: 4, benefit: 9 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 9
+Beneficio dispon9
+benefit parcial24
+compara beneficio 33 37
+benefit parcial20
+compara beneficio 29 37
+benefit parcial15
+compara beneficio 24 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10 - 9
+[(vertex: 9, cost: 8, benefit: 8 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10
+Beneficio dispon9
+benefit parcial27
+compara beneficio 36 37
+benefit parcial25
+compara beneficio 34 37
+benefit parcial25
+compara beneficio 34 37
+benefit parcial25
+compara beneficio 34 37
+benefit parcial23
+compara beneficio 32 37
+benefit parcial21
+compara beneficio 30 37
+benefit parcial20
+compara beneficio 29 37
+benefit parcial18
+compara beneficio 27 37
+benefit parcial18
+compara beneficio 27 37
+benefit parcial18
+compara beneficio 27 37
+benefit parcial15
+compara beneficio 24 37
+benefit parcial13
+compara beneficio 22 37
+benefit parcial13
+compara beneficio 22 37
+benefit parcial8
+compara beneficio 17 37
+benefit parcial6
+compara beneficio 15 37
+benefit parcial4
+compara beneficio 13 37
+benefit parcial2
+compara beneficio 11 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3 - 10
+[(vertex: 4, cost: 11, benefit: 22 ) (vertex: 10, cost: 26, benefit: 12 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3
+Beneficio dispon9
+benefit parcial25
+compara beneficio 34 37
+benefit parcial24
+compara beneficio 33 37
+benefit parcial19
+compara beneficio 28 37
+benefit parcial16
+compara beneficio 25 37
+benefit parcial11
+compara beneficio 20 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 3
+[(vertex: 3, cost: 9, benefit: 10 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2
+Beneficio dispon10
+benefit parcial38
+compara beneficio 48 37
+agregando lado..2(vertex: 10, cost: 24, benefit: 21 ) 
+myset contains: 10
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10
+Beneficio dispon10
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial39
+compara beneficio 48 37
+agregando lado..10(vertex: 11, cost: 1, benefit: 2 ) 
+myset contains: 11 10
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11
+Beneficio dispon9
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial42
+compara beneficio 48 37
+agregando lado..11(vertex: 12, cost: 7, benefit: 10 ) 
+myset contains: 12 11 10
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12
+Beneficio dispon6
+v 12
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 11, cost: 7, benefit: 10 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 11, cost: 7, benefit: 0 ) (vertex: 9, cost: 13, benefit: 0 ) ]
+benefit parcial67
+compara beneficio 48 37
+agregando lado..12(vertex: 9, cost: 13, benefit: 38 ) 
+myset contains: 9 12 11 10
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9
+Beneficio dispon-19
+v 9
+[(vertex: 12, cost: 13, benefit: 38 ) (vertex: 8, cost: 4, benefit: 9 ) (vertex: 10, cost: 8, benefit: 8 ) (vertex: 8, cost: 4, benefit: 0 ) (vertex: 10, cost: 8, benefit: 0 ) (vertex: 12, cost: 13, benefit: 0 ) ]
+benefit parcial72
+compara beneficio 48 37
+agregando lado..9(vertex: 8, cost: 4, benefit: 9 ) 
+myset contains: 8 9 12 11 10
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8
+Beneficio dispon-24
+v 8
+[(vertex: 9, cost: 4, benefit: 9 ) (vertex: 9, cost: 4, benefit: 0 ) (vertex: 2, cost: 29, benefit: 23 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 3, cost: 31, benefit: 14 ) (vertex: 1, cost: 27, benefit: 7 ) (vertex: 1, cost: 27, benefit: 0 ) (vertex: 2, cost: 29, benefit: 0 ) (vertex: 3, cost: 31, benefit: 0 ) ]
+benefit parcial68
+compara beneficio 44 37
+agregando lado..8(vertex: 9, cost: 4, benefit: 0 ) 
+myset contains: 8 9 12 11 10
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9
+Beneficio dispon-24
+v 9
+[(vertex: 12, cost: 13, benefit: 38 ) (vertex: 8, cost: 4, benefit: 9 ) (vertex: 10, cost: 8, benefit: 8 ) (vertex: 8, cost: 4, benefit: 0 ) (vertex: 10, cost: 8, benefit: 0 ) (vertex: 12, cost: 13, benefit: 0 ) ]
+benefit parcial68
+compara beneficio 44 37
+agregando lado..9(vertex: 10, cost: 8, benefit: 8 ) 
+myset contains: 8 9 12 11 10
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10
+Beneficio dispon-24
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial67
+compara beneficio 43 37
+agregando lado..10(vertex: 11, cost: 1, benefit: 0 ) 
+myset contains: 8 9 12 11 10
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 11
+Beneficio dispon-24
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial60
+compara beneficio 36 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 11
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 11, cost: 1, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10
+Beneficio dispon-24
+benefit parcial65
+compara beneficio 41 37
+agregando lado..10(vertex: 12, cost: 3, benefit: 0 ) 
+myset contains: 8 9 12 10
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12
+Beneficio dispon-24
+v 12
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 11, cost: 7, benefit: 10 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 11, cost: 7, benefit: 0 ) (vertex: 9, cost: 13, benefit: 0 ) ]
+benefit parcial62
+compara beneficio 38 37
+agregando lado..12(vertex: 10, cost: 3, benefit: 0 ) 
+myset contains: 8 9 12 10
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12 - 10
+Beneficio dispon-24
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial61
+compara beneficio 37 37
+agregando lado..10(vertex: 11, cost: 1, benefit: 0 ) 
+myset contains: 11 8 9 12 10
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12 - 10 - 11
+Beneficio dispon-24
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial54
+compara beneficio 30 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12 - 10 - 11
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 11, cost: 1, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12 - 10
+Beneficio dispon-24
+benefit parcial57
+compara beneficio 33 37
+benefit parcial55
+compara beneficio 31 37
+benefit parcial54
+compara beneficio 30 37
+benefit parcial52
+compara beneficio 28 37
+benefit parcial52
+compara beneficio 28 37
+benefit parcial52
+compara beneficio 28 37
+benefit parcial49
+compara beneficio 25 37
+benefit parcial48
+compara beneficio 24 37
+benefit parcial47
+compara beneficio 23 37
+benefit parcial47
+compara beneficio 23 37
+benefit parcial42
+compara beneficio 18 37
+benefit parcial40
+compara beneficio 16 37
+benefit parcial38
+compara beneficio 14 37
+benefit parcial36
+compara beneficio 12 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12 - 10
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 10, cost: 3, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12
+Beneficio dispon-24
+benefit parcial62
+compara beneficio 38 37
+agregando lado..12(vertex: 10, cost: 3, benefit: 0 ) 
+myset contains: 10 8 9 12
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12 - 10
+Beneficio dispon-24
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial61
+compara beneficio 37 37
+agregando lado..10(vertex: 11, cost: 1, benefit: 0 ) 
+myset contains: 11 10 8 9 12
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12 - 10 - 11
+Beneficio dispon-24
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial54
+compara beneficio 30 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12 - 10 - 11
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 11, cost: 1, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12 - 10
+Beneficio dispon-24
+benefit parcial57
+compara beneficio 33 37
+benefit parcial55
+compara beneficio 31 37
+benefit parcial54
+compara beneficio 30 37
+benefit parcial52
+compara beneficio 28 37
+benefit parcial52
+compara beneficio 28 37
+benefit parcial52
+compara beneficio 28 37
+benefit parcial49
+compara beneficio 25 37
+benefit parcial48
+compara beneficio 24 37
+benefit parcial47
+compara beneficio 23 37
+benefit parcial47
+compara beneficio 23 37
+benefit parcial42
+compara beneficio 18 37
+benefit parcial40
+compara beneficio 16 37
+benefit parcial38
+compara beneficio 14 37
+benefit parcial36
+compara beneficio 12 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12 - 10
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 10, cost: 3, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12
+Beneficio dispon-24
+benefit parcial58
+compara beneficio 34 37
+benefit parcial52
+compara beneficio 28 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 12, cost: 3, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10
+Beneficio dispon-24
+benefit parcial65
+compara beneficio 41 37
+agregando lado..10(vertex: 12, cost: 3, benefit: 0 ) 
+myset contains: 12 8 9
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12
+Beneficio dispon-24
+v 12
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 11, cost: 7, benefit: 10 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 11, cost: 7, benefit: 0 ) (vertex: 9, cost: 13, benefit: 0 ) ]
+benefit parcial62
+compara beneficio 38 37
+agregando lado..12(vertex: 10, cost: 3, benefit: 0 ) 
+myset contains: 10 12 8 9
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12 - 10
+Beneficio dispon-24
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial61
+compara beneficio 37 37
+agregando lado..10(vertex: 11, cost: 1, benefit: 0 ) 
+myset contains: 11 10 12 8 9
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12 - 10 - 11
+Beneficio dispon-24
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial54
+compara beneficio 30 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12 - 10 - 11
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 11, cost: 1, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12 - 10
+Beneficio dispon-24
+benefit parcial57
+compara beneficio 33 37
+benefit parcial55
+compara beneficio 31 37
+benefit parcial54
+compara beneficio 30 37
+benefit parcial52
+compara beneficio 28 37
+benefit parcial52
+compara beneficio 28 37
+benefit parcial52
+compara beneficio 28 37
+benefit parcial49
+compara beneficio 25 37
+benefit parcial48
+compara beneficio 24 37
+benefit parcial47
+compara beneficio 23 37
+benefit parcial47
+compara beneficio 23 37
+benefit parcial42
+compara beneficio 18 37
+benefit parcial40
+compara beneficio 16 37
+benefit parcial38
+compara beneficio 14 37
+benefit parcial36
+compara beneficio 12 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12 - 10
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 10, cost: 3, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12
+Beneficio dispon-24
+benefit parcial62
+compara beneficio 38 37
+agregando lado..12(vertex: 10, cost: 3, benefit: 0 ) 
+myset contains: 10 12 8 9
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12 - 10
+Beneficio dispon-24
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial61
+compara beneficio 37 37
+agregando lado..10(vertex: 11, cost: 1, benefit: 0 ) 
+myset contains: 11 10 12 8 9
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12 - 10 - 11
+Beneficio dispon-24
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial54
+compara beneficio 30 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12 - 10 - 11
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 11, cost: 1, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12 - 10
+Beneficio dispon-24
+benefit parcial57
+compara beneficio 33 37
+benefit parcial55
+compara beneficio 31 37
+benefit parcial54
+compara beneficio 30 37
+benefit parcial52
+compara beneficio 28 37
+benefit parcial52
+compara beneficio 28 37
+benefit parcial52
+compara beneficio 28 37
+benefit parcial49
+compara beneficio 25 37
+benefit parcial48
+compara beneficio 24 37
+benefit parcial47
+compara beneficio 23 37
+benefit parcial47
+compara beneficio 23 37
+benefit parcial42
+compara beneficio 18 37
+benefit parcial40
+compara beneficio 16 37
+benefit parcial38
+compara beneficio 14 37
+benefit parcial36
+compara beneficio 12 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12 - 10
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 10, cost: 3, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12
+Beneficio dispon-24
+benefit parcial58
+compara beneficio 34 37
+benefit parcial52
+compara beneficio 28 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 12
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 12, cost: 3, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10
+Beneficio dispon-24
+benefit parcial63
+compara beneficio 39 37
+agregando lado..10(vertex: 14, cost: 10, benefit: 5 ) 
+myset contains: 14 8 9
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 14
+Beneficio dispon-24
+v 14
+[(vertex: 13, cost: 2, benefit: 3 ) (vertex: 13, cost: 2, benefit: 0 ) (vertex: 10, cost: 10, benefit: 5 ) (vertex: 10, cost: 10, benefit: 0 ) ]
+benefit parcial64
+compara beneficio 39 37
+agregando lado..14(vertex: 13, cost: 2, benefit: 3 ) 
+myset contains: 13 14 8 9
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 14 - 13
+Beneficio dispon-25
+v 13
+[(vertex: 14, cost: 2, benefit: 3 ) (vertex: 14, cost: 2, benefit: 0 ) (vertex: 10, cost: 10, benefit: 0 ) (vertex: 10, cost: 10, benefit: 0 ) (vertex: 5, cost: 26, benefit: 15 ) (vertex: 1, cost: 13, benefit: 1 ) (vertex: 1, cost: 13, benefit: 0 ) (vertex: 5, cost: 26, benefit: 0 ) ]
+benefit parcial62
+compara beneficio 37 37
+agregando lado..13(vertex: 14, cost: 2, benefit: 0 ) 
+myset contains: 13 14 8 9
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 14 - 13 - 14
+Beneficio dispon-25
+v 14
+[(vertex: 13, cost: 2, benefit: 3 ) (vertex: 13, cost: 2, benefit: 0 ) (vertex: 10, cost: 10, benefit: 5 ) (vertex: 10, cost: 10, benefit: 0 ) ]
+benefit parcial52
+compara beneficio 27 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 14 - 13 - 14
+[(vertex: 14, cost: 2, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 14 - 13
+Beneficio dispon-25
+benefit parcial54
+compara beneficio 29 37
+benefit parcial54
+compara beneficio 29 37
+benefit parcial53
+compara beneficio 28 37
+benefit parcial52
+compara beneficio 27 37
+benefit parcial51
+compara beneficio 26 37
+benefit parcial38
+compara beneficio 13 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 14 - 13
+[(vertex: 13, cost: 2, benefit: 3 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 14
+Beneficio dispon-24
+benefit parcial61
+compara beneficio 37 37
+agregando lado..14(vertex: 13, cost: 2, benefit: 0 ) 
+myset contains: 13 8 9
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 14 - 13
+Beneficio dispon-24
+v 13
+[(vertex: 14, cost: 2, benefit: 3 ) (vertex: 14, cost: 2, benefit: 0 ) (vertex: 10, cost: 10, benefit: 0 ) (vertex: 10, cost: 10, benefit: 0 ) (vertex: 5, cost: 26, benefit: 15 ) (vertex: 1, cost: 13, benefit: 1 ) (vertex: 1, cost: 13, benefit: 0 ) (vertex: 5, cost: 26, benefit: 0 ) ]
+benefit parcial59
+compara beneficio 35 37
+benefit parcial51
+compara beneficio 27 37
+benefit parcial51
+compara beneficio 27 37
+benefit parcial50
+compara beneficio 26 37
+benefit parcial49
+compara beneficio 25 37
+benefit parcial48
+compara beneficio 24 37
+benefit parcial35
+compara beneficio 11 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 14 - 13
+[(vertex: 13, cost: 2, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 14
+Beneficio dispon-24
+benefit parcial53
+compara beneficio 29 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 14
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 14, cost: 10, benefit: 5 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10
+Beneficio dispon-24
+benefit parcial61
+compara beneficio 37 37
+agregando lado..10(vertex: 7, cost: 13, benefit: 6 ) 
+myset contains: 7 8 9
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 7
+Beneficio dispon-24
+v 7
+[(vertex: 5, cost: 10, benefit: 29 ) (vertex: 6, cost: 2, benefit: 3 ) (vertex: 6, cost: 2, benefit: 0 ) (vertex: 2, cost: 21, benefit: 15 ) (vertex: 3, cost: 23, benefit: 17 ) (vertex: 10, cost: 13, benefit: 6 ) (vertex: 5, cost: 10, benefit: 0 ) (vertex: 8, cost: 10, benefit: 0 ) (vertex: 8, cost: 10, benefit: 0 ) (vertex: 10, cost: 13, benefit: 0 ) (vertex: 1, cost: 19, benefit: 5 ) (vertex: 1, cost: 19, benefit: 0 ) (vertex: 2, cost: 21, benefit: 0 ) (vertex: 3, cost: 23, benefit: 0 ) ]
+benefit parcial59
+compara beneficio 35 37
+benefit parcial55
+compara beneficio 31 37
+benefit parcial55
+compara beneficio 31 37
+benefit parcial51
+compara beneficio 27 37
+benefit parcial51
+compara beneficio 27 37
+benefit parcial51
+compara beneficio 27 37
+benefit parcial48
+compara beneficio 24 37
+benefit parcial47
+compara beneficio 23 37
+benefit parcial42
+compara beneficio 18 37
+benefit parcial40
+compara beneficio 16 37
+benefit parcial38
+compara beneficio 14 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10 - 7
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 7, cost: 13, benefit: 6 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10
+Beneficio dispon-24
+benefit parcial60
+compara beneficio 36 37
+benefit parcial58
+compara beneficio 34 37
+benefit parcial58
+compara beneficio 34 37
+benefit parcial58
+compara beneficio 34 37
+benefit parcial55
+compara beneficio 31 37
+benefit parcial54
+compara beneficio 30 37
+benefit parcial53
+compara beneficio 29 37
+benefit parcial53
+compara beneficio 29 37
+benefit parcial48
+compara beneficio 24 37
+benefit parcial46
+compara beneficio 22 37
+benefit parcial44
+compara beneficio 20 37
+benefit parcial42
+compara beneficio 18 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9 - 10
+[(vertex: 8, cost: 4, benefit: 9 ) (vertex: 10, cost: 8, benefit: 8 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9
+Beneficio dispon-24
+benefit parcial60
+compara beneficio 36 37
+benefit parcial55
+compara beneficio 31 37
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 9
+[(vertex: 9, cost: 4, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8
+Beneficio dispon-24
+benefit parcial66
+compara beneficio 42 37
+agregando lado..8(vertex: 2, cost: 29, benefit: 23 ) 
+myset contains: 2 8
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 2
+Beneficio dispon-24
+v 2
+[(vertex: 3, cost: 9, benefit: 10 ) (vertex: 10, cost: 24, benefit: 21 ) (vertex: 5, cost: 14, benefit: 9 ) (vertex: 7, cost: 21, benefit: 15 ) (vertex: 8, cost: 29, benefit: 23 ) (vertex: 3, cost: 9, benefit: 0 ) (vertex: 5, cost: 14, benefit: 0 ) (vertex: 7, cost: 21, benefit: 0 ) (vertex: 10, cost: 24, benefit: 0 ) (vertex: 8, cost: 29, benefit: 0 ) ]
+benefit parcial67
+compara beneficio 42 37
+agregando lado..2(vertex: 3, cost: 9, benefit: 10 ) 
+myset contains: 3 2 8
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 2 - 3
+Beneficio dispon-25
+v 3
+[(vertex: 4, cost: 11, benefit: 22 ) (vertex: 1, cost: 5, benefit: 15 ) (vertex: 2, cost: 9, benefit: 10 ) (vertex: 1, cost: 5, benefit: 0 ) (vertex: 7, cost: 23, benefit: 17 ) (vertex: 2, cost: 9, benefit: 0 ) (vertex: 5, cost: 18, benefit: 9 ) (vertex: 4, cost: 11, benefit: 0 ) (vertex: 10, cost: 26, benefit: 12 ) (vertex: 8, cost: 31, benefit: 14 ) (vertex: 5, cost: 18, benefit: 0 ) (vertex: 7, cost: 23, benefit: 0 ) (vertex: 10, cost: 26, benefit: 0 ) (vertex: 8, cost: 31, benefit: 0 ) ]
+benefit parcial62
+compara beneficio 37 37
+agregando lado..3(vertex: 1, cost: 5, benefit: 0 ) 
+myset contains: 1 3 2 8
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 2 - 3 - 1
+Beneficio dispon-25
+v 1
+COPY
+[(vertex: 3, cost: 5, benefit: 15 ) (vertex: 5, cost: 17, benefit: 13 ) (vertex: 3, cost: 5, benefit: 0 ) (vertex: 4, cost: 9, benefit: 3 ) (vertex: 4, cost: 9, benefit: 0 ) (vertex: 13, cost: 13, benefit: 1 ) (vertex: 13, cost: 13, benefit: 0 ) (vertex: 7, cost: 19, benefit: 5 ) (vertex: 10, cost: 22, benefit: 7 ) (vertex: 5, cost: 17, benefit: 0 ) (vertex: 7, cost: 19, benefit: 0 ) (vertex: 8, cost: 27, benefit: 7 ) (vertex: 10, cost: 22, benefit: 0 ) (vertex: 8, cost: 27, benefit: 0 ) ]
+benefit parcial53
+compara beneficio 28 62
+benefit parcial50
+compara beneficio 25 62
+benefit parcial49
+compara beneficio 24 62
+benefit parcial48
+compara beneficio 23 62
+benefit parcial47
+compara beneficio 22 62
+benefit parcial45
+compara beneficio 20 62
+benefit parcial43
+compara beneficio 18 62
+benefit parcial42
+compara beneficio 17 62
+benefit parcial40
+compara beneficio 15 62
+benefit parcial35
+compara beneficio 10 62
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 2 - 3 - 1
+[(vertex: 4, cost: 11, benefit: 22 ) (vertex: 1, cost: 5, benefit: 0 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 2 - 3
+Beneficio dispon-25
+benefit parcial61
+compara beneficio 36 62
+benefit parcial58
+compara beneficio 33 62
+benefit parcial58
+compara beneficio 33 62
+benefit parcial56
+compara beneficio 31 62
+benefit parcial53
+compara beneficio 28 62
+benefit parcial50
+compara beneficio 25 62
+benefit parcial49
+compara beneficio 24 62
+benefit parcial44
+compara beneficio 19 62
+benefit parcial41
+compara beneficio 16 62
+benefit parcial36
+compara beneficio 11 62
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 2 - 3
+[(vertex: 10, cost: 24, benefit: 21 ) (vertex: 3, cost: 9, benefit: 10 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 2
+Beneficio dispon-24
+benefit parcial60
+compara beneficio 36 62
+benefit parcial57
+compara beneficio 33 62
+benefit parcial52
+compara beneficio 28 62
+benefit parcial45
+compara beneficio 21 62
+benefit parcial42
+compara beneficio 18 62
+benefit parcial37
+compara beneficio 13 62
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 2
+[(vertex: 2, cost: 29, benefit: 23 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8
+Beneficio dispon-24
+benefit parcial62
+compara beneficio 38 62
+benefit parcial62
+compara beneficio 38 62
+benefit parcial55
+compara beneficio 31 62
+benefit parcial52
+compara beneficio 28 62
+benefit parcial45
+compara beneficio 21 62
+benefit parcial43
+compara beneficio 19 62
+benefit parcial41
+compara beneficio 17 62
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8
+[(vertex: 8, cost: 4, benefit: 9 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9
+Beneficio dispon-19
+benefit parcial67
+compara beneficio 48 62
+benefit parcial63
+compara beneficio 44 62
+benefit parcial59
+compara beneficio 40 62
+benefit parcial54
+compara beneficio 35 62
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9
+[(vertex: 9, cost: 13, benefit: 38 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12
+Beneficio dispon6
+benefit parcial39
+compara beneficio 45 62
+benefit parcial39
+compara beneficio 45 62
+benefit parcial35
+compara beneficio 41 62
+benefit parcial29
+compara beneficio 35 62
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12
+[(vertex: 12, cost: 7, benefit: 10 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11
+Beneficio dispon9
+benefit parcial38
+compara beneficio 47 62
+benefit parcial32
+compara beneficio 41 62
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11
+[(vertex: 11, cost: 1, benefit: 2 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10
+Beneficio dispon10
+benefit parcial38
+compara beneficio 48 62
+benefit parcial37
+compara beneficio 47 62
+benefit parcial35
+compara beneficio 45 62
+benefit parcial35
+compara beneficio 45 62
+benefit parcial33
+compara beneficio 43 62
+benefit parcial31
+compara beneficio 41 62
+benefit parcial30
+compara beneficio 40 62
+benefit parcial28
+compara beneficio 38 62
+benefit parcial28
+compara beneficio 38 62
+benefit parcial28
+compara beneficio 38 62
+benefit parcial25
+compara beneficio 35 62
+benefit parcial24
+compara beneficio 34 62
+benefit parcial23
+compara beneficio 33 62
+benefit parcial23
+compara beneficio 33 62
+benefit parcial18
+compara beneficio 28 62
+benefit parcial16
+compara beneficio 26 62
+benefit parcial14
+compara beneficio 24 62
+benefit parcial12
+compara beneficio 22 62
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10
+[(vertex: 10, cost: 24, benefit: 21 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2
+Beneficio dispon10
+benefit parcial35
+compara beneficio 45 62
+benefit parcial35
+compara beneficio 45 62
+benefit parcial32
+compara beneficio 42 62
+benefit parcial27
+compara beneficio 37 62
+benefit parcial20
+compara beneficio 30 62
+benefit parcial17
+compara beneficio 27 62
+benefit parcial12
+compara beneficio 22 62
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2
+[(vertex: 7, cost: 10, benefit: 29 ) (vertex: 2, cost: 14, benefit: 9 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5
+Beneficio dispon10
+benefit parcial38
+compara beneficio 48 62
+benefit parcial37
+compara beneficio 47 62
+benefit parcial36
+compara beneficio 46 62
+benefit parcial35
+compara beneficio 45 62
+benefit parcial32
+compara beneficio 42 62
+benefit parcial31
+compara beneficio 41 62
+benefit parcial29
+compara beneficio 39 62
+benefit parcial28
+compara beneficio 38 62
+benefit parcial26
+compara beneficio 36 62
+benefit parcial20
+compara beneficio 30 62
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5
+[(vertex: 5, cost: 8, benefit: 23 ) ]
+1 - 3 - 4 - 1 - 5 - 7 - 6
+Beneficio dispon25
+benefit parcial29
+compara beneficio 54 62
+benefit parcial23
+compara beneficio 48 62
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7 - 6
+[(vertex: 6, cost: 2, benefit: 3 ) ]
+1 - 3 - 4 - 1 - 5 - 7
+Beneficio dispon26
+benefit parcial28
+compara beneficio 54 62
+benefit parcial24
+compara beneficio 50 62
+benefit parcial24
+compara beneficio 50 62
+benefit parcial23
+compara beneficio 49 62
+benefit parcial20
+compara beneficio 46 62
+benefit parcial20
+compara beneficio 46 62
+benefit parcial20
+compara beneficio 46 62
+benefit parcial17
+compara beneficio 43 62
+benefit parcial16
+compara beneficio 42 62
+benefit parcial11
+compara beneficio 37 62
+benefit parcial9
+compara beneficio 35 62
+benefit parcial7
+compara beneficio 33 62
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5 - 7
+[(vertex: 7, cost: 10, benefit: 29 ) ]
+1 - 3 - 4 - 1 - 5
+Beneficio dispon45
+benefit parcial26
+compara beneficio 56 62
+benefit parcial6
+compara beneficio 51 62
+benefit parcial3
+compara beneficio 48 62
+benefit parcial2
+compara beneficio 47 62
+benefit parcial1
+compara beneficio 46 62
+benefit parcial0
+compara beneficio 45 62
+benefit parcial-3
+compara beneficio 42 62
+benefit parcial-4
+compara beneficio 41 62
+benefit parcial-6
+compara beneficio 39 62
+benefit parcial-7
+compara beneficio 38 62
+benefit parcial-9
+compara beneficio 36 62
+benefit parcial-15
+compara beneficio 30 62
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1 - 5
+[(vertex: 3, cost: 5, benefit: 15 ) (vertex: 5, cost: 17, benefit: 13 ) ]
+1 - 3 - 4 - 1
+Beneficio dispon45
+benefit parcial10
+compara beneficio 55 62
+benefit parcial6
+compara beneficio 51 62
+benefit parcial3
+compara beneficio 48 62
+benefit parcial2
+compara beneficio 47 62
+benefit parcial1
+compara beneficio 46 62
+benefit parcial0
+compara beneficio 45 62
+benefit parcial-2
+compara beneficio 43 62
+benefit parcial-4
+compara beneficio 41 62
+benefit parcial-5
+compara beneficio 40 62
+benefit parcial-7
+compara beneficio 38 62
+benefit parcial-12
+compara beneficio 33 62
+ANTES DE ELIMINAR
+1 - 3 - 4 - 1
+[(vertex: 1, cost: 9, benefit: 3 ) ]
+1 - 3 - 4
+Beneficio dispon45
+benefit parcial12
+compara beneficio 57 62
+benefit parcial10
+compara beneficio 55 62
+ANTES DE ELIMINAR
+1 - 3 - 4
+[(vertex: 4, cost: 11, benefit: 22 ) ]
+1 - 3
+Beneficio dispon56
+benefit parcial11
+compara beneficio 66 62
+agregando lado..3(vertex: 2, cost: 9, benefit: 10 ) 
+myset contains: 2
+1 - 3 - 2
+Beneficio dispon55
+v 2
+[(vertex: 3, cost: 9, benefit: 10 ) (vertex: 10, cost: 24, benefit: 21 ) (vertex: 5, cost: 14, benefit: 9 ) (vertex: 7, cost: 21, benefit: 15 ) (vertex: 8, cost: 29, benefit: 23 ) (vertex: 3, cost: 9, benefit: 0 ) (vertex: 5, cost: 14, benefit: 0 ) (vertex: 7, cost: 21, benefit: 0 ) (vertex: 10, cost: 24, benefit: 0 ) (vertex: 8, cost: 29, benefit: 0 ) ]
+benefit parcial8
+compara beneficio 63 62
+agregando lado..2(vertex: 10, cost: 24, benefit: 21 ) 
+myset contains: 10 2
+1 - 3 - 2 - 10
+Beneficio dispon55
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial9
+compara beneficio 63 62
+agregando lado..10(vertex: 11, cost: 1, benefit: 2 ) 
+myset contains: 11 10 2
+1 - 3 - 2 - 10 - 11
+Beneficio dispon54
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial12
+compara beneficio 63 62
+agregando lado..11(vertex: 12, cost: 7, benefit: 10 ) 
+myset contains: 12 11 10 2
+1 - 3 - 2 - 10 - 11 - 12
+Beneficio dispon51
+v 12
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 11, cost: 7, benefit: 10 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 11, cost: 7, benefit: 0 ) (vertex: 9, cost: 13, benefit: 0 ) ]
+benefit parcial37
+compara beneficio 63 62
+agregando lado..12(vertex: 9, cost: 13, benefit: 38 ) 
+myset contains: 9 12 11 10 2
+1 - 3 - 2 - 10 - 11 - 12 - 9
+Beneficio dispon26
+v 9
+[(vertex: 12, cost: 13, benefit: 38 ) (vertex: 8, cost: 4, benefit: 9 ) (vertex: 10, cost: 8, benefit: 8 ) (vertex: 8, cost: 4, benefit: 0 ) (vertex: 10, cost: 8, benefit: 0 ) (vertex: 12, cost: 13, benefit: 0 ) ]
+benefit parcial42
+compara beneficio 63 62
+agregando lado..9(vertex: 8, cost: 4, benefit: 9 ) 
+myset contains: 8 9 12 11 10 2
+1 - 3 - 2 - 10 - 11 - 12 - 9 - 8
+Beneficio dispon21
+v 8
+[(vertex: 9, cost: 4, benefit: 9 ) (vertex: 9, cost: 4, benefit: 0 ) (vertex: 2, cost: 29, benefit: 23 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 3, cost: 31, benefit: 14 ) (vertex: 1, cost: 27, benefit: 7 ) (vertex: 1, cost: 27, benefit: 0 ) (vertex: 2, cost: 29, benefit: 0 ) (vertex: 3, cost: 31, benefit: 0 ) ]
+benefit parcial38
+compara beneficio 59 62
+benefit parcial36
+compara beneficio 57 62
+benefit parcial32
+compara beneficio 53 62
+benefit parcial32
+compara beneficio 53 62
+benefit parcial25
+compara beneficio 46 62
+benefit parcial22
+compara beneficio 43 62
+benefit parcial15
+compara beneficio 36 62
+benefit parcial13
+compara beneficio 34 62
+benefit parcial11
+compara beneficio 32 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 11 - 12 - 9 - 8
+[(vertex: 8, cost: 4, benefit: 9 ) ]
+1 - 3 - 2 - 10 - 11 - 12 - 9
+Beneficio dispon26
+benefit parcial37
+compara beneficio 63 62
+agregando lado..9(vertex: 10, cost: 8, benefit: 8 ) 
+myset contains: 9 12 11 10 2
+1 - 3 - 2 - 10 - 11 - 12 - 9 - 10
+Beneficio dispon26
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial36
+compara beneficio 62 62
+agregando lado..10(vertex: 11, cost: 1, benefit: 0 ) 
+myset contains: 9 12 11 10 2
+1 - 3 - 2 - 10 - 11 - 12 - 9 - 10 - 11
+Beneficio dispon26
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial29
+compara beneficio 55 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 11 - 12 - 9 - 10 - 11
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 11, cost: 1, benefit: 0 ) ]
+1 - 3 - 2 - 10 - 11 - 12 - 9 - 10
+Beneficio dispon26
+benefit parcial34
+compara beneficio 60 62
+benefit parcial34
+compara beneficio 60 62
+benefit parcial32
+compara beneficio 58 62
+benefit parcial30
+compara beneficio 56 62
+benefit parcial29
+compara beneficio 55 62
+benefit parcial27
+compara beneficio 53 62
+benefit parcial27
+compara beneficio 53 62
+benefit parcial27
+compara beneficio 53 62
+benefit parcial24
+compara beneficio 50 62
+benefit parcial23
+compara beneficio 49 62
+benefit parcial22
+compara beneficio 48 62
+benefit parcial22
+compara beneficio 48 62
+benefit parcial17
+compara beneficio 43 62
+benefit parcial15
+compara beneficio 41 62
+benefit parcial13
+compara beneficio 39 62
+benefit parcial11
+compara beneficio 37 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 11 - 12 - 9 - 10
+[(vertex: 10, cost: 8, benefit: 8 ) ]
+1 - 3 - 2 - 10 - 11 - 12 - 9
+Beneficio dispon26
+benefit parcial33
+compara beneficio 59 62
+benefit parcial29
+compara beneficio 55 62
+benefit parcial24
+compara beneficio 50 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 11 - 12 - 9
+[(vertex: 9, cost: 13, benefit: 38 ) ]
+1 - 3 - 2 - 10 - 11 - 12
+Beneficio dispon51
+benefit parcial9
+compara beneficio 60 62
+benefit parcial9
+compara beneficio 60 62
+benefit parcial5
+compara beneficio 56 62
+benefit parcial-1
+compara beneficio 50 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 11 - 12
+[(vertex: 12, cost: 7, benefit: 10 ) ]
+1 - 3 - 2 - 10 - 11
+Beneficio dispon54
+benefit parcial8
+compara beneficio 62 62
+agregando lado..11(vertex: 10, cost: 1, benefit: 0 ) 
+myset contains: 10 2
+1 - 3 - 2 - 10 - 11 - 10
+Beneficio dispon54
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial8
+compara beneficio 62 62
+agregando lado..10(vertex: 9, cost: 8, benefit: 8 ) 
+myset contains: 9 10 2
+1 - 3 - 2 - 10 - 11 - 10 - 9
+Beneficio dispon54
+v 9
+[(vertex: 12, cost: 13, benefit: 38 ) (vertex: 8, cost: 4, benefit: 9 ) (vertex: 10, cost: 8, benefit: 8 ) (vertex: 8, cost: 4, benefit: 0 ) (vertex: 10, cost: 8, benefit: 0 ) (vertex: 12, cost: 13, benefit: 0 ) ]
+benefit parcial33
+compara beneficio 62 62
+agregando lado..9(vertex: 12, cost: 13, benefit: 38 ) 
+myset contains: 12 9 10 2
+1 - 3 - 2 - 10 - 11 - 10 - 9 - 12
+Beneficio dispon29
+v 12
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 11, cost: 7, benefit: 10 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 11, cost: 7, benefit: 0 ) (vertex: 9, cost: 13, benefit: 0 ) ]
+benefit parcial36
+compara beneficio 62 62
+agregando lado..12(vertex: 11, cost: 7, benefit: 10 ) 
+myset contains: 11 12 9 10 2
+1 - 3 - 2 - 10 - 11 - 10 - 9 - 12 - 11
+Beneficio dispon26
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial29
+compara beneficio 55 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 11 - 10 - 9 - 12 - 11
+[(vertex: 11, cost: 7, benefit: 10 ) ]
+1 - 3 - 2 - 10 - 11 - 10 - 9 - 12
+Beneficio dispon29
+benefit parcial30
+compara beneficio 59 62
+benefit parcial30
+compara beneficio 59 62
+benefit parcial26
+compara beneficio 55 62
+benefit parcial20
+compara beneficio 49 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 11 - 10 - 9 - 12
+[(vertex: 12, cost: 13, benefit: 38 ) ]
+1 - 3 - 2 - 10 - 11 - 10 - 9
+Beneficio dispon54
+benefit parcial13
+compara beneficio 62 62
+agregando lado..9(vertex: 8, cost: 4, benefit: 9 ) 
+myset contains: 8 9 10 2
+1 - 3 - 2 - 10 - 11 - 10 - 9 - 8
+Beneficio dispon49
+v 8
+[(vertex: 9, cost: 4, benefit: 9 ) (vertex: 9, cost: 4, benefit: 0 ) (vertex: 2, cost: 29, benefit: 23 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 3, cost: 31, benefit: 14 ) (vertex: 1, cost: 27, benefit: 7 ) (vertex: 1, cost: 27, benefit: 0 ) (vertex: 2, cost: 29, benefit: 0 ) (vertex: 3, cost: 31, benefit: 0 ) ]
+benefit parcial9
+compara beneficio 58 62
+benefit parcial7
+compara beneficio 56 62
+benefit parcial3
+compara beneficio 52 62
+benefit parcial3
+compara beneficio 52 62
+benefit parcial-4
+compara beneficio 45 62
+benefit parcial-7
+compara beneficio 42 62
+benefit parcial-14
+compara beneficio 35 62
+benefit parcial-16
+compara beneficio 33 62
+benefit parcial-18
+compara beneficio 31 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 11 - 10 - 9 - 8
+[(vertex: 8, cost: 4, benefit: 9 ) ]
+1 - 3 - 2 - 10 - 11 - 10 - 9
+Beneficio dispon54
+benefit parcial4
+compara beneficio 58 62
+benefit parcial0
+compara beneficio 54 62
+benefit parcial-5
+compara beneficio 49 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 11 - 10 - 9
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) ]
+1 - 3 - 2 - 10 - 11 - 10
+Beneficio dispon54
+benefit parcial5
+compara beneficio 59 62
+benefit parcial5
+compara beneficio 59 62
+benefit parcial3
+compara beneficio 57 62
+benefit parcial1
+compara beneficio 55 62
+benefit parcial0
+compara beneficio 54 62
+benefit parcial-2
+compara beneficio 52 62
+benefit parcial-2
+compara beneficio 52 62
+benefit parcial-2
+compara beneficio 52 62
+benefit parcial-5
+compara beneficio 49 62
+benefit parcial-6
+compara beneficio 48 62
+benefit parcial-7
+compara beneficio 47 62
+benefit parcial-7
+compara beneficio 47 62
+benefit parcial-12
+compara beneficio 42 62
+benefit parcial-14
+compara beneficio 40 62
+benefit parcial-16
+compara beneficio 38 62
+benefit parcial-18
+compara beneficio 36 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 11 - 10
+[(vertex: 10, cost: 1, benefit: 0 ) ]
+1 - 3 - 2 - 10 - 11
+Beneficio dispon54
+benefit parcial2
+compara beneficio 56 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 11
+[(vertex: 11, cost: 1, benefit: 2 ) ]
+1 - 3 - 2 - 10
+Beneficio dispon55
+benefit parcial8
+compara beneficio 63 62
+agregando lado..10(vertex: 9, cost: 8, benefit: 8 ) 
+myset contains: 9 2
+1 - 3 - 2 - 10 - 9
+Beneficio dispon55
+v 9
+[(vertex: 12, cost: 13, benefit: 38 ) (vertex: 8, cost: 4, benefit: 9 ) (vertex: 10, cost: 8, benefit: 8 ) (vertex: 8, cost: 4, benefit: 0 ) (vertex: 10, cost: 8, benefit: 0 ) (vertex: 12, cost: 13, benefit: 0 ) ]
+benefit parcial33
+compara beneficio 63 62
+agregando lado..9(vertex: 12, cost: 13, benefit: 38 ) 
+myset contains: 12 9 2
+1 - 3 - 2 - 10 - 9 - 12
+Beneficio dispon30
+v 12
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 11, cost: 7, benefit: 10 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 11, cost: 7, benefit: 0 ) (vertex: 9, cost: 13, benefit: 0 ) ]
+benefit parcial36
+compara beneficio 63 62
+agregando lado..12(vertex: 11, cost: 7, benefit: 10 ) 
+myset contains: 11 12 9 2
+1 - 3 - 2 - 10 - 9 - 12 - 11
+Beneficio dispon27
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial37
+compara beneficio 63 62
+agregando lado..11(vertex: 10, cost: 1, benefit: 2 ) 
+myset contains: 10 11 12 9 2
+1 - 3 - 2 - 10 - 9 - 12 - 11 - 10
+Beneficio dispon26
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial36
+compara beneficio 62 62
+agregando lado..10(vertex: 11, cost: 1, benefit: 0 ) 
+myset contains: 10 11 12 9 2
+1 - 3 - 2 - 10 - 9 - 12 - 11 - 10 - 11
+Beneficio dispon26
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial29
+compara beneficio 55 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 9 - 12 - 11 - 10 - 11
+[(vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) ]
+1 - 3 - 2 - 10 - 9 - 12 - 11 - 10
+Beneficio dispon26
+benefit parcial34
+compara beneficio 60 62
+benefit parcial34
+compara beneficio 60 62
+benefit parcial32
+compara beneficio 58 62
+benefit parcial30
+compara beneficio 56 62
+benefit parcial29
+compara beneficio 55 62
+benefit parcial27
+compara beneficio 53 62
+benefit parcial27
+compara beneficio 53 62
+benefit parcial27
+compara beneficio 53 62
+benefit parcial24
+compara beneficio 50 62
+benefit parcial23
+compara beneficio 49 62
+benefit parcial22
+compara beneficio 48 62
+benefit parcial22
+compara beneficio 48 62
+benefit parcial17
+compara beneficio 43 62
+benefit parcial15
+compara beneficio 41 62
+benefit parcial13
+compara beneficio 39 62
+benefit parcial11
+compara beneficio 37 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 9 - 12 - 11 - 10
+[(vertex: 10, cost: 1, benefit: 2 ) ]
+1 - 3 - 2 - 10 - 9 - 12 - 11
+Beneficio dispon27
+benefit parcial35
+compara beneficio 62 62
+agregando lado..11(vertex: 10, cost: 1, benefit: 0 ) 
+myset contains: 10 12 9 2
+1 - 3 - 2 - 10 - 9 - 12 - 11 - 10
+Beneficio dispon27
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial34
+compara beneficio 61 62
+benefit parcial32
+compara beneficio 59 62
+benefit parcial32
+compara beneficio 59 62
+benefit parcial30
+compara beneficio 57 62
+benefit parcial28
+compara beneficio 55 62
+benefit parcial27
+compara beneficio 54 62
+benefit parcial25
+compara beneficio 52 62
+benefit parcial25
+compara beneficio 52 62
+benefit parcial25
+compara beneficio 52 62
+benefit parcial22
+compara beneficio 49 62
+benefit parcial21
+compara beneficio 48 62
+benefit parcial20
+compara beneficio 47 62
+benefit parcial20
+compara beneficio 47 62
+benefit parcial15
+compara beneficio 42 62
+benefit parcial13
+compara beneficio 40 62
+benefit parcial11
+compara beneficio 38 62
+benefit parcial9
+compara beneficio 36 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 9 - 12 - 11 - 10
+[(vertex: 10, cost: 1, benefit: 0 ) ]
+1 - 3 - 2 - 10 - 9 - 12 - 11
+Beneficio dispon27
+benefit parcial29
+compara beneficio 56 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 9 - 12 - 11
+[(vertex: 11, cost: 7, benefit: 10 ) ]
+1 - 3 - 2 - 10 - 9 - 12
+Beneficio dispon30
+benefit parcial30
+compara beneficio 60 62
+benefit parcial30
+compara beneficio 60 62
+benefit parcial26
+compara beneficio 56 62
+benefit parcial20
+compara beneficio 50 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 9 - 12
+[(vertex: 12, cost: 13, benefit: 38 ) ]
+1 - 3 - 2 - 10 - 9
+Beneficio dispon55
+benefit parcial13
+compara beneficio 63 62
+agregando lado..9(vertex: 8, cost: 4, benefit: 9 ) 
+myset contains: 8 9 2
+1 - 3 - 2 - 10 - 9 - 8
+Beneficio dispon50
+v 8
+[(vertex: 9, cost: 4, benefit: 9 ) (vertex: 9, cost: 4, benefit: 0 ) (vertex: 2, cost: 29, benefit: 23 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 3, cost: 31, benefit: 14 ) (vertex: 1, cost: 27, benefit: 7 ) (vertex: 1, cost: 27, benefit: 0 ) (vertex: 2, cost: 29, benefit: 0 ) (vertex: 3, cost: 31, benefit: 0 ) ]
+benefit parcial9
+compara beneficio 59 62
+benefit parcial7
+compara beneficio 57 62
+benefit parcial3
+compara beneficio 53 62
+benefit parcial3
+compara beneficio 53 62
+benefit parcial-4
+compara beneficio 46 62
+benefit parcial-7
+compara beneficio 43 62
+benefit parcial-14
+compara beneficio 36 62
+benefit parcial-16
+compara beneficio 34 62
+benefit parcial-18
+compara beneficio 32 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 9 - 8
+[(vertex: 8, cost: 4, benefit: 9 ) ]
+1 - 3 - 2 - 10 - 9
+Beneficio dispon55
+benefit parcial4
+compara beneficio 59 62
+benefit parcial0
+compara beneficio 55 62
+benefit parcial-5
+compara beneficio 50 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 9
+[(vertex: 9, cost: 8, benefit: 8 ) ]
+1 - 3 - 2 - 10
+Beneficio dispon55
+benefit parcial7
+compara beneficio 62 62
+agregando lado..10(vertex: 11, cost: 1, benefit: 0 ) 
+myset contains: 11 2
+1 - 3 - 2 - 10 - 11
+Beneficio dispon55
+v 11
+[(vertex: 12, cost: 7, benefit: 10 ) (vertex: 10, cost: 1, benefit: 2 ) (vertex: 10, cost: 1, benefit: 0 ) (vertex: 12, cost: 7, benefit: 0 ) ]
+benefit parcial10
+compara beneficio 62 62
+agregando lado..11(vertex: 12, cost: 7, benefit: 10 ) 
+myset contains: 12 11 2
+1 - 3 - 2 - 10 - 11 - 12
+Beneficio dispon52
+v 12
+[(vertex: 9, cost: 13, benefit: 38 ) (vertex: 11, cost: 7, benefit: 10 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 10, cost: 3, benefit: 0 ) (vertex: 11, cost: 7, benefit: 0 ) (vertex: 9, cost: 13, benefit: 0 ) ]
+benefit parcial35
+compara beneficio 62 62
+agregando lado..12(vertex: 9, cost: 13, benefit: 38 ) 
+myset contains: 9 12 11 2
+1 - 3 - 2 - 10 - 11 - 12 - 9
+Beneficio dispon27
+v 9
+[(vertex: 12, cost: 13, benefit: 38 ) (vertex: 8, cost: 4, benefit: 9 ) (vertex: 10, cost: 8, benefit: 8 ) (vertex: 8, cost: 4, benefit: 0 ) (vertex: 10, cost: 8, benefit: 0 ) (vertex: 12, cost: 13, benefit: 0 ) ]
+benefit parcial40
+compara beneficio 62 62
+agregando lado..9(vertex: 8, cost: 4, benefit: 9 ) 
+myset contains: 8 9 12 11 2
+1 - 3 - 2 - 10 - 11 - 12 - 9 - 8
+Beneficio dispon22
+v 8
+[(vertex: 9, cost: 4, benefit: 9 ) (vertex: 9, cost: 4, benefit: 0 ) (vertex: 2, cost: 29, benefit: 23 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 3, cost: 31, benefit: 14 ) (vertex: 1, cost: 27, benefit: 7 ) (vertex: 1, cost: 27, benefit: 0 ) (vertex: 2, cost: 29, benefit: 0 ) (vertex: 3, cost: 31, benefit: 0 ) ]
+benefit parcial36
+compara beneficio 58 62
+benefit parcial34
+compara beneficio 56 62
+benefit parcial30
+compara beneficio 52 62
+benefit parcial30
+compara beneficio 52 62
+benefit parcial23
+compara beneficio 45 62
+benefit parcial20
+compara beneficio 42 62
+benefit parcial13
+compara beneficio 35 62
+benefit parcial11
+compara beneficio 33 62
+benefit parcial9
+compara beneficio 31 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 11 - 12 - 9 - 8
+[(vertex: 8, cost: 4, benefit: 9 ) ]
+1 - 3 - 2 - 10 - 11 - 12 - 9
+Beneficio dispon27
+benefit parcial35
+compara beneficio 62 62
+agregando lado..9(vertex: 10, cost: 8, benefit: 8 ) 
+myset contains: 10 9 12 11 2
+1 - 3 - 2 - 10 - 11 - 12 - 9 - 10
+Beneficio dispon27
+v 10
+[(vertex: 11, cost: 1, benefit: 2 ) (vertex: 9, cost: 8, benefit: 8 ) (vertex: 11, cost: 1, benefit: 0 ) (vertex: 2, cost: 24, benefit: 21 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 12, cost: 3, benefit: 0 ) (vertex: 14, cost: 10, benefit: 5 ) (vertex: 7, cost: 13, benefit: 6 ) (vertex: 9, cost: 8, benefit: 0 ) (vertex: 14, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 13, cost: 10, benefit: 0 ) (vertex: 7, cost: 13, benefit: 0 ) (vertex: 3, cost: 26, benefit: 12 ) (vertex: 5, cost: 20, benefit: 5 ) (vertex: 1, cost: 22, benefit: 7 ) (vertex: 5, cost: 20, benefit: 0 ) (vertex: 1, cost: 22, benefit: 0 ) (vertex: 2, cost: 24, benefit: 0 ) (vertex: 3, cost: 26, benefit: 0 ) ]
+benefit parcial34
+compara beneficio 61 62
+benefit parcial32
+compara beneficio 59 62
+benefit parcial32
+compara beneficio 59 62
+benefit parcial30
+compara beneficio 57 62
+benefit parcial28
+compara beneficio 55 62
+benefit parcial27
+compara beneficio 54 62
+benefit parcial25
+compara beneficio 52 62
+benefit parcial25
+compara beneficio 52 62
+benefit parcial25
+compara beneficio 52 62
+benefit parcial22
+compara beneficio 49 62
+benefit parcial21
+compara beneficio 48 62
+benefit parcial20
+compara beneficio 47 62
+benefit parcial20
+compara beneficio 47 62
+benefit parcial15
+compara beneficio 42 62
+benefit parcial13
+compara beneficio 40 62
+benefit parcial11
+compara beneficio 38 62
+benefit parcial9
+compara beneficio 36 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 11 - 12 - 9 - 10
+[(vertex: 10, cost: 8, benefit: 8 ) ]
+1 - 3 - 2 - 10 - 11 - 12 - 9
+Beneficio dispon27
+benefit parcial31
+compara beneficio 58 62
+benefit parcial27
+compara beneficio 54 62
+benefit parcial22
+compara beneficio 49 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 11 - 12 - 9
+[(vertex: 9, cost: 13, benefit: 38 ) ]
+1 - 3 - 2 - 10 - 11 - 12
+Beneficio dispon52
+benefit parcial7
+compara beneficio 59 62
+benefit parcial7
+compara beneficio 59 62
+benefit parcial3
+compara beneficio 55 62
+benefit parcial-3
+compara beneficio 49 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 11 - 12
+[(vertex: 12, cost: 7, benefit: 10 ) ]
+1 - 3 - 2 - 10 - 11
+Beneficio dispon55
+benefit parcial6
+compara beneficio 61 62
+benefit parcial0
+compara beneficio 55 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10 - 11
+[(vertex: 11, cost: 1, benefit: 0 ) ]
+1 - 3 - 2 - 10
+Beneficio dispon55
+benefit parcial5
+compara beneficio 60 62
+benefit parcial5
+compara beneficio 60 62
+benefit parcial3
+compara beneficio 58 62
+benefit parcial1
+compara beneficio 56 62
+benefit parcial0
+compara beneficio 55 62
+benefit parcial-2
+compara beneficio 53 62
+benefit parcial-2
+compara beneficio 53 62
+benefit parcial-2
+compara beneficio 53 62
+benefit parcial-5
+compara beneficio 50 62
+benefit parcial-6
+compara beneficio 49 62
+benefit parcial-7
+compara beneficio 48 62
+benefit parcial-7
+compara beneficio 48 62
+benefit parcial-12
+compara beneficio 43 62
+benefit parcial-14
+compara beneficio 41 62
+benefit parcial-16
+compara beneficio 39 62
+benefit parcial-18
+compara beneficio 37 62
+ANTES DE ELIMINAR
+1 - 3 - 2 - 10
+[(vertex: 10, cost: 24, benefit: 21 ) ]
+1 - 3 - 2
+Beneficio dispon55
+benefit parcial6
+compara beneficio 61 62
+benefit parcial5
+compara beneficio 60 62
+benefit parcial5
+compara beneficio 60 62
+benefit parcial2
+compara beneficio 57 62
+benefit parcial-3
+compara beneficio 52 62
+benefit parcial-10
+compara beneficio 45 62
+benefit parcial-13
+compara beneficio 42 62
+benefit parcial-18
+compara beneficio 37 62
+ANTES DE ELIMINAR
+1 - 3 - 2
+[(vertex: 2, cost: 9, benefit: 10 ) ]
+1 - 3
+Beneficio dispon56
+benefit parcial5
+compara beneficio 61 62
+benefit parcial4
+compara beneficio 60 62
+benefit parcial1
+compara beneficio 57 62
+benefit parcial1
+compara beneficio 57 62
+benefit parcial-1
+compara beneficio 55 62
+benefit parcial-4
+compara beneficio 52 62
+benefit parcial-7
+compara beneficio 49 62
+benefit parcial-8
+compara beneficio 48 62
+benefit parcial-13
+compara beneficio 43 62
+benefit parcial-16
+compara beneficio 40 62
+benefit parcial-21
+compara beneficio 35 62
+ANTES DE ELIMINAR
+1 - 3
+[(vertex: 3, cost: 5, benefit: 15 ) ]
+1
+Beneficio dispon66
+benefit parcial-4
+compara beneficio 62 62
+agregando lado..1(vertex: 5, cost: 17, benefit: 13 ) 
+myset contains: 5
+1 - 5
+Beneficio dispon66
+v 5
+[(vertex: 7, cost: 10, benefit: 29 ) (vertex: 6, cost: 8, benefit: 23 ) (vertex: 1, cost: 17, benefit: 13 ) (vertex: 2, cost: 14, benefit: 9 ) (vertex: 6, cost: 8, benefit: 0 ) (vertex: 3, cost: 18, benefit: 9 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 13, cost: 26, benefit: 15 ) (vertex: 2, cost: 14, benefit: 0 ) (vertex: 10, cost: 20, benefit: 5 ) (vertex: 1, cost: 17, benefit: 0 ) (vertex: 3, cost: 18, benefit: 0 ) (vertex: 10, cost: 20, benefit: 0 ) (vertex: 13, cost: 26, benefit: 0 ) ]
+benefit parcial15
+compara beneficio 62 62
+agregando lado..5(vertex: 7, cost: 10, benefit: 29 ) 
+myset contains: 7 5
+1 - 5 - 7
+Beneficio dispon47
+v 7
+[(vertex: 5, cost: 10, benefit: 29 ) (vertex: 6, cost: 2, benefit: 3 ) (vertex: 6, cost: 2, benefit: 0 ) (vertex: 2, cost: 21, benefit: 15 ) (vertex: 3, cost: 23, benefit: 17 ) (vertex: 10, cost: 13, benefit: 6 ) (vertex: 5, cost: 10, benefit: 0 ) (vertex: 8, cost: 10, benefit: 0 ) (vertex: 8, cost: 10, benefit: 0 ) (vertex: 10, cost: 13, benefit: 0 ) (vertex: 1, cost: 19, benefit: 5 ) (vertex: 1, cost: 19, benefit: 0 ) (vertex: 2, cost: 21, benefit: 0 ) (vertex: 3, cost: 23, benefit: 0 ) ]
+benefit parcial16
+compara beneficio 62 62
+agregando lado..7(vertex: 6, cost: 2, benefit: 3 ) 
+myset contains: 6 7 5
+1 - 5 - 7 - 6
+Beneficio dispon46
+v 6
+[(vertex: 5, cost: 8, benefit: 23 ) (vertex: 7, cost: 2, benefit: 3 ) (vertex: 7, cost: 2, benefit: 0 ) (vertex: 5, cost: 8, benefit: 0 ) ]
+benefit parcial31
+compara beneficio 62 62
+agregando lado..6(vertex: 5, cost: 8, benefit: 23 ) 
+myset contains: 6 7 5
+1 - 5 - 7 - 6 - 5
+Beneficio dispon31
+v 5
+[(vertex: 7, cost: 10, benefit: 29 ) (vertex: 6, cost: 8, benefit: 23 ) (vertex: 1, cost: 17, benefit: 13 ) (vertex: 2, cost: 14, benefit: 9 ) (vertex: 6, cost: 8, benefit: 0 ) (vertex: 3, cost: 18, benefit: 9 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 13, cost: 26, benefit: 15 ) (vertex: 2, cost: 14, benefit: 0 ) (vertex: 10, cost: 20, benefit: 5 ) (vertex: 1, cost: 17, benefit: 0 ) (vertex: 3, cost: 18, benefit: 0 ) (vertex: 10, cost: 20, benefit: 0 ) (vertex: 13, cost: 26, benefit: 0 ) ]
+benefit parcial26
+compara beneficio 57 62
+benefit parcial23
+compara beneficio 54 62
+benefit parcial22
+compara beneficio 53 62
+benefit parcial21
+compara beneficio 52 62
+benefit parcial20
+compara beneficio 51 62
+benefit parcial17
+compara beneficio 48 62
+benefit parcial16
+compara beneficio 47 62
+benefit parcial14
+compara beneficio 45 62
+benefit parcial13
+compara beneficio 44 62
+benefit parcial11
+compara beneficio 42 62
+benefit parcial5
+compara beneficio 36 62
+ANTES DE ELIMINAR
+1 - 5 - 7 - 6 - 5
+[(vertex: 5, cost: 8, benefit: 23 ) ]
+1 - 5 - 7 - 6
+Beneficio dispon46
+benefit parcial14
+compara beneficio 60 62
+benefit parcial8
+compara beneficio 54 62
+ANTES DE ELIMINAR
+1 - 5 - 7 - 6
+[(vertex: 6, cost: 2, benefit: 3 ) ]
+1 - 5 - 7
+Beneficio dispon47
+benefit parcial13
+compara beneficio 60 62
+benefit parcial9
+compara beneficio 56 62
+benefit parcial9
+compara beneficio 56 62
+benefit parcial8
+compara beneficio 55 62
+benefit parcial5
+compara beneficio 52 62
+benefit parcial5
+compara beneficio 52 62
+benefit parcial5
+compara beneficio 52 62
+benefit parcial2
+compara beneficio 49 62
+benefit parcial1
+compara beneficio 48 62
+benefit parcial-4
+compara beneficio 43 62
+benefit parcial-6
+compara beneficio 41 62
+benefit parcial-8
+compara beneficio 39 62
+ANTES DE ELIMINAR
+1 - 5 - 7
+[(vertex: 7, cost: 10, benefit: 29 ) ]
+1 - 5
+Beneficio dispon66
+benefit parcial11
+compara beneficio 62 62
+agregando lado..5(vertex: 6, cost: 8, benefit: 23 ) 
+myset contains: 6
+1 - 5 - 6
+Beneficio dispon51
+v 6
+[(vertex: 5, cost: 8, benefit: 23 ) (vertex: 7, cost: 2, benefit: 3 ) (vertex: 7, cost: 2, benefit: 0 ) (vertex: 5, cost: 8, benefit: 0 ) ]
+benefit parcial12
+compara beneficio 62 62
+agregando lado..6(vertex: 7, cost: 2, benefit: 3 ) 
+myset contains: 7 6
+1 - 5 - 6 - 7
+Beneficio dispon50
+v 7
+[(vertex: 5, cost: 10, benefit: 29 ) (vertex: 6, cost: 2, benefit: 3 ) (vertex: 6, cost: 2, benefit: 0 ) (vertex: 2, cost: 21, benefit: 15 ) (vertex: 3, cost: 23, benefit: 17 ) (vertex: 10, cost: 13, benefit: 6 ) (vertex: 5, cost: 10, benefit: 0 ) (vertex: 8, cost: 10, benefit: 0 ) (vertex: 8, cost: 10, benefit: 0 ) (vertex: 10, cost: 13, benefit: 0 ) (vertex: 1, cost: 19, benefit: 5 ) (vertex: 1, cost: 19, benefit: 0 ) (vertex: 2, cost: 21, benefit: 0 ) (vertex: 3, cost: 23, benefit: 0 ) ]
+benefit parcial31
+compara beneficio 62 62
+agregando lado..7(vertex: 5, cost: 10, benefit: 29 ) 
+myset contains: 5 7 6
+1 - 5 - 6 - 7 - 5
+Beneficio dispon31
+v 5
+[(vertex: 7, cost: 10, benefit: 29 ) (vertex: 6, cost: 8, benefit: 23 ) (vertex: 1, cost: 17, benefit: 13 ) (vertex: 2, cost: 14, benefit: 9 ) (vertex: 6, cost: 8, benefit: 0 ) (vertex: 3, cost: 18, benefit: 9 ) (vertex: 7, cost: 10, benefit: 0 ) (vertex: 13, cost: 26, benefit: 15 ) (vertex: 2, cost: 14, benefit: 0 ) (vertex: 10, cost: 20, benefit: 5 ) (vertex: 1, cost: 17, benefit: 0 ) (vertex: 3, cost: 18, benefit: 0 ) (vertex: 10, cost: 20, benefit: 0 ) (vertex: 13, cost: 26, benefit: 0 ) ]
+benefit parcial26
+compara beneficio 57 62
+benefit parcial23
+compara beneficio 54 62
+benefit parcial22
+compara beneficio 53 62
+benefit parcial21
+compara beneficio 52 62
+benefit parcial20
+compara beneficio 51 62
+benefit parcial17
+compara beneficio 48 62
+benefit parcial16
+compara beneficio 47 62
+benefit parcial14
+compara beneficio 45 62
+benefit parcial13
+compara beneficio 44 62
+benefit parcial11
+compara beneficio 42 62
+benefit parcial5
+compara beneficio 36 62
+ANTES DE ELIMINAR
+1 - 5 - 6 - 7 - 5
+[(vertex: 5, cost: 10, benefit: 29 ) ]
+1 - 5 - 6 - 7
+Beneficio dispon50
+benefit parcial10
+compara beneficio 60 62
+benefit parcial6
+compara beneficio 56 62
+benefit parcial6
+compara beneficio 56 62
+benefit parcial5
+compara beneficio 55 62
+benefit parcial2
+compara beneficio 52 62
+benefit parcial2
+compara beneficio 52 62
+benefit parcial2
+compara beneficio 52 62
+benefit parcial-1
+compara beneficio 49 62
+benefit parcial-2
+compara beneficio 48 62
+benefit parcial-7
+compara beneficio 43 62
+benefit parcial-9
+compara beneficio 41 62
+benefit parcial-11
+compara beneficio 39 62
+ANTES DE ELIMINAR
+1 - 5 - 6 - 7
+[(vertex: 7, cost: 2, benefit: 3 ) ]
+1 - 5 - 6
+Beneficio dispon51
+benefit parcial9
+compara beneficio 60 62
+benefit parcial3
+compara beneficio 54 62
+ANTES DE ELIMINAR
+1 - 5 - 6
+[(vertex: 6, cost: 8, benefit: 23 ) ]
+1 - 5
+Beneficio dispon66
+benefit parcial-9
+compara beneficio 57 62
+benefit parcial-12
+compara beneficio 54 62
+benefit parcial-13
+compara beneficio 53 62
+benefit parcial-14
+compara beneficio 52 62
+benefit parcial-15
+compara beneficio 51 62
+benefit parcial-18
+compara beneficio 48 62
+benefit parcial-19
+compara beneficio 47 62
+benefit parcial-21
+compara beneficio 45 62
+benefit parcial-22
+compara beneficio 44 62
+benefit parcial-24
+compara beneficio 42 62
+benefit parcial-30
+compara beneficio 36 62
+ANTES DE ELIMINAR
+1 - 5
+[(vertex: 5, cost: 17, benefit: 13 ) ]
+1
+Beneficio dispon66
+benefit parcial-5
+compara beneficio 61 62
+benefit parcial-6
+compara beneficio 60 62
+benefit parcial-9
+compara beneficio 57 62
+benefit parcial-12
+compara beneficio 54 62
+benefit parcial-13
+compara beneficio 53 62
+benefit parcial-14
+compara beneficio 52 62
+benefit parcial-15
+compara beneficio 51 62
+benefit parcial-17
+compara beneficio 49 62
+benefit parcial-19
+compara beneficio 47 62
+benefit parcial-20
+compara beneficio 46 62
+benefit parcial-22
+compara beneficio 44 62
+benefit parcial-27
+compara beneficio 39 62
+ANTES DE ELIMINAR
+1
+1
+Beneficio dispon66
+1 - 3 - 4 - 1 - 5 - 7 - 6 - 5 - 2 - 10 - 11 - 12 - 9 - 8 - 2 - 3 - 1
+62

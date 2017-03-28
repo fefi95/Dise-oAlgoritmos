@@ -29,16 +29,16 @@ ofstream statsFile; //File to be read
 int benefit(std::vector< vector<DEdge> > graph) {
     int benefit = 0;
     int vOut = 0; // source
-    std::cout << "" << std::endl;
-    std::cout << "BENEFICIOOOOOO    " << std::endl;
+    // std::cout << "" << std::endl;
+    // std::cout << "BENEFICIOOOOOO    " << std::endl;
     while (!graph[vOut].empty() && vOut < graph.size()) {
         DEdge edge = graph[vOut][0]; // First element
-        std::cout <<  edge << std::endl;
+        // std::cout <<  edge << std::endl;
         (graph[vOut]).erase((graph[vOut]).begin());
         benefit += edge.get_benefit() - edge.get_cost();
         vOut = edge.get_vIn();
     }
-    std::cout << "" << std::endl;
+    // std::cout << "" << std::endl;
     return benefit;
 }
 
@@ -90,29 +90,53 @@ DEdge eliminar_ultimo_lado(std::vector< vector<DEdge> > sol, std::vector< vector
 
 bool esta_lado_en_sol_parcial(int v, DEdge e, std::vector< vector<DEdge> > solParcial) {
 
+    int cont = 0;
     for(std::vector<DEdge>::iterator edge = solParcial[v].begin(); edge != solParcial[v].end(); ++edge) {
-        // Edge was found
-        if (e == *edge) {
-            // std::cout << "esta lado " << v+1 << " - " << e << std::endl;
+        if (e.get_vIn() == edge -> get_vIn()){
+            cont += 1;
+        }
+    }
+    for(std::vector<DEdge>::iterator edge = solParcial[e.get_vIn()].begin(); edge != solParcial[e.get_vIn()].end(); ++edge) {
+        if (v == edge -> get_vIn()) {
+            cont += 1;
+        }
+    }
+    if (cont == 1) {
+        if (e.get_benefit() == 0){
+            return false;
+        }
+        else {
             return true;
         }
     }
-
-    for(std::vector<DEdge>::iterator edge = solParcial[e.get_vIn()].begin(); edge != solParcial[e.get_vIn()].end(); ++edge) {
-        // Edge was found
-        if (edge -> get_vIn() == v && edge -> get_benefit() == e.get_benefit()) {
-            // if (e.get_benefit() == 0) {
-            //     std::cout << "beneficio 0" << std::endl;
-            //     return false;
-            // }
-            // else {
-                // std::cout << "esta lado " << v+1 << " - " << e << std::endl;
-                return true;
-            // }
-        }
+    else if (cont < 1) {
+        return false;
     }
-    std::cout << "noooooooooo" <<  v+1 << " - " << e << std::endl;
-    return false;
+    return true;
+
+    // for(std::vector<DEdge>::iterator edge = solParcial[v].begin(); edge != solParcial[v].end(); ++edge) {
+    //     // Edge was found
+    //     if (e == *edge) {
+    //         // std::cout << "esta lado " << v+1 << " - " << e << std::endl;
+    //         return true;
+    //     }
+    // }
+    //
+    // for(std::vector<DEdge>::iterator edge = solParcial[e.get_vIn()].begin(); edge != solParcial[e.get_vIn()].end(); ++edge) {
+    //     // Edge was found
+    //     if (edge -> get_vIn() == v && edge -> get_benefit() == e.get_benefit()) {
+    //         // if (e.get_benefit() == 0) {
+    //         //     std::cout << "beneficio 0" << std::endl;
+    //         //     return false;
+    //         // }
+    //         // else {
+    //             // std::cout << "esta lado " << v+1 << " - " << e << std::endl;
+    //             return true;
+    //         // }
+    //     }
+    // }
+    // std::cout << "noooooooooo" <<  v+1 << " - " << e << std::endl;
+    // return false;
 }
 
 // func ciclo-negativo(e: arista, solParcial: Secuencia de aristas)
@@ -173,7 +197,7 @@ bool cumple_acotamiento(int v, DEdge e, std::vector< vector<DEdge> > solParcial)
     int maxBeneficio = beneficioDisponible - max(0, beneficioE) + beneficioSolParcial;
     // int maxBeneficio = beneficioSolParcial;
     std::cout << "compara beneficio " << maxBeneficio << " " << benefit(mejorSol)  << std::endl;
-    if (maxBeneficio <= benefit(mejorSol)){
+    if (maxBeneficio < benefit(mejorSol)){
         // std::cout << " no cumple_acotamiento" << std::endl;
         return false;
     }
@@ -209,7 +233,7 @@ void DFS(int v, DGraph& grafo) {
                 std::cout << "Beneficio dispon" << beneficioDisponible << std::endl;
                 timeEnd = time(NULL);
                 tDiff = difftime(timeEnd, timeStart);
-                if (tDiff > 600) { // 10 min
+                if (tDiff > 1200) { // 10 min
                     std::cout << "TIME OUT" << std::endl;
                     statsFile << "-T-" << std::endl;
                     exit(0);
@@ -271,17 +295,16 @@ int main(int argc, char **argv) {
     for (int i = 0; i < sol.second.size()-1; i++) {
         v1 = sol.second[i]-1;
         v2 = sol.second[i+1]-1;
-        std::cout << "arista" << v1 << "," << v2 << std::endl;
+        // std::cout << "arista" << v1 << "," << v2 << std::endl;
 
         edgeInSol.first = v2;
         edgeInSol.second = v1;
         std::set<pair<int, int>>::iterator find = isInSol.find(edgeInSol);
-        std::cout << "myset contains:";
-        for ( pair<int,int> x: isInSol ) std::cout << "(" << x.first << " "  << x.second << ") ";
-        std::cout << "mas bonito " << find -> first << find -> second << std::endl;
+        // std::cout << "myset contains:";
+        // for ( pair<int,int> x: isInSol ) std::cout << "(" << x.first << " "  << x.second << ") ";
+        // std::cout << "mas bonito " << find -> first << find -> second << std::endl;
         std::vector<DEdge> adjacent = grafo.get_graph()[v1];
         for(std::vector<DEdge>::iterator it =  adjacent.begin(); it != adjacent.end(); ++it) {
-            std::cout << *it << "vs" << *grafo.get_graph()[v1].end() << std::endl;
             if (it -> get_vIn() == v2) {
                 be = it -> get_benefit();
                 ce = it -> get_cost();
@@ -291,26 +314,26 @@ int main(int argc, char **argv) {
         if (find != isInSol.end()) { // not found
             be = 0;
         }
-        cout << "AYUDAME JESUS... el valor de i es: " << i <<  endl;
+        // cout << "AYUDAME JESUS... el valor de i es: " << i <<  endl;
         DEdge e(v2, ce, be);
         mejorSol[v1].push_back(e);
         // cout << "acceso de la sol.second de: " << i << endl;
         std::pair<int,int> e2(v1,v2);
         isInSol.insert(e2);
     }
-    std::cout << "what?" << std::endl;
-    std::cout << benefit(mejorSol) << " sooool " << sol.first << std::endl;
+    // std::cout << "what?" << std::endl;
+    // std::cout << benefit(mejorSol) << " sooool " << sol.first << std::endl;
     statsFile.open(argv[2], std::ios::out | std::ios::app);
 
 
-    beneficioDisponible = get_max_benefit(strcat(argv[1],"-salida.txt"));
+    // beneficioDisponible = get_max_benefit(strcat(argv[1],"-salida.txt"));
     // if (beneficioDisponible < 0) {
     beneficioDisponible = atoi(argv[4]);
     // }
     std::cout << "Beneficio dispon" << beneficioDisponible << std::endl;
     // name, optimum, heuristic value, heuristic deviation,
     float optimum = stof(argv[4]);
-    statsFile << argv[3] << "," << optimum << "," << beneficioDisponible << "," << pStd(optimum, beneficioDisponible) << "," << std::endl;
+    statsFile << argv[3] << "," << optimum << "," << sol.first << "," << pStd(optimum, sol.first) << "," << std::endl;
     timeStart = time(NULL);
     //exit(0);
     DFS(0, grafo);

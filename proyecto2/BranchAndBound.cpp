@@ -29,16 +29,12 @@ ofstream statsFile; //File to be read
 int benefit(std::vector< vector<DEdge> > graph) {
     int benefit = 0;
     int vOut = 0; // source
-    // std::cout << "" << std::endl;
-    // std::cout << "BENEFICIOOOOOO    " << std::endl;
     while (!graph[vOut].empty() && vOut < graph.size()) {
         DEdge edge = graph[vOut][0]; // First element
-        // std::cout <<  edge << std::endl;
         (graph[vOut]).erase((graph[vOut]).begin());
         benefit += edge.get_benefit() - edge.get_cost();
         vOut = edge.get_vIn();
     }
-    // std::cout << "" << std::endl;
     return benefit;
 }
 
@@ -46,19 +42,13 @@ void printSol(std::vector< vector<DEdge> > sol) {
     int vOut = 0; // source
     while (!sol[vOut].empty() && vOut < sol.size()) {
         DEdge edge = sol[vOut][0]; // First element
-        // std::cout << vOut + 1 << " - ";
-        // std::cout << edge << std::endl;
         sol[vOut].erase(sol[vOut].begin());
         vOut = edge.get_vIn();
     }
-    // std::cout << vOut + 1 << std::endl;
-    // std::cout << std::endl;
 }
+
 void agregar_lado(int v, DEdge e, std::vector< vector<DEdge> >& solParcial){
     vertexInSol.insert(e.get_vIn());
-    //std::cout << "myset contains:";
-    // for ( int x: vertexInSol ) std::cout << " " << x+1;
-    // std::cout << std::endl;
     solParcial[v].push_back(e);
 }
 
@@ -76,12 +66,7 @@ DEdge eliminar_ultimo_lado(std::vector< vector<DEdge> > sol, std::vector< vector
         vOut = edge.get_vIn();
     }
     DEdge e(vOut, ce, be);
-    // std::cout << "edge to delete "<< vToDelete+1 << e << std::endl;
     if (!solParcial[vToDelete].empty()){
-        // printEdges(cout, solParcial[vToDelete]);
-        // std::cout << *(solParcial[vToDelete].begin() + vOut) << std::endl;
-        // std::vector< vector<DEdge> >::iterator it = solParcial[vToDelete].begin();
-        // it += vOut;
         solParcial[vToDelete].erase(solParcial[vToDelete].end());
         vertexInSol.erase(vOut);
     }
@@ -131,16 +116,13 @@ bool ciclo_negativo(int v, DEdge e, std::vector< vector<DEdge> > solParcial) {
     else {
         int benefit = 0;
         int vOut = e.get_vIn(); // source
-        // std::cout << "" << std::endl;
         while (!solParcial[vOut].empty() && vOut < solParcial.size()) {
             DEdge edge = solParcial[vOut][0]; // First element
-            // std::cout <<  edge << std::endl;
             (solParcial[vOut]).erase((solParcial[vOut]).begin());
             benefit += edge.get_benefit() - edge.get_cost();
             vOut = edge.get_vIn();
         }
         benefit += e.get_benefit() - e.get_cost();
-        // std::cout << "" << std::endl;
     }
     return (benefit < 0);
 }
@@ -169,27 +151,18 @@ bool repite_ciclo(int v, DEdge e, std::vector< vector<DEdge> > solParcial) {
 bool cumple_acotamiento(int v, DEdge e, std::vector< vector<DEdge> > solParcial) {
     int beneficioE = e.get_benefit() - e.get_cost();
     int beneficioSolParcial = benefit(solParcial) + beneficioE;
-    // std::cout << "benefit parcial" << beneficioSolParcial << std::endl;
     int maxBeneficio = beneficioDisponible - max(0, beneficioE) + beneficioSolParcial;
-    // int maxBeneficio = beneficioSolParcial;
-    // std::cout << "compara beneficio " << maxBeneficio << " " << benefit(mejorSol)  << std::endl;
     if (maxBeneficio < benefit(mejorSol)){
-        // std::cout << " no cumple_acotamiento" << std::endl;
         return false;
     }
-    // std::cout << "cumple_acotamiento" << std::endl;
     return true;
 }
 
 void DFS(int v, DGraph& grafo) {
-    // std::cout << "benefit " << benefit(solParcial) << " " << benefit(mejorSol) << std::endl;
-    // std::cout << "v " << v+1 << std::endl;
     if (v == 0 && (benefit(solParcial) > benefit(mejorSol))) {
-        // std::cout << "COPY" << std::endl;
         std::copy(solParcial.begin(), solParcial.end(), mejorSol.begin());
     }
     std::vector<DEdge> L = grafo.get_successor_list(v);
-    // printEdges(cout, L);
     for (int i = 0; i < L.size(); i++) {
         DEdge e = L[i];
         int vj = e.get_vIn();
@@ -200,11 +173,8 @@ void DFS(int v, DGraph& grafo) {
             !repite_ciclo(v, e, solParcial) &&
             cumple_acotamiento(v, e, solParcial)
             ) {
-                // std::cout << "agregando lado.." << v+1 << e << std::endl;
                 agregar_lado(v, e, solParcial);
-                // printSol(solParcial);
                 beneficioDisponible = beneficioDisponible - max(0, be - ce);
-                // std::cout << "Beneficio dispon" << beneficioDisponible << std::endl;
                 timeEnd = time(NULL);
                 tDiff = difftime(timeEnd, timeStart);
                 if (tDiff > 1800) { // 10 min
@@ -216,13 +186,10 @@ void DFS(int v, DGraph& grafo) {
             }
     }
 
-    // printSol(solParcial);
     DEdge e = eliminar_ultimo_lado(solParcial, solParcial);
-    // printSol(solParcial);
     int be = e.get_benefit();
     int ce = e.get_cost();
     beneficioDisponible = beneficioDisponible + max(0, be - ce);
-    // std::cout << "Beneficio dispon" << beneficioDisponible << std::endl;
 }
 
 // Input: Un grafo G = (V, E) y un ciclo solInicial soluci´on de PRPP
@@ -288,7 +255,6 @@ int main(int argc, char **argv) {
 
 
     beneficioDisponible = atoi(argv[4]);
-    // std::cout << "Beneficio dispon" << beneficioDisponible << std::endl;
     // name, optimum, heuristic value, heuristic deviation,
     float optimum = stof(argv[4]);
     statsFile << argv[3] << "," << optimum << "," << sol.first << "," << pStd(optimum, sol.first) << "," << std::endl;

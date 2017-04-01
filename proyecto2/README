@@ -1,0 +1,23 @@
+/**
+ *  Universidad Simon Bolivar
+ *  CI-5651 - Diseño de Algoritmos I
+ *  @author : Salvador Di Renzo 10-10296
+ *  @author : Stefani Castellanos 11-11394
+ *
+ */
+
+ En el proyecto se encuentran los resultados de Branch and Bound dentro de la carpeta
+ "Resultados" bajo el nombre <conjunto_problema>-bnb.csv
+
+ Se incluyen los mismos archivo del proyecto 1 y se agregan DGraph que representa
+ el grafo dirigido y Branch and Bound con la implementación.
+
+ Para correr Branch and Bound:
+
+ ./BranchAndBound <archivo_problema> <archivo_resultados> <nombre_problema> <optimo>
+
+ ejemplo:
+
+ ./BranchAndBound instanciasPRPP/CHRISTOFIDES/P16NoRPP Resultados/cristofides-bnb.csv P16 113
+
+El archivo runProject.cpp corre el algoritmo greedy para todos los problemas.
